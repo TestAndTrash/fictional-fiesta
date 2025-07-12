@@ -74,9 +74,10 @@ namespace Assets.Script
         {
             if (hp < 1)
             {
-                this.gameObject.SetActive(false);
-                tile.creature = null;
-                //Destroy(this.gameObject);
+                //tile.creature = null;
+                
+                //this.gameObject.SetActive(false);
+                Destroy(this.gameObject);
             }
         }
 
