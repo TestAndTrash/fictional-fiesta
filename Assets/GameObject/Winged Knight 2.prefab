@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8842533967999451137}
   - component: {fileID: 1325126310910319795}
   m_Layer: 0
-  m_Name: Winged Knight
+  m_Name: Winged Knight 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: -1175304452, guid: 2e94bce47c68bf84295716d22ce74ac6, type: 3}
-  m_Color: {r: 0.19406372, g: 0.6195995, b: 0.8396226, a: 1}
+  m_Color: {r: 0.75862825, g: 0.8392157, b: 0.19215687, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2835d1feedbcf0543ae47b7aa7897d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 1
+  move: 2
   health: 4
   attack: 3
   range: 1

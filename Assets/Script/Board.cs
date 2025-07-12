@@ -1,6 +1,7 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
+using UnityEditor.Search;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -14,11 +15,11 @@ public class Board : MonoBehaviour
 
 
 
-    public void InvokCreature(ICreature prefab, int team, Tile tile)
+    public void InvokCreature(Creature prefab, int team, Tile tile)
     {
-        ICreature newCreature = Instantiate(prefab, teams[team].transform);
-        newCreature.GetComponent<ICreature>().team = team;
-        newCreature.GetComponent<ICreature>().tile = tile;
+        Creature newCreature = Instantiate(prefab, teams[team].transform);
+        newCreature.GetComponent<Creature>().team = team;
+        newCreature.updateTile(tile);
         newCreature.transform.position = tile.transform.position;
 
         this.teams[team].creatures.Add(newCreature);
@@ -26,20 +27,31 @@ public class Board : MonoBehaviour
         {
             newCreature.GetComponent<SpriteRenderer>().flipX = true;
         }
-
-
     }
 
     public void RunAction()
     {
-        foreach (Team team in teams)
+        StartCoroutine(CoroutineActions());
+    }
+
+    public IEnumerator CoroutineActions()
+    {
+        foreach (Creature creature in teams[playerTeamIndex].creatures)
         {
-            foreach (ICreature creature in team.creatures)
-            {
-                Tile tile = creature.tile.GetComponent<Tile>();
-                Lane lane = lanes[tile.pos[tile.laneIndex]];
-                StartCoroutine(creature.MoveForward(lane));
-            }
+            Tile tile = creature.tile.GetComponent<Tile>();
+            Lane lane = lanes[tile.pos[tile.laneIndex]];
+            yield return (creature.MoveForward(lane));
+        }
+
+        foreach (Creature creature in teams[ennemyTeamIndex].creatures)
+        {
+            Tile tile = creature.tile.GetComponent<Tile>();
+            Lane lane = lanes[tile.pos[tile.laneIndex]];
+            yield return (creature.MoveForward(lane));
         }
     }
+
+
+
+
 }

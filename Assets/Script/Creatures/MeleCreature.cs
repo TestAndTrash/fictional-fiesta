@@ -1,14 +1,33 @@
-﻿using System;
-using UnityEngine;
+﻿
+using System.Collections;
 
 namespace Assets.Script.Creatures
 {
-    internal class MeleCreature : ICreature
+    internal class MeleCreature : Creature
     {
+        public int move; 
+        public int health; 
+        public int attack; 
+        public int range; 
 
-        override public void DoAction()
+        public override void Start()
         {
-            //throw new NotImplementedException();
+            pm = move;
+            hp = health;
+            atk = attack;
+            rng = range;
+        }
+
+        public override IEnumerator Fight(Tile nextTile)
+        {
+            Creature ennemy = nextTile.creature;
+            this.hp -= ennemy.atk;
+            
+            ennemy.hp -= this.atk;
+            this.CheckDead();
+            ennemy.CheckDead();
+
+            yield return null;
         }
 
 

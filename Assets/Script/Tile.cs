@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Assets.Script.Creatures;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Assets.Script
 {
@@ -15,6 +9,7 @@ namespace Assets.Script
         public int laneIndex { get; private set; } = 0;
         public int tileIndex { get; private set; } = 1;
 
+        public Creature creature { get; set; } = null;
 
     }
 }

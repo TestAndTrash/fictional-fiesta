@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 0}
-  creature: {fileID: 1325126310910319795, guid: 947044d6ba00a51428d22a8bd0ff6f96, type: 3}
+  creature1: {fileID: 1325126310910319795, guid: 947044d6ba00a51428d22a8bd0ff6f96, type: 3}
+  creature2: {fileID: 1325126310910319795, guid: 37bf5a85f05c5724ab2ebb4f1677a69f, type: 3}
   tile1: {fileID: 0}
   tile2: {fileID: 0}
