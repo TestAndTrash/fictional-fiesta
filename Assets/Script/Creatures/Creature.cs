@@ -16,6 +16,7 @@ namespace Assets.Script
         public int hp { get; set; } = -1;
         public int atk { get; set; } = -1;
         public int rng { get; set; } = -1;
+        public bool alive { get; set; } = true;
 
         public virtual void Start() {}
 
@@ -26,7 +27,7 @@ namespace Assets.Script
         
         public virtual IEnumerator MoveForward(Lane lane)
         {
-            for (int i = 0; i < pm && (tile.pos[tile.tileIndex] != goal[team]); i++)
+            for (int i = 0; i < pm && (tile.pos[tile.tileIndex] != goal[team]) && this.alive; i++)
             {
                 Tile nextTile = lane.tiles[tile.pos[tile.tileIndex]+ direction[team]];
                 if (nextTile.creature == null)
@@ -38,6 +39,11 @@ namespace Assets.Script
                     yield return Fight(nextTile);
                 }
                 
+            }
+
+            if (tile.pos[tile.tileIndex] != goal[team] && lane.tiles[tile.pos[tile.tileIndex] + direction[team]].creature != null && this.alive)
+            {
+                yield return Fight(lane.tiles[tile.pos[tile.tileIndex] + direction[team]]);
             }
 
         }
@@ -74,10 +80,10 @@ namespace Assets.Script
         {
             if (hp < 1)
             {
-                //tile.creature = null;
+                this.alive = false;
+                tile.creature = null;
+                this.gameObject.SetActive(false);
                 
-                //this.gameObject.SetActive(false);
-                Destroy(this.gameObject);
             }
         }
 

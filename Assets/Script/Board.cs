@@ -36,18 +36,38 @@ public class Board : MonoBehaviour
 
     public IEnumerator CoroutineActions()
     {
-        foreach (Creature creature in teams[playerTeamIndex].creatures)
+        //foreach (Creature creature in teams[playerTeamIndex].creatures)
+        for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
-            Tile tile = creature.tile.GetComponent<Tile>();
-            Lane lane = lanes[tile.pos[tile.laneIndex]];
-            yield return (creature.MoveForward(lane));
+            Creature creature = teams[playerTeamIndex].creatures[i];
+            if (creature.gameObject.activeSelf)
+            {
+                Tile tile = creature.tile.GetComponent<Tile>();
+                Lane lane = lanes[tile.pos[tile.laneIndex]];
+                yield return (creature.MoveForward(lane));
+            }
+            else
+            {
+                teams[playerTeamIndex].creatures.Remove(creature);
+                Destroy(creature.gameObject);
+            }
         }
 
-        foreach (Creature creature in teams[ennemyTeamIndex].creatures)
+        //foreach (Creature creature in teams[ennemyTeamIndex].creatures)
+        for (int i = teams[ennemyTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
-            Tile tile = creature.tile.GetComponent<Tile>();
-            Lane lane = lanes[tile.pos[tile.laneIndex]];
-            yield return (creature.MoveForward(lane));
+            Creature creature = teams[ennemyTeamIndex].creatures[i];
+            if (creature.gameObject.activeSelf)
+            {
+                Tile tile = creature.tile.GetComponent<Tile>();
+                Lane lane = lanes[tile.pos[tile.laneIndex]];
+                yield return (creature.MoveForward(lane));
+            }
+            else
+            {
+                teams[ennemyTeamIndex].creatures.Remove(creature);
+                Destroy(creature.gameObject);
+            }
         }
     }
 

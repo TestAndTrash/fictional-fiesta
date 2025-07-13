@@ -20,9 +20,12 @@ namespace Assets.Script.Creatures
 
         public override IEnumerator Fight(Tile nextTile)
         {
+
             Creature ennemy = nextTile.creature;            
             ennemy.hp -= this.atk;
+            this.hp -= ennemy.atk;
             ennemy.CheckDead();
+            this.CheckDead();
 
             yield return null;
         }
