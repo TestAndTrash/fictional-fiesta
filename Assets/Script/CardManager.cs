@@ -3,10 +3,11 @@ using DG.Tweening;
 using System.Collections.Generic;
 using Assets.Script;
 
-
 public class CardManager : MonoBehaviour
 {
     Vector3 orignalPos;
+
+    CardEntry card;
     public bool traveling = true;
     public string cardName;
     public int hp;
@@ -35,11 +36,18 @@ public class CardManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        List<Tile> playerTiles = board.GetPlayerTiles();
+        board.SetPlaceCardMode(card, this);
+    }
+
+    public void UseCard()
+    {
+        handManager.DeleteFromHand(gameObject);
+        Destroy(gameObject);
     }
 
     public void fillCardData(CardEntry entry)
     {
+        card = entry;
         cardName = entry.cardName;
         hp = entry.hp;
         mobility = entry.mobility;

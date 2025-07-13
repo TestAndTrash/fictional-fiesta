@@ -5,7 +5,7 @@ namespace Assets.Script
     public class Hover : MonoBehaviour
     {
 
-        private bool isHoverable;
+        public bool isHoverable;
 
         private Color initialColor;
         private Color hoverColor = Color.azure;
@@ -31,6 +31,12 @@ namespace Assets.Script
         {
             isHoverable = true;
             ColorMe(hoverableColor);
+        }
+
+        public void DisableHoverable()
+        {
+            isHoverable = false;
+            ColorMe(initialColor);
         }
 
 
