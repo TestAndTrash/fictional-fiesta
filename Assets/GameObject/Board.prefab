@@ -54,6 +54,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -102,6 +105,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000005000000
+  creature: {fileID: 0}
 --- !u!1 &255767829239033505
 GameObject:
   m_ObjectHideFlags: 0
@@ -156,6 +160,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -204,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000003000000
+  creature: {fileID: 0}
 --- !u!1 &316448915222050657
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +303,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -343,6 +354,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000002000000
+  creature: {fileID: 0}
 --- !u!1 &1162328457671374111
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,6 +409,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -445,6 +460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000004000000
+  creature: {fileID: 0}
 --- !u!1 &1226364780074192959
 GameObject:
   m_ObjectHideFlags: 0
@@ -499,6 +515,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -547,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000005000000
+  creature: {fileID: 0}
 --- !u!1 &1385942180944537438
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +751,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -779,6 +802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000000000000
+  creature: {fileID: 0}
 --- !u!1 &2286425763718862606
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +857,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -881,6 +908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000001000000
+  creature: {fileID: 0}
 --- !u!1 &2419711441818381797
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1003,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1023,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000004000000
+  creature: {fileID: 0}
 --- !u!1 &2800469130831594641
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,6 +1109,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1125,6 +1160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000006000000
+  creature: {fileID: 0}
 --- !u!1 &3371059217479146479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1215,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1227,6 +1266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000001000000
+  creature: {fileID: 0}
 --- !u!1 &3383772266381466994
 GameObject:
   m_ObjectHideFlags: 0
@@ -1370,8 +1410,8 @@ RectTransform:
   m_LocalScale: {x: 1.8289951, y: 1.8289951, z: 1.8289951}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8593404128131601857}
   - {fileID: 1833535845336044488}
+  - {fileID: 8593404128131601857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1454,6 +1494,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1502,6 +1545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000004000000
+  creature: {fileID: 0}
 --- !u!1 &4029563345060996608
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,6 +1600,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1604,6 +1651,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000002000000
+  creature: {fileID: 0}
 --- !u!1 &4079374456710310106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1658,6 +1706,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1706,6 +1757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000003000000
+  creature: {fileID: 0}
 --- !u!1 &4187842129811606738
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +1812,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1808,6 +1863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000005000000
+  creature: {fileID: 0}
 --- !u!1 &4248420082359379422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,6 +1918,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1910,6 +1969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000006000000
+  creature: {fileID: 0}
 --- !u!1 &4515376079212852425
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2024,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2012,6 +2075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000004000000
+  creature: {fileID: 0}
 --- !u!1 &4673519101715144356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2115,6 +2179,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2163,6 +2230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000001000000
+  creature: {fileID: 0}
 --- !u!1 &4768027226720715035
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,6 +2285,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2265,6 +2336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000004000000
+  creature: {fileID: 0}
 --- !u!1 &5059334540962016274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2319,6 +2391,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2367,6 +2442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000002000000
+  creature: {fileID: 0}
 --- !u!1 &5655258742279814390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,6 +2497,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2469,6 +2548,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000001000000
+  creature: {fileID: 0}
 --- !u!1 &5867192517975137295
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,6 +2668,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2636,6 +2719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000003000000
+  creature: {fileID: 0}
 --- !u!1 &6160850069148289225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2690,6 +2774,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2738,6 +2825,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000000000000
+  creature: {fileID: 0}
 --- !u!1 &6360953273074064463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,6 +2880,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2840,6 +2931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000007000000
+  creature: {fileID: 0}
 --- !u!1 &6573887581573819573
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,6 +2986,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2942,6 +3037,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000003000000
+  creature: {fileID: 0}
 --- !u!1 &6958122895831019098
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,6 +3092,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3044,6 +3143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000005000000
+  creature: {fileID: 0}
 --- !u!1 &7323414903237842148
 GameObject:
   m_ObjectHideFlags: 0
@@ -3098,6 +3198,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3146,6 +3249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000006000000
+  creature: {fileID: 0}
 --- !u!1 &7452322680985395071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3200,6 +3304,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3248,6 +3355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000007000000
+  creature: {fileID: 0}
 --- !u!1 &7586241389062248756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3302,6 +3410,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3350,6 +3461,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000002000000
+  creature: {fileID: 0}
 --- !u!1 &7612526634607633245
 GameObject:
   m_ObjectHideFlags: 0
@@ -3404,6 +3516,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3452,6 +3567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000000000000
+  creature: {fileID: 0}
 --- !u!1 &7760608406979586108
 GameObject:
   m_ObjectHideFlags: 0
@@ -3506,6 +3622,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3554,6 +3673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000000000000
+  creature: {fileID: 0}
 --- !u!1 &7916960643397421861
 GameObject:
   m_ObjectHideFlags: 0
@@ -3608,6 +3728,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3656,6 +3779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0300000003000000
+  creature: {fileID: 0}
 --- !u!1 &7961753509542120094
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,6 +3834,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3758,6 +3885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000002000000
+  creature: {fileID: 0}
 --- !u!1 &8226422728031693306
 GameObject:
   m_ObjectHideFlags: 0
@@ -3812,6 +3940,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3860,6 +3991,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0400000007000000
+  creature: {fileID: 0}
 --- !u!1 &8239976222289024917
 GameObject:
   m_ObjectHideFlags: 0
@@ -3914,6 +4046,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3962,6 +4097,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000006000000
+  creature: {fileID: 0}
 --- !u!1 &8443836838882817010
 GameObject:
   m_ObjectHideFlags: 0
@@ -4081,6 +4217,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4129,6 +4268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000007000000
+  creature: {fileID: 0}
 --- !u!1 &8590786730535365584
 GameObject:
   m_ObjectHideFlags: 0
@@ -4183,6 +4323,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4231,6 +4374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0200000001000000
+  creature: {fileID: 0}
 --- !u!1 &8622395246232572221
 GameObject:
   m_ObjectHideFlags: 0
@@ -4285,6 +4429,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4333,6 +4480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000005000000
+  creature: {fileID: 0}
 --- !u!1 &8972897526752585921
 GameObject:
   m_ObjectHideFlags: 0
@@ -4387,6 +4535,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4435,6 +4586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000006000000
+  creature: {fileID: 0}
 --- !u!1 &8974590949551577037
 GameObject:
   m_ObjectHideFlags: 0
@@ -4489,6 +4641,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4537,6 +4692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0100000000000000
+  creature: {fileID: 0}
 --- !u!1 &9092852721777806260
 GameObject:
   m_ObjectHideFlags: 0
@@ -4591,6 +4747,9 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4639,3 +4798,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pos: 0000000007000000
+  creature: {fileID: 0}
