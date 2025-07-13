@@ -1,5 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
+using System.Collections.Generic;
+using Assets.Script;
 
 
 public class CardManager : MonoBehaviour
@@ -14,14 +16,11 @@ public class CardManager : MonoBehaviour
     bool setOnce = false;
 
     private HandManager handManager;
+    private Board board;
 
     void OnMouseEnter()
     {
-        /*handManager.DeleteFromHand(gameObject);
-        Destroy(gameObject);*/
         if (traveling) return;
-        Debug.Log(cardName);
-        Debug.Log("Hp" + hp);
         transform.DOMoveY(transform.position.y + 0.2f, 0.25f);
         if (setOnce) return;
         orignalPos = transform.position;
@@ -34,6 +33,11 @@ public class CardManager : MonoBehaviour
         transform.DOMoveY(orignalPos.y, 0.25f);
     }
 
+    void OnMouseDown()
+    {
+        List<Tile> playerTiles = board.GetPlayerTiles();
+    }
+
     public void fillCardData(CardEntry entry)
     {
         cardName = entry.cardName;
@@ -43,9 +47,9 @@ public class CardManager : MonoBehaviour
         range = entry.range;
     }
 
-    public void fillHandManager(HandManager hManager)
+    public void fillManagers(HandManager hManager, Board brd)
     {
-        Debug.Log(hManager);
         handManager = hManager;
+        board = brd;
     }
 }

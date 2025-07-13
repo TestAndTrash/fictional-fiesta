@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -71,7 +70,14 @@ public class Board : MonoBehaviour
         }
     }
 
-
-
-
+    public List<Tile> GetPlayerTiles()
+    {
+        List<Tile> playerTiles = new();
+        foreach (Lane lane in lanes)
+        {
+            playerTiles.Add(lane.tiles[0]);
+            lane.tiles[0].gameObject.GetComponent<Hover>().MakeHoverable();
+        }
+        return playerTiles;
+    }
 }

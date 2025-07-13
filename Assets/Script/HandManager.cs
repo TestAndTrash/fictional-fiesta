@@ -11,6 +11,7 @@ public class HandManager : MonoBehaviour
     [SerializeField] private Transform spawnPoint;
 
     [SerializeField] private DeckManager deckManager;
+    [SerializeField] private Board board;
 
     private List<GameObject> handCards = new();
     void Update()
@@ -27,10 +28,10 @@ public class HandManager : MonoBehaviour
             Debug.Log("No more card in the deck");
             return;
         }
-        GameObject cardObject = Instantiate(drawnCard.prefab, spawnPoint.position, spawnPoint.rotation);
+        GameObject cardObject = Instantiate(drawnCard.cardPrefab, spawnPoint.position, spawnPoint.rotation);
         CardManager cardManager = cardObject.GetComponent<CardManager>();
         cardManager.fillCardData(drawnCard);
-        cardManager.fillHandManager(this);
+        cardManager.fillManagers(this, board);
         handCards.Add(cardObject);
         UpdateCardPos(cardObject.GetComponent<CardManager>());
     }

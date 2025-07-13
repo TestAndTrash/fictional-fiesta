@@ -1,10 +1,12 @@
+using Assets.Script;
 using UnityEngine;
 
 [System.Serializable]
 public class CardEntry
 {
     public int id;
-    public GameObject prefab;
+    public GameObject cardPrefab;
+    public Creature creaturePrefab;
     public int cost;
     public string cardName;
     public int mobility;
