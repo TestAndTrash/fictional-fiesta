@@ -14,12 +14,14 @@ public class HandManager : MonoBehaviour
     [SerializeField] private Board board;
 
     private List<GameObject> handCards = new();
+
+    private bool canPlay = false;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) DrawCard();
     }
 
-    private void DrawCard()
+    public void DrawCard()
     {
         if (handCards.Count >= maxHandSize) return;
         CardEntry drawnCard = deckManager.DrawCardFromDeck();
@@ -31,9 +33,19 @@ public class HandManager : MonoBehaviour
         GameObject cardObject = Instantiate(drawnCard.cardPrefab, spawnPoint.position, spawnPoint.rotation);
         CardManager cardManager = cardObject.GetComponent<CardManager>();
         cardManager.fillCardData(drawnCard);
-        cardManager.fillManagers(this, board);
+        cardManager.fillHandManager(this);
+        cardManager.OnCardClicked += CardClicked;
         handCards.Add(cardObject);
         UpdateCardPos(cardObject.GetComponent<CardManager>());
+    }
+
+    public void DrawFirstHand(int nbOfCards)
+    {
+        //TODO MAYBE WAIT FOR A MILISEC BETWEEN EACH DRAW
+        for (int i = 0; i < nbOfCards; i++)
+        {
+            DrawCard();
+        }
     }
 
     private void UpdateCardPos(CardManager card)
@@ -79,5 +91,16 @@ public class HandManager : MonoBehaviour
     {
         handCards.Remove(card);
         ArrangeCardPos();
+    }
+
+    private void CardClicked(CardManager cardManager)
+    {
+        if (!canPlay) return;
+        board.SetPlaceCardMode(cardManager.card, cardManager);
+    }
+
+    public void ActivatePlay(bool active)
+    {
+        canPlay = active;
     }
 }

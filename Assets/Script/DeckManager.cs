@@ -10,9 +10,14 @@ public class DeckManager : MonoBehaviour
     public CardEntry DrawCardFromDeck()
     {
         if (deck.Count <= 0) return null;
-        int randomInt = Random.Range(0, deck.Count());
+        int randomInt = Random.Range(0, deck.Count);
         CardEntry cardEntry = database.GetCardById(deck[randomInt]);
         deck.RemoveAt(randomInt);
         return cardEntry;
+    }
+
+    public void AddCardToDeck(int cardID)
+    {
+        deck.Add(cardID);
     }
 }

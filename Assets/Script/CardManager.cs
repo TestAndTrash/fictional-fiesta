@@ -1,23 +1,16 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Collections.Generic;
-using Assets.Script;
+using System;
 
 public class CardManager : MonoBehaviour
 {
     Vector3 orignalPos;
-
-    CardEntry card;
+    public CardEntry card;
     public bool traveling = true;
     public string cardName;
-    public int hp;
-    public int mobility;
-    public int attack;
-    public int range;
     bool setOnce = false;
-
+    public event Action<CardManager> OnCardClicked;
     private HandManager handManager;
-    private Board board;
 
     void OnMouseEnter()
     {
@@ -36,7 +29,7 @@ public class CardManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        board.SetPlaceCardMode(card, this);
+        OnCardClicked?.Invoke(this);
     }
 
     public void UseCard()
@@ -49,15 +42,10 @@ public class CardManager : MonoBehaviour
     {
         card = entry;
         cardName = entry.cardName;
-        hp = entry.hp;
-        mobility = entry.mobility;
-        attack = entry.attack;
-        range = entry.range;
     }
 
-    public void fillManagers(HandManager hManager, Board brd)
+    public void fillHandManager(HandManager hManager)
     {
         handManager = hManager;
-        board = brd;
     }
 }
