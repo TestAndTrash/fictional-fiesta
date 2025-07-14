@@ -67,9 +67,11 @@ namespace Assets.Script.Creatures
         public IEnumerator Fight(Tile nextTile)
         {
             Creature ennemy = nextTile.creature;
-
-            ennemy.UpdateHP(ennemy.hp - this.atk);
-            this.UpdateHP(this.hp - ennemy.atk);
+            if (ennemy.team != this.team)
+            {
+                ennemy.UpdateHP(ennemy.hp - this.atk);
+                this.UpdateHP(this.hp - ennemy.atk);
+            }
             
             yield return null;
         }
