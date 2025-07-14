@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5881519073093879662}
   - component: {fileID: 8842533967999451137}
-  - component: {fileID: 1325126310910319795}
+  - component: {fileID: 7165828391431992569}
   m_Layer: 0
-  m_Name: Winged Knight
+  m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: -1175304452, guid: 2e94bce47c68bf84295716d22ce74ac6, type: 3}
-  m_Color: {r: 0.19406372, g: 0.6195995, b: 0.8396226, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1325126310910319795
+--- !u!114 &7165828391431992569
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -98,13 +98,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8801012688876195169}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2835d1feedbcf0543ae47b7aa7897d4f, type: 3}
+  m_Script: {fileID: 11500000, guid: bc60424444655d2459a73975fd9ab43e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  move: 1
-  health: 4
-  attack: 3
-  range: 1
+  move: 0
+  health: 5
+  attack: 0
+  range: 0
 --- !u!1001 &1123885173863853053
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,18 +191,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8379393417298064980, guid: 61d1e18ef5a0677409f97f28387930ac, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.924
+      value: -1.18
       objectReference: {fileID: 0}
     - target: {fileID: 8379393417298064980, guid: 61d1e18ef5a0677409f97f28387930ac, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -1.313
+      value: -1.24
       objectReference: {fileID: 0}
     - target: {fileID: 8934138386743004494, guid: 61d1e18ef5a0677409f97f28387930ac, type: 3}
       propertyPath: m_Name
       value: CreatureUI
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 3633302929389217636, guid: 61d1e18ef5a0677409f97f28387930ac, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61d1e18ef5a0677409f97f28387930ac, type: 3}
