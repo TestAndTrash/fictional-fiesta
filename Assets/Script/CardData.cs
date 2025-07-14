@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Assets.Script;
 using UnityEngine;
 
@@ -17,11 +18,11 @@ public class CardEntry
 
 public class CardData : MonoBehaviour
 {
-    public CardEntry[] entries;
+    public List<CardEntry> entries;
 
     public CardEntry GetCardById(int id)
     {
-        foreach (var entry in entries)
+        foreach (CardEntry entry in entries)
         {
             if (entry.id == id)
                 return entry;

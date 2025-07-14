@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
@@ -17,6 +18,12 @@ public class Board : MonoBehaviour
     private CardEntry currentCardEntry;
     private CardManager currentCardManager;
 
+    public event Action<bool> CaptureLane;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt)) CaptureLane?.Invoke(true);
+    }
     private void OnEnable()
     {
         Tile.OnTileClicked += HandleTileClick;
@@ -40,14 +47,18 @@ public class Board : MonoBehaviour
         }
     }
 
-    public void RunAction()
+    public void RunOpponentActions()
     {
-        StartCoroutine(CoroutineActions());
+        StartCoroutine(CoroutineOpponentActions());
     }
 
-    public IEnumerator CoroutineActions()
+    public void RunPlayerActions()
     {
-        //foreach (Creature creature in teams[playerTeamIndex].creatures)
+        StartCoroutine(CoroutinePlayerActions());
+    }
+
+    public IEnumerator CoroutinePlayerActions()
+    { 
         for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[playerTeamIndex].creatures[i];
@@ -63,8 +74,10 @@ public class Board : MonoBehaviour
                 Destroy(creature.gameObject);
             }
         }
+    }
 
-        //foreach (Creature creature in teams[ennemyTeamIndex].creatures)
+    public IEnumerator CoroutineOpponentActions()
+    {
         for (int i = teams[ennemyTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[ennemyTeamIndex].creatures[i];
