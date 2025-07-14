@@ -1,4 +1,5 @@
 using System;
+using Assets.Script.HUD;
 using UnityEngine;
 
 public class CardGameManager : MonoBehaviour
@@ -18,7 +19,9 @@ public class CardGameManager : MonoBehaviour
         //Sub to everything here
         //sub to oppnet passed
         //player passed
+        PassTurn.playerPassedTurn += PlayerHasPassed;
         board.CaptureLane += CaptureLane;
+        LaunchGame();
     }
 
     public void LaunchGame()

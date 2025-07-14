@@ -206,6 +206,8 @@ MonoBehaviour:
   board: {fileID: 2087468633}
   playerHandManager: {fileID: 890215344}
   gameOver: 0
+  playerWon: 0
+  opponentWon: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
