@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 namespace Assets.Script
@@ -7,57 +8,58 @@ namespace Assets.Script
     public class Creature : MonoBehaviour
     {
         public int team { get; set; } = -1;
-        private int[] goal = { 7, 0 };
-        private int[] direction = { 1, -1 };
         public Tile tile { get; set; } = null;
 
         [SerializeField]
         public int pm { get; set; } = -1;
-        public int hp { get; set; } = -1;
-        public int atk { get; set; } = -1;
+        public int hp { get; private set; } = -1;
+        public int atk { get; private set; } = -1;
         public int rng { get; set; } = -1;
         public bool alive { get; set; } = true;
 
-        public virtual void Start() {}
+        private TextMeshPro hpDisplay = null;
+        private TextMeshPro atkDisplay = null;
 
-        public virtual void DoAction()
+
+        public virtual void Start() {
+            Transform display = gameObject.transform.Find("CreatureUI/HP_UI/HP");
+            if (display != null)
+            {
+                hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
+            }
+
+            
+            display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
+            if (display != null)
+            {
+                atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
+            }
+
+        }
+
+        public void UpdateHP(int newHP)
         {
-            throw new NotImplementedException();
+            this.hp = newHP;
+            if (hpDisplay != null)
+            {
+                hpDisplay.text = this.hp.ToString();
+            }
+            CheckDead();
+        } 
+        
+        public void UpdateATK(int newATK)
+        {
+            this.atk = newATK;
+            if (atkDisplay != null)
+            {
+                atkDisplay.text = this.atk.ToString();
+            }
         }
         
         public virtual IEnumerator MoveForward(Lane lane)
         {
-            for (int i = 0; i < pm && (tile.pos[tile.tileIndex] != goal[team]) && this.alive; i++)
-            {
-                Tile nextTile = lane.tiles[tile.pos[tile.tileIndex]+ direction[team]];
-                if (nextTile.creature == null)
-                {
-                    updateTile(nextTile);
-                    yield return MoveToNextTile(nextTile);
-                }else
-                {
-                    yield return Fight(nextTile);
-                }
-                
-            }
+            throw new NotImplementedException();
 
-            if (tile.pos[tile.tileIndex] != goal[team] && lane.tiles[tile.pos[tile.tileIndex] + direction[team]].creature != null && this.alive)
-            {
-                yield return Fight(lane.tiles[tile.pos[tile.tileIndex] + direction[team]]);
-            }
-
-        }
-
-        public virtual IEnumerator MoveToNextTile(Tile nextTile)
-        {
-            float speed = 5.0f;
-            float step = speed * Time.deltaTime;
-            while (transform.position != nextTile.transform.position)
-            {
-                transform.position = UnityEngine.Vector2.MoveTowards(transform.position, nextTile.transform.position, step);
-                yield return null;
-
-            }
         }
 
         public void updateTile(Tile newTile)
@@ -70,11 +72,6 @@ namespace Assets.Script
             newTile.creature = this;
 
         } 
-
-        public virtual IEnumerator Fight(Tile nextTile)
-        {
-            throw new NotImplementedException();
-        }
 
         public virtual void CheckDead()
         {

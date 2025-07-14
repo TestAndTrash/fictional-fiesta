@@ -47,6 +47,12 @@ public class Board : MonoBehaviour
         }
     }
 
+
+    public IEnumerator RunAction()
+    {
+        //yield return StartCoroutine(CoroutineActions());
+    }
+    
     public void RunOpponentActions()
     {
         StartCoroutine(CoroutineOpponentActions());
