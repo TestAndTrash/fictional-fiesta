@@ -30,5 +30,10 @@ namespace Assets.Script
             }
         }
 
+        public Lane GetLane()
+        {
+            return gameObject.transform.parent.GetComponent<Lane>();
+        }
+
     }
 }

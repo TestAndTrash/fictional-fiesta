@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Drawing;
 using TMPro;
 using UnityEngine;
 
@@ -73,14 +74,18 @@ namespace Assets.Script
 
         } 
 
+        public virtual void Kill()
+        {
+            this.alive = false;
+            tile.creature = null;
+            this.gameObject.SetActive(false);
+        }
+
         public virtual void CheckDead()
         {
             if (hp < 1)
             {
-                this.alive = false;
-                tile.creature = null;
-                this.gameObject.SetActive(false);
-                
+                Kill();
             }
         }
 

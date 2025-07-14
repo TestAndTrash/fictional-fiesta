@@ -35,5 +35,16 @@ namespace Assets.Script
             bases.Add(newBase);
         }
 
+        public void ClearTiles()
+        {
+            foreach (Tile tile in tiles)
+            {
+                if (tile.creature != null)
+                {
+                    tile.creature.Kill();
+                }
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using UnityEngine;
 
 namespace Assets.Script.Creatures
 {
@@ -26,13 +27,20 @@ namespace Assets.Script.Creatures
         {
             return null;
         }
+
+        public override void Kill()
+        {
+            this.alive = false;
+            tile.GetLane().ClearTiles();
+            gameObject.GetComponent<SpriteRenderer>().color = Color.darkGray;
+            OnTileClicked?.Invoke(this);
+        }
+
         public override void CheckDead()
         {
             if (hp < 1)
             {
-                this.alive = false;
-                //TODO
-                OnTileClicked?.Invoke(this);
+                Kill();
             }
         }
     }
