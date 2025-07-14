@@ -1,7 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
-using UnityEditor.Search;
 using UnityEngine;
 
 public class Board : MonoBehaviour
@@ -13,8 +13,26 @@ public class Board : MonoBehaviour
     public int playerTeamIndex { get; private set; } = 0;
     public int ennemyTeamIndex { get; private set; } = 1;
 
+    private List<Tile> playerTiles = new();
 
+    private CardEntry currentCardEntry;
+    private CardManager currentCardManager;
 
+    public event Action<bool> CaptureLane;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt)) CaptureLane?.Invoke(true);
+    }
+    private void OnEnable()
+    {
+        Tile.OnTileClicked += HandleTileClick;
+    }
+
+    private void OnDisable()
+    {
+        Tile.OnTileClicked -= HandleTileClick;      
+    }
     public void InvokCreature(Creature prefab, int team, Tile tile)
     {
         Creature newCreature = Instantiate(prefab, teams[team].transform);
@@ -22,21 +40,25 @@ public class Board : MonoBehaviour
         newCreature.updateTile(tile);
         newCreature.transform.position = tile.transform.position;
 
-        this.teams[team].creatures.Add(newCreature);
+        teams[team].creatures.Add(newCreature);
         if (newCreature.team == ennemyTeamIndex)
         {
             newCreature.GetComponent<SpriteRenderer>().flipX = true;
         }
     }
 
-    public void RunAction()
+    public void RunOpponentActions()
     {
-        StartCoroutine(CoroutineActions());
+        StartCoroutine(CoroutineOpponentActions());
     }
 
-    public IEnumerator CoroutineActions()
+    public void RunPlayerActions()
     {
-        //foreach (Creature creature in teams[playerTeamIndex].creatures)
+        StartCoroutine(CoroutinePlayerActions());
+    }
+
+    public IEnumerator CoroutinePlayerActions()
+    { 
         for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[playerTeamIndex].creatures[i];
@@ -52,8 +74,10 @@ public class Board : MonoBehaviour
                 Destroy(creature.gameObject);
             }
         }
+    }
 
-        //foreach (Creature creature in teams[ennemyTeamIndex].creatures)
+    public IEnumerator CoroutineOpponentActions()
+    {
         for (int i = teams[ennemyTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[ennemyTeamIndex].creatures[i];
@@ -71,7 +95,38 @@ public class Board : MonoBehaviour
         }
     }
 
+    public void SetPlayerTiles()
+    {
+        foreach (Lane lane in lanes)
+        {
+            playerTiles.Add(lane.tiles[0]);
+            lane.tiles[0].gameObject.GetComponent<Hover>().MakeHoverable();
+        }
+    }
+
+    public void DisablePlaceCardMode() {
+        foreach (Tile tile in playerTiles) {
+            tile.gameObject.GetComponent<Hover>().DisableHoverable();
+        }
+    }
+
+    public void SetPlaceCardMode(CardEntry cardEntry, CardManager cardManager)
+    {
+        currentCardEntry = cardEntry;
+        currentCardManager = cardManager;
+        SetPlayerTiles();
+    }
 
 
-
+    public void HandleTileClick(Tile clickedTile)
+    {
+        if (currentCardEntry != null)
+        {
+            InvokCreature(currentCardEntry.creaturePrefab, 0, clickedTile);
+            clickedTile.used = true;
+            currentCardEntry = null;
+            currentCardManager.UseCard();
+            DisablePlaceCardMode();
+        }
+    }
 }
