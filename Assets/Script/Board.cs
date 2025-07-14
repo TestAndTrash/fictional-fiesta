@@ -40,9 +40,9 @@ public class Board : MonoBehaviour
         }
     }
 
-    public void RunAction()
+    public IEnumerator RunAction()
     {
-        StartCoroutine(CoroutineActions());
+        yield return StartCoroutine(CoroutineActions());
     }
 
     public IEnumerator CoroutineActions()
