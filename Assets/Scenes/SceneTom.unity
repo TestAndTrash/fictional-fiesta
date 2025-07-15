@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   board: {fileID: 2087468633}
+  opponentCardManager: {fileID: 1645451024}
   playerHandManager: {fileID: 890215344}
   gameOver: 0
   playerWon: 0
@@ -860,6 +861,63 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d8fb26e4ee38b4dbe5dd9f29f5e553, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1645451023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1645451025}
+  - component: {fileID: 1645451024}
+  m_Layer: 0
+  m_Name: Opponent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1645451024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645451023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c97ceb157fd9c03d1989828cfef9309c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: 
+  strongAttackerSensitivity: 3
+  strongDefenserSensitivity: 4
+  weakHPSensitivity: 1
+  bigRangeSensitivity: 2
+  highMobilitySensitivity: 3
+  nexusDangerSensitivity: 0
+  strongAttackerPriority: 4
+  strongDefenserPriority: 5
+  weakHPPriority: 9
+  bigRangePriority: 6
+  highMobilityPriority: 7
+  nexusDangerPriority: 10
+--- !u!4 &1645451025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645451023}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.60213, y: 5.73268, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659611761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1001,6 +1059,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1984600887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 147058133435493957, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
+  m_PrefabInstance: {fileID: 5556140380770031398}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e917dda5caea794988decf4036d7e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2087468631 stripped
@@ -1363,7 +1432,7 @@ PrefabInstance:
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2087468633}
+      objectReference: {fileID: 1984600887}
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -1374,7 +1443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RunAction
+      value: LaunchRound
       objectReference: {fileID: 0}
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
@@ -1382,7 +1451,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Board, Assembly-CSharp
+      value: Assets.Script.HUD.PassTurn, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3029129115495749603, guid: 5b95392efd355824c916a189ff1997f2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -1425,3 +1494,4 @@ SceneRoots:
   - {fileID: 890215346}
   - {fileID: 517491757}
   - {fileID: 1006879528}
+  - {fileID: 1645451025}
