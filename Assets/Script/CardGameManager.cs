@@ -1,10 +1,12 @@
 using System;
+using System.Collections;
 using Assets.Script.HUD;
 using UnityEngine;
 
 public class CardGameManager : MonoBehaviour
 {
     [SerializeField] private Board board;
+    [SerializeField] private OpponentCardManager opponentCardManager;
     [SerializeField] private HandManager playerHandManager;
 
     private int playerCapturedLane = 0;
@@ -18,39 +20,46 @@ public class CardGameManager : MonoBehaviour
     {
         //Sub to everything here
         //sub to oppnet passed
-        //player passed
         PassTurn.playerPassedTurn += PlayerHasPassed;
         board.CaptureLane += CaptureLane;
+        opponentCardManager.FillPlayerTeam(board.GetPlayerTeam());
         LaunchGame();
     }
 
     public void LaunchGame()
     {
         //DRAW OPPONENT CARD
-        playerHandManager.DrawFirstHand(5);
+        StartCoroutine(playerHandManager.DrawFirstHand(5));
         playerHandManager.ActivatePlay(true);
     }
 
     public void PlayerHasPassed()  //EVENT
     {
+        StartCoroutine(PlayerHasPassedCRT());
+    }
+
+    public IEnumerator PlayerHasPassedCRT()
+    {
         playerHandManager.ActivatePlay(false);
-        board.RunPlayerActions();
-        if (gameObject) EndTheGame();
+        yield return board.CoroutinePlayerActions();
+        if (gameOver) EndTheGame();
         else LaunchOpponentTurn();
+    }
+
+    public void LaunchOpponentTurn()
+    {
+        opponentCardManager.PlayTurn();
+        //DRAW OPPONENT CARD 
+        //Opponent play
     }
 
     public void OpponentHasPassed() //EVENT
     {
         board.RunOpponentActions();
-        if (gameObject) EndTheGame();
+        if (gameOver) EndTheGame();
         else LaunchPlayerTurn();
     }
 
-    public void LaunchOpponentTurn()
-    {
-        //DRAW OPPONENT CARD 
-        //Opponent play
-    }
 
     public void LaunchPlayerTurn()
     {

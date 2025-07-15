@@ -10,10 +10,10 @@ public class CardEntry
     public Creature creaturePrefab;
     public int cost;
     public string cardName;
-    public int mobility;
+    public int pm;
     public int hp;
-    public int attack;
-    public int range;
+    public int atk;
+    public int rng;
 }
 
 public class CardData : MonoBehaviour

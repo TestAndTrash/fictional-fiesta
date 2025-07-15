@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Splines;
 using DG.Tweening;
+using System.Collections;
 
 public class HandManager : MonoBehaviour
 {
@@ -38,13 +39,12 @@ public class HandManager : MonoBehaviour
         handCards.Add(cardObject);
         UpdateCardPos(cardObject.GetComponent<CardManager>());
     }
-
-    public void DrawFirstHand(int nbOfCards)
+    public IEnumerator DrawFirstHand(int nbOfCards)
     {
-        //TODO MAYBE WAIT FOR A MILISEC BETWEEN EACH DRAW
         for (int i = 0; i < nbOfCards; i++)
         {
             DrawCard();
+            yield return new WaitForSeconds(0.2f);
         }
     }
 

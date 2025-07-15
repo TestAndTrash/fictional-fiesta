@@ -9,7 +9,6 @@ namespace Assets.Script
         public int[] pos;
         public int laneIndex { get; private set; } = 0;
         public int tileIndex { get; private set; } = 1;
-        public bool used = false;
         [SerializeField]
         public Creature creature = null;
 
@@ -24,7 +23,7 @@ namespace Assets.Script
 
         void OnMouseDown()
         {
-            if (hover.isHoverable && !used)
+            if (hover.isHoverable && !creature)
             {
                 OnTileClicked?.Invoke(this);
             }

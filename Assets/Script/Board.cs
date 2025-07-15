@@ -9,7 +9,7 @@ public class Board : MonoBehaviour
     [SerializeField]
     List<Lane> lanes;
     [SerializeField]
-    List<Team> teams;
+    public List<Team> teams;
     public int playerTeamIndex { get; private set; } = 0;
     public int ennemyTeamIndex { get; private set; } = 1;
 
@@ -31,7 +31,7 @@ public class Board : MonoBehaviour
 
     private void OnDisable()
     {
-        Tile.OnTileClicked -= HandleTileClick;      
+        Tile.OnTileClicked -= HandleTileClick;
     }
     public void InvokCreature(Creature prefab, int team, Tile tile)
     {
@@ -52,13 +52,8 @@ public class Board : MonoBehaviour
         StartCoroutine(CoroutineOpponentActions());
     }
 
-    public void RunPlayerActions()
-    {
-        StartCoroutine(CoroutinePlayerActions());
-    }
-
     public IEnumerator CoroutinePlayerActions()
-    { 
+    {
         for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[playerTeamIndex].creatures[i];
@@ -104,8 +99,10 @@ public class Board : MonoBehaviour
         }
     }
 
-    public void DisablePlaceCardMode() {
-        foreach (Tile tile in playerTiles) {
+    public void DisablePlaceCardMode()
+    {
+        foreach (Tile tile in playerTiles)
+        {
             tile.gameObject.GetComponent<Hover>().DisableHoverable();
         }
     }
@@ -123,10 +120,14 @@ public class Board : MonoBehaviour
         if (currentCardEntry != null)
         {
             InvokCreature(currentCardEntry.creaturePrefab, 0, clickedTile);
-            clickedTile.used = true;
             currentCardEntry = null;
             currentCardManager.UseCard();
             DisablePlaceCardMode();
         }
+    }
+
+    public Team GetPlayerTeam()
+    {
+        return teams[playerTeamIndex];
     }
 }
