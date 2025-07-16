@@ -7,7 +7,7 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     [SerializeField]
-    List<Lane> lanes;
+    public List<Lane> lanes;
     [SerializeField]
     public List<Team> teams;
     public int playerTeamIndex { get; private set; } = 0;

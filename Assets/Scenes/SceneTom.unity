@@ -119,6 +119,138 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &157375821
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 157375823}
+  - component: {fileID: 157375822}
+  m_Layer: 0
+  m_Name: OpponentCardSpline
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &157375822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157375821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab5c7d4c32e743048dfca98e2d5914f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Spline:
+    m_EditModeType: 1
+    m_Knots: []
+    m_MetaData: []
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Splines:
+  - m_EditModeType: 1
+    m_Knots:
+    - Position:
+        x: 5
+        y: -5
+        z: 90
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.50990194
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.50990194
+      Rotation:
+        value:
+          x: -0.5468345
+          y: -0.44829902
+          z: 0.4482967
+          w: 0.54683644
+    - Position:
+        x: 0
+        y: -4
+        z: 90
+      TangentIn:
+        x: 0
+        y: 0
+        z: -3.6700144
+      TangentOut:
+        x: 0
+        y: 0
+        z: 3.6700144
+      Rotation:
+        value:
+          x: 0.4322292
+          y: 0.5608392
+          z: -0.4310528
+          w: -0.5593128
+    - Position:
+        x: -5
+        y: -5
+        z: 90
+      TangentIn:
+        x: -0
+        y: -0
+        z: -0.50990194
+      TangentOut:
+        x: 0
+        y: 0
+        z: 0.50990194
+      Rotation:
+        value:
+          x: 0.44829696
+          y: 0.5468362
+          z: -0.5468347
+          w: -0.44829875
+    m_MetaData:
+    - Mode: 0
+      Tension: 0.5
+    - Mode: 2
+      Tension: 0.5
+    - Mode: 0
+      Tension: 0.5
+    m_Closed: 0
+    m_IntData:
+      m_Data: []
+    m_FloatData:
+      m_Data: []
+    m_Float4Data:
+      m_Data: []
+    m_ObjectData:
+      m_Data: []
+  m_Knots:
+    m_KnotsLink: []
+--- !u!4 &157375823
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157375821}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.91, y: 8.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &230292614 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4742026467862419082, guid: 946f2bbaa85374949b9bbddb4edb6dee, type: 3}
@@ -500,37 +632,37 @@ MonoBehaviour:
     creaturePrefab: {fileID: 1325126310910319795, guid: 37bf5a85f05c5724ab2ebb4f1677a69f, type: 3}
     cost: 2
     cardName: Ace of Heart
-    mobility: 1
+    pm: 0
     hp: 1
-    attack: 1
-    range: 1
+    atk: 0
+    rng: 0
   - id: 2
     cardPrefab: {fileID: 2199839037768752300, guid: ff06c982f6f174a3aaa62074c865c558, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 947044d6ba00a51428d22a8bd0ff6f96, type: 3}
     cost: 2
     cardName: Three of Glove
-    mobility: 1
+    pm: 0
     hp: 1
-    attack: 1
-    range: 1
+    atk: 0
+    rng: 0
   - id: 3
     cardPrefab: {fileID: 2199839037768752300, guid: 2d8d53a9033305397827aae2ee8db5c1, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 76d479caa8729aa4dba1edb7ccf874df, type: 3}
     cost: 1
     cardName: Six of Square
-    mobility: 1
+    pm: 0
     hp: 1
-    attack: 4
-    range: 1
+    atk: 0
+    rng: 0
   - id: 4
     cardPrefab: {fileID: 2199839037768752300, guid: fcd53b4edc634321eac7e984cfe6d458, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
     cost: 1
     cardName: Nine of Square
-    mobility: 1
+    pm: 0
     hp: 1
-    attack: 4
-    range: 1
+    atk: 0
+    rng: 0
 --- !u!114 &890215344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -871,6 +1003,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1645451025}
   - component: {fileID: 1645451024}
+  - component: {fileID: 1645451026}
+  - component: {fileID: 1645451027}
   m_Layer: 0
   m_Name: Opponent
   m_TagString: Untagged
@@ -890,13 +1024,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97ceb157fd9c03d1989828cfef9309c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: 
+  deck: {fileID: 1645451026}
+  opponentHandManager: {fileID: 1645451027}
+  maxHandSize: 10
   strongAttackerSensitivity: 3
   strongDefenserSensitivity: 4
   weakHPSensitivity: 1
   bigRangeSensitivity: 2
   highMobilitySensitivity: 3
-  nexusDangerSensitivity: 0
   strongAttackerPriority: 4
   strongDefenserPriority: 5
   weakHPPriority: 9
@@ -918,6 +1053,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1645451026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645451023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9d59e6e0b30bbcfcbe67edd76d342d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deck: 01000000020000000200000001000000020000000300000001000000020000000100000001000000040000000100000002000000030000000300000002000000010000000400000001000000
+  database: {fileID: 890215343}
+--- !u!114 &1645451027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645451023}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1afff9067b64638c29e62570bfd62e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoint: {fileID: 1006879528}
+  splineContainer: {fileID: 157375822}
+  cardBackPrefab: {fileID: 2767287617299862059, guid: 6184028c17cb90fd98775cb63db9f1dc, type: 3}
+  spacing: 30
 --- !u!1 &1659611761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,6 +1275,10 @@ PrefabInstance:
     - target: {fileID: 3822685037581182118, guid: 946f2bbaa85374949b9bbddb4edb6dee, type: 3}
       propertyPath: m_Name
       value: Board
+      objectReference: {fileID: 0}
+    - target: {fileID: 4528104654513102912, guid: 946f2bbaa85374949b9bbddb4edb6dee, type: 3}
+      propertyPath: bases.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5275210314921259601, guid: 946f2bbaa85374949b9bbddb4edb6dee, type: 3}
       propertyPath: m_Pivot.x
@@ -1490,6 +1659,7 @@ SceneRoots:
   - {fileID: 893620455}
   - {fileID: 1213436846}
   - {fileID: 1392630084}
+  - {fileID: 157375823}
   - {fileID: 1659611763}
   - {fileID: 890215346}
   - {fileID: 517491757}

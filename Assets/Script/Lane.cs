@@ -35,6 +35,11 @@ namespace Assets.Script
             bases.Add(newBase);
         }
 
+        public Creature GetNexusFromTeamID(int index)
+        {
+           return bases[index];
+        }
+
         public void ClearTiles()
         {
             foreach (Tile tile in tiles)
