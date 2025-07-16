@@ -62,8 +62,8 @@ public class EnhanceDeck : MonoBehaviour
         {
             float position = firstCardPosition + i * cardSpacing;
             Vector3 splinePosition = spline.EvaluatePosition(position);
-            Vector3 splinePositionTest = splineContainer.transform.TransformPoint(splinePosition);
-            physicalCards[i].transform.DOMove(splinePositionTest, 0.25f).OnComplete(() =>
+            Vector3 splinePositionWorld = splineContainer.transform.TransformPoint(splinePosition);
+            physicalCards[i].transform.DOMove(splinePositionWorld, 0.25f).OnComplete(() =>
             {
                 card.traveling = false;
             });
