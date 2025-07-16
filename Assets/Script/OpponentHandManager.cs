@@ -40,8 +40,8 @@ public class OpponentHandManager : MonoBehaviour
 
     public void DeleteACardFromHand()
     {
-        //debug plus tard mamene
-        //handCards.RemoveRange(0, 1);
+        Destroy(handCards[0]);
+        handCards.RemoveAt(0);
         UpdateCardPos();
     }
 }

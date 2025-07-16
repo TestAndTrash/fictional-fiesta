@@ -1,21 +1,31 @@
 ﻿using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Assets.Script.HUD
 {
     [RequireComponent(typeof(Button))]
-    
+
     internal class PassTurn : MonoBehaviour
     {
         [SerializeField]
         private Button button;
         public static event Action playerPassedTurn;
 
+        void Start()
+        {
+            HandManager.playerCanPlay += onEnnemyPassed;
+        }
+
         public void LaunchRound()
         {
             playerPassedTurn?.Invoke();
+            button.enabled = false;
+        }
+
+        public void onEnnemyPassed()
+        {
+            button.enabled = true;
         }
     }
 }

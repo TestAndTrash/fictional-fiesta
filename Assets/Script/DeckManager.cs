@@ -20,4 +20,9 @@ public class DeckManager : MonoBehaviour
     {
         deck.Add(cardID);
     }
+
+    public int GetDeckCount()
+    {
+        return deck.Count;
+    }
 }

@@ -4,15 +4,14 @@ using UnityEngine;
 
 namespace Assets.Script.Creatures
 {
-    internal class Base : Creature
+    public class Base : Creature
     {
         public int move;
         public int health;
         public int attack;
         public int range;
 
-        public static event Action<Base> OnTileClicked;
-
+        public static event Action<Base> baseIsKilled;
 
         public override void Start()
         {
@@ -30,10 +29,10 @@ namespace Assets.Script.Creatures
 
         public override void Kill()
         {
-            this.alive = false;
+            alive = false;
             tile.GetLane().ClearTiles();
             gameObject.GetComponent<SpriteRenderer>().color = Color.darkGray;
-            OnTileClicked?.Invoke(this);
+            baseIsKilled?.Invoke(this);
         }
 
         public override void CheckDead()

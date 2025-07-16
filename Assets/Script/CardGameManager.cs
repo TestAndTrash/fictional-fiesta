@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Assets.Script.Creatures;
 using Assets.Script.HUD;
 using UnityEngine;
 
@@ -10,7 +11,7 @@ public class CardGameManager : MonoBehaviour
     [SerializeField] private HandManager playerHandManager;
 
     private int playerCapturedLane = 0;
-    private int opponentCaptureLAne = 0;
+    private int opponentCaptureLane = 0;
     public static event Action<bool> partyIsOver;
     public bool gameOver = false;
     public bool playerWon = false;
@@ -18,18 +19,18 @@ public class CardGameManager : MonoBehaviour
 
     public void Start()
     {
-        //Sub to everything here
-        //sub to oppnet passed
         PassTurn.playerPassedTurn += PlayerHasPassed;
         opponentCardManager.opponentPassedTurn += OpponentHasPassed;
-        board.CaptureLane += CaptureLane;
+        Base.baseIsKilled += CaptureLane;
+        playerHandManager.playerDeckIsEmpty += OnPlayerDeckEmpty;
+        opponentCardManager.opponentDeckIsEmpty += OnOpponentDeckEmpty;
         opponentCardManager.FillBoardInfo(board);
         LaunchGame();
     }
 
     public void LaunchGame()
     {
-        opponentCardManager.Draw(5);
+        opponentCardManager.Draw(3);
         StartCoroutine(playerHandManager.DrawFirstHand(5));
         playerHandManager.ActivatePlay(true);
     }
@@ -49,6 +50,7 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchOpponentTurn()
     {
+        opponentCardManager.Draw(1);
         opponentCardManager.PlayTurn();
     }
 
@@ -67,41 +69,57 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchPlayerTurn()
     {
-        playerHandManager.DrawCard();
         playerHandManager.ActivatePlay(true);
+        playerHandManager.DrawCard();
     }
 
     public void EndTheGame()
     {
+        playerHandManager.ActivatePlay(false);
         if (playerWon)
         {
-
+            Debug.Log("PLAYER WON");
         }
         else
         {
-
+            Debug.Log("OPPONENT WON");
         }
     }
 
-    public void CaptureLane(bool isPlayer)
+    public void CaptureLane(Base killedBase)
     {
+        bool isPlayer = killedBase.team == board.playerTeamIndex;
         if (isPlayer)
+        {
+            opponentCaptureLane++;
+            if (opponentCaptureLane >= 3)
+            {
+                gameOver = true;
+                opponentWon = true;
+            }
+        }
+        else
         {
             playerCapturedLane++;
             if (playerCapturedLane >= 3)
             {
                 gameOver = true;
                 playerWon = true;
-            } 
+            }
         }
-        else
-        {
-            opponentCaptureLAne++;
-            if (opponentCaptureLAne >= 3)
-            {
-                gameOver = true;
-                opponentWon = true;
-            } 
-        }
+    }
+
+    public void OnPlayerDeckEmpty()
+    {
+        gameOver = true;
+        opponentWon = true;
+        EndTheGame();
+    }
+
+    public void OnOpponentDeckEmpty()
+    {
+        gameOver = true;
+        playerWon = true;
+        EndTheGame();
     }
 }
