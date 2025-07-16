@@ -17,7 +17,7 @@ public class HandManager : MonoBehaviour
 
     private List<GameObject> handCards = new();
 
-    private bool canPlay = false;
+    public bool canPlay = false;
 
     public static event Action playerCanPlay;
     public event Action playerDeckIsEmpty;
@@ -46,15 +46,18 @@ public class HandManager : MonoBehaviour
     }
     public IEnumerator DrawFirstHand(int nbOfCards)
     {
+        canPlay = false;
         for (int i = 0; i < nbOfCards; i++)
         {
             DrawCard();
-            yield return new WaitForSeconds(0.2f);
+            yield return new WaitForSeconds(0.3f);
         }
+        canPlay = true;
     }
 
     private void UpdateCardPos(CardManager card)
     {
+        canPlay = false;
         if (handCards.Count == 0) return;
         float cardSpacing = 1f / 15;
         float firstCardPosition = 0.5f - (handCards.Count - 1) * cardSpacing / 2;
@@ -70,12 +73,15 @@ public class HandManager : MonoBehaviour
             handCards[i].transform.DOMove(splinePosition, 0.25f).OnComplete(() =>
             {
                 card.traveling = false;
+                canPlay = true;
             });
         }
+        
     }
 
     private void ArrangeCardPos()
     {
+        canPlay = false;
         if (handCards.Count == 0) return;
         float cardSpacing = 1f / 15;
         float firstCardPosition = 0.5f - (handCards.Count - 1) * cardSpacing / 2;
@@ -88,7 +94,10 @@ public class HandManager : MonoBehaviour
             Vector3 up = spline.EvaluateUpVector(position);
             Quaternion rotation = Quaternion.LookRotation(up, Vector3.Cross(up, forward).normalized);
             handCards[i].transform.DOLocalRotateQuaternion(rotation, 0.25f);
-            handCards[i].transform.DOMove(splinePosition, 0.25f);
+            handCards[i].transform.DOMove(splinePosition, 0.25f).OnComplete(()=>
+            {
+                canPlay = true;
+            });
         }
     }
 

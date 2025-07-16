@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
 using UnityEngine;
@@ -159,7 +160,7 @@ public class OpponentCardManager : MonoBehaviour
 
     public void PlayTheCard(CardEntry cardEntry, Tile tile)
     {
-        board.InvokCreature(cardEntry.creaturePrefab, 1, tile);
+        board.InvokCreature(cardEntry.creaturePrefab, 1, tile, cardEntry);
         remainingMana -= cardEntry.cost;
         hand.Remove(cardEntry);
         opponentHandManager.DeleteACardFromHand();
@@ -189,17 +190,18 @@ public class OpponentCardManager : MonoBehaviour
         playerTeam = brd.GetPlayerTeam();
     }
 
-    public void Draw(int nbOfCards)
+    public IEnumerator Draw(int nbOfCards)
     {
         if (deck.GetDeckCount() <= 0 && hand.Count <= 0)
         {
             opponentDeckIsEmpty?.Invoke();
         }
-        if (hand.Count >= maxHandSize) return;
+        if (hand.Count >= maxHandSize) yield return null;
         for (int i = 0; i < nbOfCards; i++)
         {
             hand.Add(deck.DrawCardFromDeck());
             opponentHandManager.DrawCard();
+            yield return new WaitForSeconds(0.3f);
         }
     }
 }

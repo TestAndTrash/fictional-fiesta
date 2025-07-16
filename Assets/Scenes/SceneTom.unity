@@ -165,27 +165,27 @@ MonoBehaviour:
   - m_EditModeType: 1
     m_Knots:
     - Position:
-        x: 5
-        y: -5
-        z: 90
+        x: 2.321147
+        y: -3.446826
+        z: 90.00076
       TangentIn:
         x: -0
         y: -0
-        z: -0.50990194
+        z: -0.25131714
       TangentOut:
         x: 0
         y: 0
-        z: 0.50990194
+        z: 0.25131714
       Rotation:
         value:
-          x: -0.5468345
-          y: -0.44829902
-          z: 0.4482967
-          w: 0.54683644
+          x: -0.45286074
+          y: -0.533967
+          z: 0.5400785
+          w: 0.46702424
     - Position:
-        x: 0
-        y: -4
-        z: 90
+        x: -0.16164446
+        y: -3.8332872
+        z: 90.05
       TangentIn:
         x: 0
         y: 0
@@ -201,17 +201,17 @@ MonoBehaviour:
           z: -0.4310528
           w: -0.5593128
     - Position:
-        x: -5
-        y: -5
-        z: 90
+        x: -3.058258
+        y: -3.4116516
+        z: 90.00001
       TangentIn:
         x: 0
         y: 0
         z: 0
       TangentOut:
-        x: 0.2866488
-        y: -0.0000066811435
-        z: -1.0852836
+        x: -7.054044
+        y: -0.0000004470011
+        z: -7.1868367
       Rotation:
         value:
           x: 0.44829696
@@ -245,7 +245,7 @@ Transform:
   m_GameObject: {fileID: 157375821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.91, y: 8.18, z: 0}
+  m_LocalPosition: {x: 7.36, y: 7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -632,37 +632,37 @@ MonoBehaviour:
     creaturePrefab: {fileID: 1325126310910319795, guid: 37bf5a85f05c5724ab2ebb4f1677a69f, type: 3}
     cost: 2
     cardName: Ace of Heart
-    pm: 0
+    pm: 3
     hp: 1
-    atk: 0
-    rng: 0
+    atk: 1
+    rng: 1
   - id: 2
     cardPrefab: {fileID: 2199839037768752300, guid: ff06c982f6f174a3aaa62074c865c558, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 947044d6ba00a51428d22a8bd0ff6f96, type: 3}
     cost: 2
     cardName: Three of Glove
-    pm: 0
+    pm: 1
     hp: 1
-    atk: 0
-    rng: 0
+    atk: 1
+    rng: 1
   - id: 3
     cardPrefab: {fileID: 2199839037768752300, guid: 2d8d53a9033305397827aae2ee8db5c1, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 76d479caa8729aa4dba1edb7ccf874df, type: 3}
     cost: 1
     cardName: Six of Square
-    pm: 0
+    pm: 4
     hp: 1
-    atk: 0
-    rng: 0
+    atk: 1
+    rng: 1
   - id: 4
     cardPrefab: {fileID: 2199839037768752300, guid: fcd53b4edc634321eac7e984cfe6d458, type: 3}
-    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    creaturePrefab: {fileID: 5234382742849657349, guid: 14fd33e9b96911b4cacfedc37029d5a6, type: 3}
     cost: 1
     cardName: Nine of Square
-    pm: 0
+    pm: 2
     hp: 1
-    atk: 0
-    rng: 0
+    atk: 1
+    rng: 3
 --- !u!114 &890215344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -680,6 +680,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1213436846}
   deckManager: {fileID: 890215345}
   board: {fileID: 2087468633}
+  canPlay: 0
 --- !u!114 &890215345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1090,7 +1091,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1006879528}
   splineContainer: {fileID: 157375822}
   cardBackPrefab: {fileID: 2767287617299862059, guid: 6184028c17cb90fd98775cb63db9f1dc, type: 3}
-  spacing: 30
+  spacing: 10
 --- !u!1 &1659611761
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,7 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchGame()
     {
-        opponentCardManager.Draw(3);
+        StartCoroutine(opponentCardManager.Draw(3));
         StartCoroutine(playerHandManager.DrawFirstHand(5));
         playerHandManager.ActivatePlay(true);
     }
@@ -50,7 +50,7 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchOpponentTurn()
     {
-        opponentCardManager.Draw(1);
+        StartCoroutine(opponentCardManager.Draw(1));
         opponentCardManager.PlayTurn();
     }
 

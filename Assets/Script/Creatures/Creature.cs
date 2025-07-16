@@ -21,6 +21,7 @@ namespace Assets.Script
         private TextMeshPro hpDisplay = null;
         private TextMeshPro atkDisplay = null;
 
+        private CardEntry card;
 
         public virtual void Start() {
             Transform display = gameObject.transform.Find("CreatureUI/HP_UI/HP");
@@ -29,13 +30,22 @@ namespace Assets.Script
                 hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
             }
 
-            
+
             display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
             if (display != null)
             {
                 atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
             }
 
+        }
+
+        public void Initiate(CardEntry cardEntry)
+        {
+            card = cardEntry;
+            pm = card.pm;
+            UpdateHP(card.hp);
+            UpdateATK(card.atk);
+            rng = card.rng;
         }
 
         public void UpdateHP(int newHP)

@@ -14,7 +14,7 @@ public class CardManager : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (traveling) return;
+        if (traveling || !handManager.canPlay) return;
         transform.DOMoveY(transform.position.y + 0.2f, 0.25f);
         if (setOnce) return;
         orignalPos = transform.position;
@@ -23,7 +23,7 @@ public class CardManager : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (traveling) return;
+        if (traveling || !handManager.canPlay) return;
         transform.DOMoveY(orignalPos.y, 0.25f);
     }
 
