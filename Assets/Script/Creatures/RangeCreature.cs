@@ -77,7 +77,7 @@ namespace Assets.Script.Creatures
             int sens = direction[team];
 
             List<Tile> tiles = new List<Tile>();
-            for (int i = 1; i <= range; i = i++)
+            for (int i = 1; i <= range; i++)
             {
                 if ((actualPos+(i * sens) != goal[team] + sens)) {
                     tiles.Add(lane.tiles[actualPos + (i * sens)]);
@@ -99,7 +99,6 @@ namespace Assets.Script.Creatures
             {
                 transform.position = UnityEngine.Vector2.MoveTowards(transform.position, nextTile.transform.position, step);
                 yield return null;
-
             }
         }
 

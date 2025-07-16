@@ -17,20 +17,5 @@ namespace Assets.Script.HUD
         {
             playerPassedTurn?.Invoke();
         }
-
-//handle clickability
-        private IEnumerator RoundCoroutine()
-        {
-            button.enabled = false;
-            Board board = GameObject.Find("Board").GetComponent<Board>();
-            if (board != null)
-            {
-            }
-            button.enabled = true;
-
-            yield return null;
-        }
-
-
     }
 }
