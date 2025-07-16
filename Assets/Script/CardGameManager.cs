@@ -21,14 +21,15 @@ public class CardGameManager : MonoBehaviour
         //Sub to everything here
         //sub to oppnet passed
         PassTurn.playerPassedTurn += PlayerHasPassed;
+        opponentCardManager.opponentPassedTurn += OpponentHasPassed;
         board.CaptureLane += CaptureLane;
-        opponentCardManager.FillPlayerTeam(board.GetPlayerTeam());
+        opponentCardManager.FillBoardInfo(board);
         LaunchGame();
     }
 
     public void LaunchGame()
     {
-        //DRAW OPPONENT CARD
+        opponentCardManager.Draw(5);
         StartCoroutine(playerHandManager.DrawFirstHand(5));
         playerHandManager.ActivatePlay(true);
     }
@@ -49,13 +50,16 @@ public class CardGameManager : MonoBehaviour
     public void LaunchOpponentTurn()
     {
         opponentCardManager.PlayTurn();
-        //DRAW OPPONENT CARD 
-        //Opponent play
     }
 
     public void OpponentHasPassed() //EVENT
     {
-        board.RunOpponentActions();
+        StartCoroutine(OpponenetHasPassedCRT());
+    }
+
+    public IEnumerator OpponenetHasPassedCRT()
+    {
+        yield return board.CoroutineOpponentActions();
         if (gameOver) EndTheGame();
         else LaunchPlayerTurn();
     }
