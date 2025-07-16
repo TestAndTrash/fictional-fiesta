@@ -27,6 +27,5 @@ namespace Assets.Script.HUD
         {
             button.enabled = true;
         }
-
     }
 }

@@ -1,6 +1,5 @@
 ﻿
 using System.Collections;
-using System.ComponentModel;
 using UnityEngine;
 
 namespace Assets.Script.Creatures
