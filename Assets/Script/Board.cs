@@ -18,12 +18,6 @@ public class Board : MonoBehaviour
     private CardEntry currentCardEntry;
     private CardManager currentCardManager;
 
-    public event Action<bool> CaptureLane;
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftAlt)) CaptureLane?.Invoke(true);
-    }
     private void OnEnable()
     {
         Tile.OnTileClicked += HandleTileClick;
@@ -37,7 +31,7 @@ public class Board : MonoBehaviour
     {
         Creature newCreature = Instantiate(prefab, teams[team].transform);
         newCreature.GetComponent<Creature>().team = team;
-        //newCreature.GetComponent<Creature>().Initiate(cardEntry);
+        newCreature.GetComponent<Creature>().Initiate(cardEntry);
         newCreature.updateTile(tile);
         newCreature.transform.position = tile.transform.position;
 

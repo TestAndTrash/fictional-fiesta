@@ -18,10 +18,6 @@ namespace Assets.Script.Creatures
         public override void Start()
         {
             base.Start();
-            pm = move;
-            UpdateHP(health);
-            UpdateATK(attack);
-            rng = range;
         }
 
         public override IEnumerator MoveForward(Lane lane)

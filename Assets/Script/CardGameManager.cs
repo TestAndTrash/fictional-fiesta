@@ -25,7 +25,11 @@ public class CardGameManager : MonoBehaviour
         playerHandManager.playerDeckIsEmpty += OnPlayerDeckEmpty;
         opponentCardManager.opponentDeckIsEmpty += OnOpponentDeckEmpty;
         opponentCardManager.FillBoardInfo(board);
-        LaunchGame();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt)) LaunchGame();
     }
 
     public void LaunchGame()

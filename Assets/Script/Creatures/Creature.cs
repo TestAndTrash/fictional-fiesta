@@ -24,23 +24,18 @@ namespace Assets.Script
         private CardEntry card;
 
         public virtual void Start() {
-            Transform display = gameObject.transform.Find("CreatureUI/HP_UI/HP");
-            if (display != null)
+            if (hpDisplay == null || atkDisplay == null)
             {
-                hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
+                InitDisplay();
             }
-
-
-            display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
-            if (display != null)
-            {
-                atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
-            }
-
         }
 
         public void Initiate(CardEntry cardEntry)
         {
+            if (hpDisplay == null || atkDisplay == null)
+            {
+                InitDisplay();
+            }
             card = cardEntry;
             pm = card.pm;
             UpdateHP(card.hp);
@@ -48,22 +43,38 @@ namespace Assets.Script
             rng = card.rng;
         }
 
+        public void InitDisplay()
+        {
+            Transform display = gameObject.transform.Find("CreatureUI/HP_UI/HP");
+            if (display != null)
+            {
+                hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
+            }
+
+            display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
+            if (display != null)
+            {
+                atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
+            }
+        }
+
         public void UpdateHP(int newHP)
         {
-            this.hp = newHP;
+            hp = newHP;
             if (hpDisplay != null)
             {
-                hpDisplay.text = this.hp.ToString();
+
+                hpDisplay.text = hp.ToString();
             }
             CheckDead();
         } 
         
         public void UpdateATK(int newATK)
         {
-            this.atk = newATK;
+            atk = newATK;
             if (atkDisplay != null)
             {
-                atkDisplay.text = this.atk.ToString();
+                atkDisplay.text = atk.ToString();
             }
         }
         
