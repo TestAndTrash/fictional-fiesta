@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.Splines;
 using DG.Tweening;
 using System.Collections;
+using System;
 
 public class HandManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class HandManager : MonoBehaviour
     private List<GameObject> handCards = new();
 
     private bool canPlay = false;
+
+    public static event Action playerCanPlay;
+    public event Action playerDeckIsEmpty;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) DrawCard();
@@ -28,7 +33,7 @@ public class HandManager : MonoBehaviour
         CardEntry drawnCard = deckManager.DrawCardFromDeck();
         if (drawnCard == null)
         {
-            Debug.Log("No more card in the deck");
+            if(handCards.Count <= 0) playerDeckIsEmpty?.Invoke();
             return;
         }
         GameObject cardObject = Instantiate(drawnCard.cardPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -102,5 +107,6 @@ public class HandManager : MonoBehaviour
     public void ActivatePlay(bool active)
     {
         canPlay = active;
+        if(active) playerCanPlay?.Invoke();
     }
 }

@@ -10,7 +10,7 @@ public class OpponentCardManager : MonoBehaviour
     private Board board;
     [SerializeField] private DeckManager deck;
     [SerializeField] private OpponentHandManager opponentHandManager;
-    private List<CardEntry> hand = new();
+    public List<CardEntry> hand = new();
 
     [SerializeField] private int maxHandSize;
     private int mana = 10;
@@ -39,13 +39,14 @@ public class OpponentCardManager : MonoBehaviour
     [SerializeField] private int nexusAlivePoint;
     [SerializeField] private int playerNexusAlivePoint;
 
-
     List<(Creature creature, int threatLevel)> creatureThreat = new List<(Creature, int)>();
     List<(CardEntry cardEntry, int cardLevel)> goodCards = new List<(CardEntry, int)>();
     List<(Creature nexus, int hp)> nexusAlive = new List<(Creature, int)>();
     List<(Creature nexus, int hp)> playerNexus = new List<(Creature, int)>();
 
     public event Action opponentPassedTurn;
+    public event Action opponentDeckIsEmpty;
+    
 
     public void DetectThreat()
     {
@@ -55,11 +56,11 @@ public class OpponentCardManager : MonoBehaviour
             if (creature.atk >= strongAttackerSensitivity) threatLevel += strongAttackerPoint;
             if (creature.hp >= strongDefenserSensitivity) threatLevel += strongDefenserPoint;
             if (creature.pm > highMobilitySensitivity) threatLevel += highMobilityPoint;
-            if (creature.hp == weakHPSensitivity) threatLevel += weakHPSensitivity;
+            if (creature.hp == weakHPSensitivity) threatLevel += weakHPPoint;
             if (creature.rng >= bigRangeSensitivity) threatLevel += bigRangePoint;
             if (creature.tile.GetLane().GetNexusFromTeamID(board.ennemyTeamIndex).alive) threatLevel += nexusAlivePoint;
             if (creature.tile.GetLane().GetNexusFromTeamID(board.playerTeamIndex).alive) threatLevel += playerNexusAlivePoint;
-            
+
             creatureThreat.Add((creature, threatLevel));
         }
         creatureThreat.Sort((a, b) => b.threatLevel.CompareTo(a.threatLevel));
@@ -115,25 +116,24 @@ public class OpponentCardManager : MonoBehaviour
                 Lane currLane = creatureTile.GetLane();
                 Tile firstTile = currLane.tiles[7];
                 if (!currLane.GetNexusFromTeamID(board.ennemyTeamIndex).alive) return;
-                if (firstTile.creature) return;
+                if (firstTile.creature) continue;
+                CardEntry cardToDelete = null;
                 foreach (var goodCard in goodCards)
                 {
                     if (goodCard.cardEntry.cost <= remainingMana)
                     {
-                        board.InvokCreature(goodCard.cardEntry.creaturePrefab, 1, firstTile);
-                        remainingMana -= goodCard.cardEntry.cost;
-                        opponentHandManager.DeleteACardFromHand();
-                        goodCards.Remove(goodCard);
+                        PlayTheCard(goodCard.cardEntry, firstTile);
+                        cardToDelete = goodCard.cardEntry;
                         break;
                     }
                 }
+                goodCards.RemoveAll(entry => entry.cardEntry == cardToDelete);
             }
             if (remainingMana >= 1)
             {
                 PlayForNexus();
             }
         }
-
     }
     public void PlayForNexus()
     {
@@ -142,19 +142,27 @@ public class OpponentCardManager : MonoBehaviour
         {
             if (remainingMana <= 0) return;
             Tile firstTile = element.nexus.tile.GetLane().tiles[7];
-            if (firstTile.creature) return;
+            if (firstTile.creature) continue;
+            CardEntry cardToDelete = null;
             foreach (var goodCard in goodCards)
             {
                 if (goodCard.cardEntry.cost <= remainingMana)
                 {
-                    board.InvokCreature(goodCard.cardEntry.creaturePrefab, 1, firstTile);
-                    remainingMana -= goodCard.cardEntry.cost;
-                    opponentHandManager.DeleteACardFromHand();
-                    goodCards.Remove(goodCard);
+                    PlayTheCard(goodCard.cardEntry, firstTile);
+                    cardToDelete = goodCard.cardEntry;
                     break;
                 }
             }
+            goodCards.RemoveAll(entry => entry.cardEntry == cardToDelete);
         }
+    }
+
+    public void PlayTheCard(CardEntry cardEntry, Tile tile)
+    {
+        board.InvokCreature(cardEntry.creaturePrefab, 1, tile);
+        remainingMana -= cardEntry.cost;
+        hand.Remove(cardEntry);
+        opponentHandManager.DeleteACardFromHand();
     }
     public void PlayTurn()
     {
@@ -165,14 +173,14 @@ public class OpponentCardManager : MonoBehaviour
         DetectGoodCards();
         DetectNexus();
         ChooseCardToPlay();
-
         opponentPassedTurn?.Invoke();
     }
-
     public void ResetData()
     {
         creatureThreat = new List<(Creature, int)>();
         goodCards = new List<(CardEntry, int)>();
+        playerNexus = new List<(Creature, int)>();
+        nexusAlive = new List<(Creature, int)>();
     }
 
     public void FillBoardInfo(Board brd)
@@ -183,6 +191,10 @@ public class OpponentCardManager : MonoBehaviour
 
     public void Draw(int nbOfCards)
     {
+        if (deck.GetDeckCount() <= 0 && hand.Count <= 0)
+        {
+            opponentDeckIsEmpty?.Invoke();
+        }
         if (hand.Count >= maxHandSize) return;
         for (int i = 0; i < nbOfCards; i++)
         {

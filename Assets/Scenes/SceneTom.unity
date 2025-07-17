@@ -205,13 +205,13 @@ MonoBehaviour:
         y: -5
         z: 90
       TangentIn:
-        x: -0
-        y: -0
-        z: -0.50990194
-      TangentOut:
         x: 0
         y: 0
-        z: 0.50990194
+        z: 0
+      TangentOut:
+        x: 0.2866488
+        y: -0.0000066811435
+        z: -1.0852836
       Rotation:
         value:
           x: 0.44829696
@@ -223,7 +223,7 @@ MonoBehaviour:
       Tension: 0.5
     - Mode: 2
       Tension: 0.5
-    - Mode: 0
+    - Mode: 4
       Tension: 0.5
     m_Closed: 0
     m_IntData:
@@ -1026,6 +1026,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deck: {fileID: 1645451026}
   opponentHandManager: {fileID: 1645451027}
+  hand: []
   maxHandSize: 10
   strongAttackerSensitivity: 3
   strongDefenserSensitivity: 4
@@ -1038,6 +1039,13 @@ MonoBehaviour:
   bigRangePriority: 6
   highMobilityPriority: 7
   nexusDangerPriority: 10
+  strongAttackerPoint: 0
+  strongDefenserPoint: 0
+  weakHPPoint: 0
+  bigRangePoint: 0
+  highMobilityPoint: 0
+  nexusAlivePoint: 0
+  playerNexusAlivePoint: 0
 --- !u!4 &1645451025
 Transform:
   m_ObjectHideFlags: 0
