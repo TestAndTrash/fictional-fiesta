@@ -41,10 +41,7 @@ public class Board : MonoBehaviour
         newCreature.transform.position = tile.transform.position;
 
         teams[team].creatures.Add(newCreature);
-        if (newCreature.team == ennemyTeamIndex)
-        {
-            newCreature.GetComponent<SpriteRenderer>().flipX = true;
-        }
+        
     }
 
     public void RunOpponentActions()

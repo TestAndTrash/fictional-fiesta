@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Drawing;
+using Assets.Script.Creatures;
 using TMPro;
 using UnityEngine;
 
 namespace Assets.Script
 {
+    [RequireComponent(typeof(CreatureAnimation))]
     public class Creature : MonoBehaviour
     {
         public int team { get; set; } = -1;
@@ -20,6 +22,8 @@ namespace Assets.Script
 
         private TextMeshPro hpDisplay = null;
         private TextMeshPro atkDisplay = null;
+
+        public CreatureAnimation animations;
 
 
         public virtual void Start() {
@@ -36,7 +40,13 @@ namespace Assets.Script
                 atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
             }
 
+            animations = gameObject.GetComponent<CreatureAnimation>();
+            animations.SelectTeam(team);
+
+            PlayAnimation("Spawn");
         }
+
+        
 
         public void UpdateHP(int newHP)
         {
@@ -74,10 +84,31 @@ namespace Assets.Script
 
         } 
 
+        public void PlayAnimation(String name)
+        {
+            if ( animations != null)
+            {
+                animations.PlayAnimation(name);
+            }
+        }
+        public virtual void Hit(int newHP)
+        {
+            UpdateHP(newHP);
+        }
+
         public virtual void Kill()
         {
+            
             this.alive = false;
             tile.creature = null;
+
+            StartCoroutine(KillAnim("Death"));
+        }
+
+        public IEnumerator KillAnim(String name)
+        {
+            PlayAnimation(name);
+            yield return new WaitForSeconds(1f);
             this.gameObject.SetActive(false);
         }
 
