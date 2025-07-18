@@ -25,12 +25,16 @@ public class CardGameManager : MonoBehaviour
         playerHandManager.playerDeckIsEmpty += OnPlayerDeckEmpty;
         opponentCardManager.opponentDeckIsEmpty += OnOpponentDeckEmpty;
         opponentCardManager.FillBoardInfo(board);
-        LaunchGame();
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftAlt)) LaunchGame();
     }
 
     public void LaunchGame()
     {
-        opponentCardManager.Draw(3);
+        StartCoroutine(opponentCardManager.Draw(3));
         StartCoroutine(playerHandManager.DrawFirstHand(5));
         playerHandManager.ActivatePlay(true);
     }
@@ -50,7 +54,7 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchOpponentTurn()
     {
-        opponentCardManager.Draw(1);
+        StartCoroutine(opponentCardManager.Draw(1));
         opponentCardManager.PlayTurn();
     }
 

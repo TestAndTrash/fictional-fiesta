@@ -23,17 +23,38 @@ namespace Assets.Script
         private TextMeshPro hpDisplay = null;
         private TextMeshPro atkDisplay = null;
 
+        private CardEntry card;
+
         public CreatureAnimation animations;
 
-
         public virtual void Start() {
+            if (hpDisplay == null || atkDisplay == null)
+            {
+                InitDisplay();
+            }
+        }
+
+        public void Initiate(CardEntry cardEntry)
+        {
+            if (hpDisplay == null || atkDisplay == null)
+            {
+                InitDisplay();
+            }
+            card = cardEntry;
+            pm = card.pm;
+            UpdateHP(card.hp);
+            UpdateATK(card.atk);
+            rng = card.rng;
+        }
+
+        public void InitDisplay()
+        {
             Transform display = gameObject.transform.Find("CreatureUI/HP_UI/HP");
             if (display != null)
             {
                 hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
             }
 
-            
             display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
             if (display != null)
             {
@@ -50,20 +71,21 @@ namespace Assets.Script
 
         public void UpdateHP(int newHP)
         {
-            this.hp = newHP;
+            hp = newHP;
             if (hpDisplay != null)
             {
-                hpDisplay.text = this.hp.ToString();
+
+                hpDisplay.text = hp.ToString();
             }
             CheckDead();
         } 
         
         public void UpdateATK(int newATK)
         {
-            this.atk = newATK;
+            atk = newATK;
             if (atkDisplay != null)
             {
-                atkDisplay.text = this.atk.ToString();
+                atkDisplay.text = atk.ToString();
             }
         }
         
