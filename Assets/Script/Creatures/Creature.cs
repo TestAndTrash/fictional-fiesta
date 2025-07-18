@@ -27,11 +27,17 @@ namespace Assets.Script
 
         public CreatureAnimation animations;
 
-        public virtual void Start() {
+        public virtual void Start()
+        {
             if (hpDisplay == null || atkDisplay == null)
             {
                 InitDisplay();
             }
+            
+            animations = gameObject.GetComponent<CreatureAnimation>();
+            animations.SelectTeam(team);
+
+            PlayAnimation("Spawn");
         }
 
         public void Initiate(CardEntry cardEntry)
@@ -60,11 +66,6 @@ namespace Assets.Script
             {
                 atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
             }
-
-            animations = gameObject.GetComponent<CreatureAnimation>();
-            animations.SelectTeam(team);
-
-            PlayAnimation("Spawn");
         }
 
         
