@@ -47,7 +47,6 @@ public class OpponentCardManager : MonoBehaviour
 
     public event Action opponentPassedTurn;
     public event Action opponentDeckIsEmpty;
-    
 
     public void DetectThreat()
     {
@@ -82,7 +81,6 @@ public class OpponentCardManager : MonoBehaviour
         goodCards.Sort((a, b) => b.cardLevel.CompareTo(a.cardLevel));
     }
 
-
     public void DetectNexus()
     {
         foreach (Lane lane in board.lanes)
@@ -102,69 +100,6 @@ public class OpponentCardManager : MonoBehaviour
         playerNexus.Sort((a, b) => a.hp.CompareTo(b.hp));
     }
 
-    public void ChooseCardToPlay()
-    {
-        if (creatureThreat.Count <= 0)
-        {
-            PlayForNexus();
-        }
-        else
-        {
-            foreach (var creaThreat in creatureThreat)
-            {
-                if (remainingMana <= 0) return;
-                Tile creatureTile = creaThreat.creature.tile;
-                Lane currLane = creatureTile.GetLane();
-                Tile firstTile = currLane.tiles[7];
-                if (!currLane.GetNexusFromTeamID(board.ennemyTeamIndex).alive) return;
-                if (firstTile.creature) continue;
-                CardEntry cardToDelete = null;
-                foreach (var goodCard in goodCards)
-                {
-                    if (goodCard.cardEntry.cost <= remainingMana)
-                    {
-                        PlayTheCard(goodCard.cardEntry, firstTile);
-                        cardToDelete = goodCard.cardEntry;
-                        break;
-                    }
-                }
-                goodCards.RemoveAll(entry => entry.cardEntry == cardToDelete);
-            }
-            if (remainingMana >= 1)
-            {
-                PlayForNexus();
-            }
-        }
-    }
-    public void PlayForNexus()
-    {
-        List<(Creature nexus, int hp)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
-        foreach (var element in concernedNexusList)
-        {
-            if (remainingMana <= 0) return;
-            Tile firstTile = element.nexus.tile.GetLane().tiles[7];
-            if (firstTile.creature) continue;
-            CardEntry cardToDelete = null;
-            foreach (var goodCard in goodCards)
-            {
-                if (goodCard.cardEntry.cost <= remainingMana)
-                {
-                    PlayTheCard(goodCard.cardEntry, firstTile);
-                    cardToDelete = goodCard.cardEntry;
-                    break;
-                }
-            }
-            goodCards.RemoveAll(entry => entry.cardEntry == cardToDelete);
-        }
-    }
-
-    public void PlayTheCard(CardEntry cardEntry, Tile tile)
-    {
-        board.InvokCreature(cardEntry.creaturePrefab, 1, tile, cardEntry);
-        remainingMana -= cardEntry.cost;
-        hand.Remove(cardEntry);
-        opponentHandManager.DeleteACardFromHand();
-    }
     public void PlayTurn()
     {
         mana++;
@@ -173,9 +108,98 @@ public class OpponentCardManager : MonoBehaviour
         DetectThreat();
         DetectGoodCards();
         DetectNexus();
-        ChooseCardToPlay();
+        StartCoroutine(PlayTurnRoutine());
+    }
+
+    private IEnumerator PlayTurnRoutine()
+    {
+        List<(CardEntry, Tile)> cardsToPlay = new();
+
+        if (creatureThreat.Count > 0)
+        {
+            cardsToPlay.AddRange(GetCardsToPlayForThreats());
+        }
+
+        if (remainingMana >= 1)
+        {
+            cardsToPlay.AddRange(GetCardsToPlayForNexus());
+        }
+
+        yield return StartCoroutine(PlayCardsSequentially(cardsToPlay));
+
         opponentPassedTurn?.Invoke();
     }
+
+    private List<(CardEntry, Tile)> GetCardsToPlayForThreats()
+    {
+        List<(CardEntry, Tile)> selected = new();
+
+        foreach (var creaThreat in creatureThreat)
+        {
+            if (remainingMana <= 0) break;
+            Tile firstTile = creaThreat.creature.tile.GetLane().tiles[7];
+            if (!firstTile.creature && creaThreat.creature.tile.GetLane().GetNexusFromTeamID(board.ennemyTeamIndex).alive)
+            {
+                foreach (var goodCard in goodCards)
+                {
+                    if (goodCard.cardEntry.cost <= remainingMana)
+                    {
+                        selected.Add((goodCard.cardEntry, firstTile));
+                        remainingMana -= goodCard.cardEntry.cost;
+                        goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                        break;
+                    }
+                }
+            }
+        }
+
+        return selected;
+    }
+
+private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
+{
+    List<(CardEntry, Tile)> selected = new();
+    List<(Creature, int)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
+
+    foreach (var (nexus, hp) in concernedNexusList)
+    {
+        if (remainingMana <= 0) break;
+        Tile firstTile = nexus.tile.GetLane().tiles[7];
+        if (!firstTile.creature)
+        {
+            foreach (var goodCard in goodCards)
+            {
+                if (goodCard.cardEntry.cost <= remainingMana)
+                {
+                    selected.Add((goodCard.cardEntry, firstTile));
+                    remainingMana -= goodCard.cardEntry.cost;
+                    goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                    break;
+                }
+            }
+        }
+    }
+
+    return selected;
+}
+
+    private IEnumerator PlayCardsSequentially(List<(CardEntry cardEntry, Tile tile)> cardsToPlay)
+    {
+        foreach (var (card, tile) in cardsToPlay)
+        {
+            yield return StartCoroutine(PlayTheCardRoutine(card, tile));
+        }
+    }
+
+    private IEnumerator PlayTheCardRoutine(CardEntry cardEntry, Tile tile)
+    {
+        opponentHandManager.PlayTheCard(cardEntry); // animation
+        yield return new WaitForSeconds(2f); // attendre 2 secondes
+
+        board.InvokCreature(cardEntry.creaturePrefab, 1, tile, cardEntry);
+        hand.Remove(cardEntry);
+    }
+
     public void ResetData()
     {
         creatureThreat = new List<(Creature, int)>();
