@@ -11,8 +11,10 @@ GameObject:
   - component: {fileID: 5881519073093879662}
   - component: {fileID: 8842533967999451137}
   - component: {fileID: 1325126310910319795}
+  - component: {fileID: 1622306214377426601}
+  - component: {fileID: 1519757677256384308}
   m_Layer: 0
-  m_Name: Winged Knight
+  m_Name: Citrouille
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.86, y: -0.48, z: 0.025101967}
-  m_LocalScale: {x: 0.54674834, y: 0.54674834, z: 0.54674834}
+  m_LocalScale: {x: 0.3244459, y: 0.3244459, z: 0.3244459}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2685674761338498706}
@@ -78,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1175304452, guid: 2e94bce47c68bf84295716d22ce74ac6, type: 3}
-  m_Color: {r: 0.19406372, g: 0.6195995, b: 0.8396226, a: 1}
+  m_Sprite: {fileID: 128900922889134240, guid: 25d727d2f0735d945b9e33db39cd7fc1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.12, y: 5.12}
+  m_Size: {x: 4.08, y: 3.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -101,10 +103,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2835d1feedbcf0543ae47b7aa7897d4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animations: {fileID: 0}
   move: 1
   health: 4
   attack: 3
   range: 1
+--- !u!114 &1622306214377426601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801012688876195169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b06bd4fa1ccf6479352ddb759754ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1519757677256384308}
+--- !u!95 &1519757677256384308
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801012688876195169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 846f255407096ba409a627485d904ed4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1123885173863853053
 PrefabInstance:
   m_ObjectHideFlags: 0

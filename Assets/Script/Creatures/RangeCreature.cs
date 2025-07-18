@@ -103,7 +103,7 @@ namespace Assets.Script.Creatures
             Creature ennemy = nextTile.creature;
             if (ennemy.team != this.team)
             {
-                ennemy.UpdateHP(ennemy.hp - this.atk);
+                ennemy.Hit(ennemy.hp - this.atk);
             }
             yield return null;
         }

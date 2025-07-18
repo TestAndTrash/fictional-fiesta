@@ -30,6 +30,7 @@ namespace Assets.Script.Creatures
         public override void Kill()
         {
             alive = false;
+            PlayAnimation("Death");
             tile.GetLane().ClearTiles();
             gameObject.GetComponent<SpriteRenderer>().color = Color.darkGray;
             baseIsKilled?.Invoke(this);

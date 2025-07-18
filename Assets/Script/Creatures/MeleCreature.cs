@@ -22,6 +22,7 @@ namespace Assets.Script.Creatures
 
         public override IEnumerator MoveForward(Lane lane)
         {
+            bool fighted = false;
             for (int i = 0; i < pm && (tile.pos[tile.tileIndex] != goal[team]) && this.alive; i++)
             {
                 Tile nextTile = lane.tiles[tile.pos[tile.tileIndex] + direction[team]];
@@ -30,17 +31,18 @@ namespace Assets.Script.Creatures
                     updateTile(nextTile);
                     yield return MoveToNextTile(nextTile);
                 }
-                else
+                else if (!fighted)
                 {
+                    fighted = true;
                     yield return Fight(nextTile);
                 }
 
             }
 
-            if (tile.pos[tile.tileIndex] != goal[team] && lane.tiles[tile.pos[tile.tileIndex] + direction[team]].creature != null && this.alive)
+            if (tile.pos[tile.tileIndex] != goal[team] && lane.tiles[tile.pos[tile.tileIndex] + direction[team]].creature != null && this.alive && !fighted)
             {
                 yield return Fight(lane.tiles[tile.pos[tile.tileIndex] + direction[team]]);
-            }else if (tile.pos[tile.tileIndex] == goal[team] && this.alive)
+            }else if (tile.pos[tile.tileIndex] == goal[team] && this.alive && !fighted)
             {
                 yield return Fight(lane.baseTiles[baseToAttack[team]]);
             }
@@ -51,6 +53,7 @@ namespace Assets.Script.Creatures
         {
             float speed = 5.0f;
             float step = speed * Time.deltaTime;
+            PlayAnimation("Walk");
             while (transform.position != nextTile.transform.position)
             {
                 transform.position = UnityEngine.Vector2.MoveTowards(transform.position, nextTile.transform.position, step);
@@ -61,16 +64,20 @@ namespace Assets.Script.Creatures
 
         public IEnumerator Fight(Tile nextTile)
         {
-            Creature ennemy = nextTile.creature;
+            Creature ennemy = nextTile.creature;            
             if (ennemy.team != this.team)
             {
-                ennemy.UpdateHP(ennemy.hp - this.atk);
-                this.UpdateHP(this.hp - ennemy.atk);
+                ennemy.PlayAnimation("Fight");
+                PlayAnimation("Fight");
+                yield return new WaitForSeconds(1.1f);
+
+                ennemy.PlayAnimation("Hit");
+                PlayAnimation("Hit");
+                yield return new WaitForSeconds(0.5f);
+                ennemy.Hit(ennemy.hp - this.atk);
+                this.Hit(this.hp - ennemy.atk);
+                yield return new WaitForSeconds(1f);
             }
-            
-            yield return null;
         }
-
-
     }
 }

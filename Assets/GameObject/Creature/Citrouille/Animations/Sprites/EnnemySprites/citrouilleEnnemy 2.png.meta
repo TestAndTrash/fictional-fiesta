@@ -1,0 +1,936 @@
+fileFormatVersion: 2
+guid: 5ceb8064b829782458bae9df77d4fb3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5275973992901411774
+    second: citrouilleAlly_0
+  - first:
+      213: -5324928705586570763
+    second: citrouilleAlly_1
+  - first:
+      213: -7431203460691505649
+    second: citrouilleAlly_2
+  - first:
+      213: 190763083869184530
+    second: citrouilleAlly_3
+  - first:
+      213: 5539903619406055454
+    second: citrouilleAlly_4
+  - first:
+      213: -2034235792692319722
+    second: citrouilleAlly_5
+  - first:
+      213: 4274614906754154858
+    second: citrouilleAlly_6
+  - first:
+      213: 3883406851636777623
+    second: citrouilleAlly_7
+  - first:
+      213: -855455921339053031
+    second: citrouilleAlly_8
+  - first:
+      213: 1489930314972166951
+    second: citrouilleAlly_9
+  - first:
+      213: -5360921290149266114
+    second: citrouilleAlly_10
+  - first:
+      213: -3380006733024112297
+    second: citrouilleAlly_11
+  - first:
+      213: -2421016591965828399
+    second: citrouilleAlly_12
+  - first:
+      213: 4439104937360773526
+    second: citrouilleAlly_13
+  - first:
+      213: 8378402737732772021
+    second: citrouilleAlly_14
+  - first:
+      213: -7905077129597940854
+    second: citrouilleAlly_15
+  - first:
+      213: -6532734486100115897
+    second: citrouilleAlly_16
+  - first:
+      213: -7979158616312700786
+    second: citrouilleAlly_17
+  - first:
+      213: 1530141136767723916
+    second: citrouilleAlly_18
+  - first:
+      213: -6281949180096929292
+    second: citrouilleAlly_19
+  - first:
+      213: -322060908721318576
+    second: citrouilleAlly_20
+  - first:
+      213: -4892777796511277277
+    second: citrouilleAlly_21
+  - first:
+      213: 6225702830495244874
+    second: citrouilleAlly_22
+  - first:
+      213: 3049711416117705341
+    second: citrouilleAlly_23
+  - first:
+      213: -8934744306156846271
+    second: citrouilleAlly_24
+  - first:
+      213: -2755883259247798572
+    second: citrouilleAlly_25
+  - first:
+      213: 597104808103773260
+    second: citrouilleAlly_26
+  - first:
+      213: 676650124078275175
+    second: citrouilleAlly_27
+  - first:
+      213: 7401110834174822102
+    second: citrouilleAlly_28
+  - first:
+      213: 1662594035480379483
+    second: citrouilleAlly_29
+  - first:
+      213: -5658081149632146368
+    second: citrouilleAlly_30
+  - first:
+      213: 9031296826770994587
+    second: citrouilleAlly_31
+  - first:
+      213: -6145346546628868244
+    second: citrouilleAlly_32
+  - first:
+      213: 9175870885238494239
+    second: citrouilleAlly_33
+  - first:
+      213: -1719876852110388820
+    second: citrouilleAlly_34
+  - first:
+      213: 4996703815547364133
+    second: citrouilleAlly_35
+  - first:
+      213: 3549131423576806747
+    second: citrouilleAlly_36
+  - first:
+      213: 423224743732078197
+    second: citrouilleAlly_37
+  - first:
+      213: 232519689739649751
+    second: citrouilleAlly_38
+  - first:
+      213: -4250931640919634536
+    second: citrouilleAlly_39
+  - first:
+      213: 1579572063461265625
+    second: citrouilleAlly_40
+  - first:
+      213: -7774757645154239630
+    second: citrouilleAlly_41
+  - first:
+      213: 844816711358245492
+    second: citrouilleAlly_42
+  - first:
+      213: 8671664265853469042
+    second: citrouilleAlly_43
+  - first:
+      213: -6149065579298445057
+    second: citrouilleAlly_44
+  - first:
+      213: 948139339808874853
+    second: citrouilleAlly_45
+  - first:
+      213: -6686901303303119231
+    second: citrouilleAlly_46
+  - first:
+      213: -4911987399166308679
+    second: citrouilleAlly_47
+  - first:
+      213: -1215115544229033318
+    second: citrouilleAlly_48
+  - first:
+      213: -8141147265697417665
+    second: citrouilleAlly_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: citrouilleEnnemy_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5653f33cdc7cd0e4793d4f0e65933dba
+      internalID: -1636686023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36b7383316c604f4a8e398dd5bc6a48a
+      internalID: 885168481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e45715c116414d4c91744b1ac57eb82
+      internalID: -931760276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f62d5eb774695d0418046b05f0884dc2
+      internalID: 152063518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7e2af44e8831b4f8535e83963635c7
+      internalID: 153107506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d5ae47cdffe5c44bbd154547ce1385
+      internalID: 1591764063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5cd72a6950c5344aa010707da72ecd4
+      internalID: -1625110004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f9eccc83bbb23429741348f63c3e15
+      internalID: -444713577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b0d97c73d39834b8be919bd232357e
+      internalID: -2101749463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_9
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2c1195cc8039dc42a36c46de58581f3
+      internalID: -585560460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_10
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88517b57b4e6c844890c29791fc6ff1c
+      internalID: -1847469918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_11
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd5ebf9c629e7242a5be9440dfd6285
+      internalID: -1417523286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_12
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98ce967c98c27924f9e17a5cdba91d97
+      internalID: 1664402954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_13
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cffee09008be406458b760c5e26c0e05
+      internalID: 2087905323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_14
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 697d9126f83afd847a9f3538baaa15f5
+      internalID: 1735372825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_15
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b89139c3f2d7d4b996253d653bfd52
+      internalID: 260069434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_16
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: beb5e4fc30de06a4f803826e16a59b0a
+      internalID: -1760574538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_17
+      rect:
+        serializedVersion: 2
+        x: 8704
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3011cd4abe70204581316c4c79e0d89
+      internalID: 358276533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_18
+      rect:
+        serializedVersion: 2
+        x: 9216
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f598af327a343734584ca26fbd86e662
+      internalID: -628953802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_19
+      rect:
+        serializedVersion: 2
+        x: 9728
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d62cba5f42c3b344f945d873d3a95220
+      internalID: 1023368035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_20
+      rect:
+        serializedVersion: 2
+        x: 10240
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c8e56b70ed14cc4094fda566ff6be42
+      internalID: -1941259918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_21
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af58ac9a8e4952a42b241c50e3677a6c
+      internalID: -811941730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_22
+      rect:
+        serializedVersion: 2
+        x: 11264
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a324b6e01261ea45a2824d2f2208c5d
+      internalID: 215864665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_23
+      rect:
+        serializedVersion: 2
+        x: 11776
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6813aacdb3523984d970445a4f552aea
+      internalID: 696993672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_24
+      rect:
+        serializedVersion: 2
+        x: 12288
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 569976ba51cbc534da93a85f78100d2b
+      internalID: -28923662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_25
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f87f7bb2b4eac8f40b7c41f9d39acc94
+      internalID: 1743399493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_26
+      rect:
+        serializedVersion: 2
+        x: 13312
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41167739a5f887a41a18a147027ab675
+      internalID: -1769725029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_27
+      rect:
+        serializedVersion: 2
+        x: 13824
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22060ab3e4951e44c8966d968570cf1c
+      internalID: 348483216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: citrouilleEnnemy_28
+      rect:
+        serializedVersion: 2
+        x: 14336
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079efe3399c0911479c06efd3ea6fa6e
+      internalID: -732282119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a935a6feffb31d54bbf6d9f0450300b5
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20000000298023225},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      citrouilleEnnemy_0: -1636686023
+      citrouilleEnnemy_1: 885168481
+      citrouilleEnnemy_10: -1847469918
+      citrouilleEnnemy_11: -1417523286
+      citrouilleEnnemy_12: 1664402954
+      citrouilleEnnemy_13: 2087905323
+      citrouilleEnnemy_14: 1735372825
+      citrouilleEnnemy_15: 260069434
+      citrouilleEnnemy_16: -1760574538
+      citrouilleEnnemy_17: 358276533
+      citrouilleEnnemy_18: -628953802
+      citrouilleEnnemy_19: 1023368035
+      citrouilleEnnemy_2: -931760276
+      citrouilleEnnemy_20: -1941259918
+      citrouilleEnnemy_21: -811941730
+      citrouilleEnnemy_22: 215864665
+      citrouilleEnnemy_23: 696993672
+      citrouilleEnnemy_24: -28923662
+      citrouilleEnnemy_25: 1743399493
+      citrouilleEnnemy_26: -1769725029
+      citrouilleEnnemy_27: 348483216
+      citrouilleEnnemy_28: -732282119
+      citrouilleEnnemy_3: 152063518
+      citrouilleEnnemy_4: 153107506
+      citrouilleEnnemy_5: 1591764063
+      citrouilleEnnemy_6: -1625110004
+      citrouilleEnnemy_7: -444713577
+      citrouilleEnnemy_8: -2101749463
+      citrouilleEnnemy_9: -585560460
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
