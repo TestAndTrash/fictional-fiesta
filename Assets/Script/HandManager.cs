@@ -4,6 +4,7 @@ using UnityEngine.Splines;
 using DG.Tweening;
 using System.Collections;
 using System;
+using TMPro;
 
 public class HandManager : MonoBehaviour
 {
@@ -22,6 +23,18 @@ public class HandManager : MonoBehaviour
     public static event Action playerCanPlay;
     public event Action playerDeckIsEmpty;
 
+    private int mana = 0;
+    private int remainingMana = 0;
+
+    private TextMeshPro manaDisplay = null;
+
+    private CardManager lastCardClicked = null;
+
+    void Start()
+    {
+        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space)) DrawCard();
@@ -33,7 +46,7 @@ public class HandManager : MonoBehaviour
         CardEntry drawnCard = deckManager.DrawCardFromDeck();
         if (drawnCard == null)
         {
-            if(handCards.Count <= 0) playerDeckIsEmpty?.Invoke();
+            if (handCards.Count <= 0) playerDeckIsEmpty?.Invoke();
             return;
         }
         GameObject cardObject = Instantiate(drawnCard.cardPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -76,7 +89,7 @@ public class HandManager : MonoBehaviour
                 canPlay = true;
             });
         }
-        
+
     }
 
     private void ArrangeCardPos()
@@ -94,7 +107,7 @@ public class HandManager : MonoBehaviour
             Vector3 up = spline.EvaluateUpVector(position);
             Quaternion rotation = Quaternion.LookRotation(up, Vector3.Cross(up, forward).normalized);
             handCards[i].transform.DOLocalRotateQuaternion(rotation, 0.25f);
-            handCards[i].transform.DOMove(splinePosition, 0.25f).OnComplete(()=>
+            handCards[i].transform.DOMove(splinePosition, 0.25f).OnComplete(() =>
             {
                 canPlay = true;
             });
@@ -109,13 +122,42 @@ public class HandManager : MonoBehaviour
 
     private void CardClicked(CardManager cardManager)
     {
-        if (!canPlay) return;
+        if (!canPlay || cardManager.card.cost > remainingMana) return;
         board.SetPlaceCardMode(cardManager.card, cardManager);
+        UpChosenOne(cardManager);
+    }
+
+    public void UpChosenOne(CardManager cardManager)
+    {
+        if(lastCardClicked != null)
+        {
+            lastCardClicked.Up(false);
+        }
+        cardManager.Up(true);
+        lastCardClicked = cardManager;
     }
 
     public void ActivatePlay(bool active)
     {
         canPlay = active;
-        if(active) playerCanPlay?.Invoke();
+        if (active) playerCanPlay?.Invoke();
+    }
+
+    public void RefillMana()
+    {
+        mana++;
+        remainingMana = mana;
+        UpdateManaDisplay();
+    }
+
+    public void PayMana(int manaToSubstract)
+    {
+        remainingMana -= manaToSubstract;
+        UpdateManaDisplay();
+    }
+
+    public void UpdateManaDisplay()
+    {
+        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
     }
 }
