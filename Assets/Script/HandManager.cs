@@ -30,6 +30,8 @@ public class HandManager : MonoBehaviour
 
     private CardManager lastCardClicked = null;
 
+    private int totalGold = 0;
+
     void Start()
     {
         manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
@@ -129,7 +131,7 @@ public class HandManager : MonoBehaviour
 
     public void UpChosenOne(CardManager cardManager)
     {
-        if(lastCardClicked != null)
+        if (lastCardClicked != null)
         {
             lastCardClicked.Up(false);
         }
@@ -159,5 +161,11 @@ public class HandManager : MonoBehaviour
     public void UpdateManaDisplay()
     {
         manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
+    }
+
+    public int ChangeGold(int modifier)
+    {
+        totalGold = totalGold + modifier;
+        return totalGold;
     }
 }

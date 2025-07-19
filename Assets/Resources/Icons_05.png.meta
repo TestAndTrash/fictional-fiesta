@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 89a1c3f543c6b7c8eb5f68e67a10c3fa
+guid: dfd26e542f472f193b4bcfc03815b777
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7621042455958394445
-    second: HealthBulb6_Leaf&Branch_0
-  - first:
-      213: 173538894772244785
-    second: HealthBulb6_Leaf&Branch_1
+      213: 3164707272721218726
+    second: Icons_05_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HealthBulb6_Leaf&Branch_0
+      name: Icons_05_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 30
-        width: 24
-        height: 60
+        x: 3
+        y: 0
+        width: 29
+        height: 23
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d4612955cb163c960800000000000000
-      internalID: 7621042455958394445
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: HealthBulb6_Leaf&Branch_1
-      rect:
-        serializedVersion: 2
-        x: 4
-        y: 4
-        width: 295
-        height: 296
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1311d9194b8886200800000000000000
-      internalID: 173538894772244785
+      spriteID: 6acb4a84f7c4beb20800000000000000
+      internalID: 3164707272721218726
       vertices: []
       indices: 
       edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      HealthBulb6_Leaf&Branch_0: 7621042455958394445
-      HealthBulb6_Leaf&Branch_1: 173538894772244785
+      Icons_05_0: 3164707272721218726
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -16,6 +16,8 @@ public class CardGameManager : MonoBehaviour
     public bool gameOver = false;
     public bool playerWon = false;
     public bool opponentWon = false;
+    public static event Action playerWonGame;
+    public static event Action playerLostGame;    
 
     public void Start()
     {
@@ -84,11 +86,11 @@ public class CardGameManager : MonoBehaviour
         playerHandManager.ActivatePlay(false);
         if (playerWon)
         {
-            Debug.Log("PLAYER WON");
+            playerWonGame?.Invoke();
         }
         else
         {
-            Debug.Log("OPPONENT WON");
+            playerLostGame?.Invoke();
         }
     }
 

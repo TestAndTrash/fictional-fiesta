@@ -23,6 +23,12 @@ public class DeckManager : MonoBehaviour
         currentDeck = deck;
     }
 
+    public void ReplaceDeck(List<int> newDeck)
+    {
+        deck = newDeck;
+        currentDeck = deck;
+    }
+
     public void UpdateDisplay()
     {
         cardNumberDisplay.text = currentDeck.Count.ToString();

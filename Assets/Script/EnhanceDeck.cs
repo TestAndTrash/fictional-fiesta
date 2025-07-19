@@ -2,6 +2,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 using DG.Tweening;
+using System;
+
 public class EnhanceDeck : MonoBehaviour
 {
     [SerializeField] private CardData database;
@@ -11,31 +13,32 @@ public class EnhanceDeck : MonoBehaviour
     [SerializeField] private SplineContainer splineContainer;
 
     [SerializeField] private Transform spawnPoint;
-
-    private List<int> tempPool = new();
     private List<CardEntry> cardsToChooseFrom = new();
 
     private List<GameObject> physicalCards = new();
 
-    void Start()
-    {
-        tempPool.Add(1);
-        tempPool.Add(4);
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl)) DrawRandCards(2, tempPool);
-    }
+    public static event Action<CardManager> playerChoseCard;
 
-    void DrawRandCards(int nbOfCards, List<int> cardPool)
+    public void DrawRandCards(int nbOfCards, List<int> cardPool)
     {
+        EmptyTheDisplay();
         for (int i = 0; i < nbOfCards; i++)
         {
-            int randomInt = Random.Range(0, cardPool.Count);
+            int randomInt = UnityEngine.Random.Range(0, cardPool.Count);
             cardsToChooseFrom.Add(database.GetCardById(cardPool[randomInt]));
             cardPool.RemoveAt(randomInt);
         }
         DisplayCards();
+    }
+
+    public void EmptyTheDisplay()
+    {
+        foreach (GameObject card in physicalCards)
+        {
+            Destroy(card);
+        }
+        physicalCards = new();
+        cardsToChooseFrom = new();
     }
 
     private void DisplayCards()
@@ -45,6 +48,7 @@ public class EnhanceDeck : MonoBehaviour
             GameObject cardObject = Instantiate(card.cardPrefab, spawnPoint.position, spawnPoint.rotation);
             CardManager cardManager = cardObject.GetComponent<CardManager>();
             cardManager.fillCardData(card);
+            cardManager.reward = true;
             cardManager.OnCardClicked += CardClicked;
             physicalCards.Add(cardObject);
             board.gameObject.SetActive(false);
@@ -72,6 +76,6 @@ public class EnhanceDeck : MonoBehaviour
 
     private void CardClicked(CardManager cardManager)
     {
-        playerDeck.AddCardToDeck(cardManager.card.id);
+        playerChoseCard?.Invoke(cardManager);
     }
 }

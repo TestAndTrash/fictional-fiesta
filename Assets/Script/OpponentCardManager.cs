@@ -7,15 +7,18 @@ using UnityEngine;
 
 public class OpponentCardManager : MonoBehaviour
 {
-    private string opponentName = "Test Marcus";
+    public string opponentName = "Test Marcus";
+
+    public Opponent opponentData;
+    public List<CardEntry> hand = new();
+
     private Team playerTeam;
     private Board board;
     [SerializeField] private DeckManager deck;
     [SerializeField] private OpponentHandManager opponentHandManager;
-    public List<CardEntry> hand = new();
 
     [SerializeField] private int maxHandSize;
-    private int mana = 10;
+    private int mana = 0;
     private int remainingMana = 0;
 
     //SENSITIVITY
@@ -49,11 +52,18 @@ public class OpponentCardManager : MonoBehaviour
     public event Action opponentPassedTurn;
     public event Action opponentDeckIsEmpty;
 
-     private TextMeshPro manaDisplay = null;
+    private TextMeshPro manaDisplay = null;
 
     void Start()
     {
-        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();        
+        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
+    }
+
+    public void InitOpponent(Opponent opponent)
+    {
+        opponentData = opponent;
+        deck.ReplaceDeck(opponent.deck);
+        opponentName = opponent.name;
     }
 
     public void DetectThreat()
@@ -128,7 +138,7 @@ public class OpponentCardManager : MonoBehaviour
 
     public void UpdateManaDisplay()
     {
-        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();  
+        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
     }
 
     private IEnumerator PlayTurnRoutine()
@@ -176,32 +186,32 @@ public class OpponentCardManager : MonoBehaviour
         return selected;
     }
 
-private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
-{
-    List<(CardEntry, Tile)> selected = new();
-    List<(Creature, int)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
-
-    foreach (var (nexus, hp) in concernedNexusList)
+    private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
     {
-        if (remainingMana <= 0) break;
-        Tile firstTile = nexus.tile.GetLane().tiles[7];
-        if (!firstTile.creature)
+        List<(CardEntry, Tile)> selected = new();
+        List<(Creature, int)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
+
+        foreach (var (nexus, hp) in concernedNexusList)
         {
-            foreach (var goodCard in goodCards)
+            if (remainingMana <= 0) break;
+            Tile firstTile = nexus.tile.GetLane().tiles[7];
+            if (!firstTile.creature)
             {
-                if (goodCard.cardEntry.cost <= remainingMana)
+                foreach (var goodCard in goodCards)
                 {
-                    selected.Add((goodCard.cardEntry, firstTile));
-                    PayMana(goodCard.cardEntry.cost);
-                    goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
-                    break;
+                    if (goodCard.cardEntry.cost <= remainingMana)
+                    {
+                        selected.Add((goodCard.cardEntry, firstTile));
+                        PayMana(goodCard.cardEntry.cost);
+                        goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                        break;
+                    }
                 }
             }
         }
-    }
 
-    return selected;
-}
+        return selected;
+    }
 
     private IEnumerator PlayCardsSequentially(List<(CardEntry cardEntry, Tile tile)> cardsToPlay)
     {

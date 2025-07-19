@@ -10,11 +10,13 @@ public class CardManager : MonoBehaviour
     public string cardName;
     bool setOnce = false;
     public event Action<CardManager> OnCardClicked;
-    private HandManager handManager;
+    private HandManager handManager = null;
 
     private SpriteRenderer spriteRenderer;
     private int originalSortingOrder;
     private bool chosen = false;
+
+    public bool reward = false;
 
     void Start()
     {
@@ -24,7 +26,8 @@ public class CardManager : MonoBehaviour
 
     void OnMouseEnter()
     {
-        if (traveling || !handManager.canPlay || chosen) return;
+        if ((handManager == null || !handManager.canPlay || chosen) && !reward) return;
+        if (traveling) return;
         transform.DOMoveY(transform.position.y + 0.2f, 0.25f);
         spriteRenderer.sortingOrder = 10;
         if (setOnce) return;
@@ -34,14 +37,15 @@ public class CardManager : MonoBehaviour
 
     void OnMouseExit()
     {
-        if (traveling || !handManager.canPlay || chosen) return;
+        if ((handManager == null || !handManager.canPlay || chosen) && !reward) return;
+        if (traveling) return;
         transform.DOMoveY(orignalPos.y, 0.25f);
         spriteRenderer.sortingOrder = originalSortingOrder;
     }
 
     void OnMouseDown()
     {
-        if (chosen) return;
+        if (chosen && !reward) return;
         OnCardClicked?.Invoke(this);
     }
 
