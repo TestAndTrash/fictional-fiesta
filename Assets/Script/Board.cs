@@ -112,8 +112,8 @@ public class Board : MonoBehaviour
         if (currentCardEntry != null)
         {
             InvokCreature(currentCardEntry.creaturePrefab, 0, clickedTile, currentCardEntry);
+            currentCardManager.UseCard(currentCardEntry.cost);
             currentCardEntry = null;
-            currentCardManager.UseCard();
             DisablePlaceCardMode();
         }
     }

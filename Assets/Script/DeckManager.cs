@@ -14,7 +14,7 @@ public class DeckManager : MonoBehaviour
     public void Start()
     {
         RefillDeck();
-        cardNumberDisplay = transform.GetChild(0).gameObject.GetComponent<TextMeshPro>();
+        cardNumberDisplay = gameObject.transform.Find("Number").gameObject.GetComponent<TextMeshPro>();
         UpdateDisplay();
     }
 

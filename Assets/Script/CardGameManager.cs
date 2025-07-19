@@ -36,6 +36,7 @@ public class CardGameManager : MonoBehaviour
     {
         StartCoroutine(opponentCardManager.Draw(3));
         StartCoroutine(playerHandManager.DrawFirstHand(5));
+        playerHandManager.RefillMana();
         playerHandManager.ActivatePlay(true);
     }
 
@@ -73,6 +74,7 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchPlayerTurn()
     {
+        playerHandManager.RefillMana();
         playerHandManager.ActivatePlay(true);
         playerHandManager.DrawCard();
     }

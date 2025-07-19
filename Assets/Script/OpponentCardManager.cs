@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Script;
+using TMPro;
 using UnityEngine;
 
 public class OpponentCardManager : MonoBehaviour
@@ -47,6 +48,13 @@ public class OpponentCardManager : MonoBehaviour
 
     public event Action opponentPassedTurn;
     public event Action opponentDeckIsEmpty;
+
+     private TextMeshPro manaDisplay = null;
+
+    void Start()
+    {
+        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();        
+    }
 
     public void DetectThreat()
     {
@@ -104,11 +112,23 @@ public class OpponentCardManager : MonoBehaviour
     {
         mana++;
         remainingMana = mana;
+        UpdateManaDisplay();
         ResetData();
         DetectThreat();
         DetectGoodCards();
         DetectNexus();
         StartCoroutine(PlayTurnRoutine());
+    }
+
+    public void PayMana(int manaToSubstract)
+    {
+        remainingMana -= manaToSubstract;
+        UpdateManaDisplay();
+    }
+
+    public void UpdateManaDisplay()
+    {
+        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();  
     }
 
     private IEnumerator PlayTurnRoutine()
@@ -145,7 +165,7 @@ public class OpponentCardManager : MonoBehaviour
                     if (goodCard.cardEntry.cost <= remainingMana)
                     {
                         selected.Add((goodCard.cardEntry, firstTile));
-                        remainingMana -= goodCard.cardEntry.cost;
+                        PayMana(goodCard.cardEntry.cost);
                         goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
                         break;
                     }
@@ -172,7 +192,7 @@ private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
                 if (goodCard.cardEntry.cost <= remainingMana)
                 {
                     selected.Add((goodCard.cardEntry, firstTile));
-                    remainingMana -= goodCard.cardEntry.cost;
+                    PayMana(goodCard.cardEntry.cost);
                     goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
                     break;
                 }
