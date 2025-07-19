@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1622306214377426601}
   - component: {fileID: 2032118708755391872}
   m_Layer: 0
-  m_Name: Winged Knight 1
+  m_Name: Navet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -131,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 8801012688876195169}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 846f255407096ba409a627485d904ed4, type: 2}
+  m_Controller: {fileID: 9100000, guid: f44452386fe4e6344a14f1d77a28a3d8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
