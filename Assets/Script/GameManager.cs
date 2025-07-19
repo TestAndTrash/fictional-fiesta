@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
 using DG.Tweening;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CardGameManager cardGameManager;
     [SerializeField] private EnhanceDeck enhanceDeck;
     [SerializeField] private CardData cardData;
+    [SerializeField] private Dialogue dialogue;
 
 
     private List<int> godDeck = new();
@@ -29,6 +31,8 @@ public class GameManager : MonoBehaviour
     private bool deckInit = false;
     private bool bought = false;
 
+    private string[] newLines;
+
 
     void Start()
     {
@@ -41,7 +45,7 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < 120; i++)
         {
             //int randomInt = Random.Range(0, cardData.entries.Count);
-            int randomInt = Random.Range(1, 3);
+            int randomInt = UnityEngine.Random.Range(1, 3);
             godDeck.Add(randomInt);
         }
         OpponentCardDisplay.OnCardDisplayClicked += OpponentChosed;
@@ -56,7 +60,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfOpponent; i++)
         {
-            int randomInt = Random.Range(0, dbEntries.Count);
+            int randomInt = UnityEngine.Random.Range(0, dbEntries.Count);
             Opponent opponent = opponentDatabase.GetOpponentById(dbEntries[randomInt]);
             currOpponentChoice.Add(opponent);
             GameObject opponentCardObject = Instantiate(opponentCardPrefab, spawnPoint.position, spawnPoint.rotation);
@@ -138,10 +142,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void LaunchDialogue()
+    {
+        newLines = new string[1];
+        newLines[0] = "Hey there, welcome in the vegetable-top game championship !";
+        dialogue.SetLines(newLines);
+        dialogue.StartDialogue();
+    }
+
     public void ManageRun()
     {
-        if (!deckInit) {
+        if (!deckInit)
+        {
             //DIALOGUE
+
             needsToDraw = 5;
             enhanceDeck.DrawRandCards(4, godDeck);
         }
@@ -161,7 +175,7 @@ public class GameManager : MonoBehaviour
             enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
         }
-        else if (wonFight == 2)
+        else if (wonFight == 3)
         {
             //DIALOGUE
             enhanceDeck.EmptyTheDisplay();
@@ -170,9 +184,11 @@ public class GameManager : MonoBehaviour
         else if (!bought)
         {
             //DIALOGUE
+            enhanceDeck.EmptyTheDisplay();
             //MERCHANT
         }
-        else {
+        else
+        {
             LaunchFight();
         }
     }

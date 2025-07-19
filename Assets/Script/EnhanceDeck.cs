@@ -21,13 +21,14 @@ public class EnhanceDeck : MonoBehaviour
 
     public void DrawRandCards(int nbOfCards, List<int> cardPool)
     {
+        List<int> tempPool = new List<int>(cardPool);
         EmptyTheDisplay();
         for (int i = 0; i < nbOfCards; i++)
         {
-            if (cardPool.Count <= 0) break;
-            int randomInt = UnityEngine.Random.Range(0, cardPool.Count);
-            cardsToChooseFrom.Add(database.GetCardById(cardPool[randomInt]));
-            cardPool.RemoveAt(randomInt);
+            if (tempPool.Count <= 0) break;
+            int randomInt = UnityEngine.Random.Range(0, tempPool.Count);
+            cardsToChooseFrom.Add(database.GetCardById(tempPool[randomInt]));
+            tempPool.RemoveAt(randomInt);
         }
         DisplayCards();
     }

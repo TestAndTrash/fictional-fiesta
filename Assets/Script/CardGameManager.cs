@@ -21,6 +21,7 @@ public class CardGameManager : MonoBehaviour
     public bool opponentWon = false;
     public static event Action playerWonGame;
     public static event Action playerLostGame;    
+    public static event Action battleStart;    
 
     public void Start()
     {
@@ -39,10 +40,13 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchGame()
     {
+        battleStart?.Invoke();
         gameOver = false;
         eventSent = false;
-        board.PrepareFight();
         board.gameObject.SetActive(true);
+        board.PrepareFight();
+        playerHandManager.StartBattle();
+        opponentCardManager.StartBattle();
         StartCoroutine(opponentCardManager.Draw(4));
         StartCoroutine(playerHandManager.DrawFirstHand(4));
         playerHandManager.RefillMana();

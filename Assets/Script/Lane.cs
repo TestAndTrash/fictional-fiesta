@@ -54,6 +54,7 @@ namespace Assets.Script
         public void ResetLane()
         {
             ClearTiles();
+            bases.Clear();
             InvokBase(playerBaseIndex);
             InvokBase(ennemyBaseIndex);
         }

@@ -177,7 +177,7 @@ public class OpponentCardManager : MonoBehaviour
                     {
                         selected.Add((goodCard.cardEntry, firstTile));
                         PayMana(goodCard.cardEntry.cost);
-                        goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                        goodCards.Remove(goodCard);
                         break;
                     }
                 }
@@ -204,7 +204,7 @@ public class OpponentCardManager : MonoBehaviour
                     {
                         selected.Add((goodCard.cardEntry, firstTile));
                         PayMana(goodCard.cardEntry.cost);
-                        goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                        goodCards.Remove(goodCard);
                         break;
                     }
                 }

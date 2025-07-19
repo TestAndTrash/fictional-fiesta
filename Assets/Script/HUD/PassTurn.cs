@@ -17,6 +17,7 @@ namespace Assets.Script.HUD
             HandManager.playerCanPlay += onEnnemyPassed;
             CardGameManager.playerLostGame += EndBattle;
             CardGameManager.playerWonGame += EndBattle;
+            CardGameManager.battleStart += StartBattle;
         }
 
         public void LaunchRound()
@@ -32,6 +33,10 @@ namespace Assets.Script.HUD
 
         public void EndBattle() {
             gameObject.SetActive(false);
+        }
+
+        public void StartBattle() {
+            gameObject.SetActive(true);
         }
     }
 }

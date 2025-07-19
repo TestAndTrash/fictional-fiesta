@@ -28,17 +28,17 @@ public class HandManager : MonoBehaviour
 
     private TextMeshPro manaDisplay = null;
     private SpriteRenderer manaSprite = null;
-
-
+    private TextMeshPro goldDisplay = null;
     private CardManager lastCardClicked = null;
 
-    private int totalGold = 0;
+    private int totalGold = 3;
 
     void Start()
     {
         manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
         manaSprite = gameObject.transform.Find("ManaSprite").gameObject.GetComponent<SpriteRenderer>();
-
+        goldDisplay = gameObject.transform.Find("GoldNumber").gameObject.GetComponent<TextMeshPro>();
+        goldDisplay.text = totalGold.ToString();
     }
     public void DrawCard()
     {
@@ -164,7 +164,9 @@ public class HandManager : MonoBehaviour
     public int ChangeGold(int modifier)
     {
         totalGold = totalGold + modifier;
+        goldDisplay.text = totalGold.ToString();
         return totalGold;
+        
     }
 
     public void DeleteAll()
