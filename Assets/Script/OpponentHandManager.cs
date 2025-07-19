@@ -55,4 +55,13 @@ public class OpponentHandManager : MonoBehaviour
         handCards.RemoveAt(0);
         UpdateCardPos();
     }
+
+    public void DeleteAll()
+    {
+        foreach (GameObject card in handCards)
+        {
+            Destroy(card);
+        }
+        handCards = new();
+    }
 }

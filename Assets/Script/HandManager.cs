@@ -27,6 +27,8 @@ public class HandManager : MonoBehaviour
     private int remainingMana = 0;
 
     private TextMeshPro manaDisplay = null;
+    private SpriteRenderer manaSprite = null;
+
 
     private CardManager lastCardClicked = null;
 
@@ -35,13 +37,9 @@ public class HandManager : MonoBehaviour
     void Start()
     {
         manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
-    }
+        manaSprite = gameObject.transform.Find("ManaSprite").gameObject.GetComponent<SpriteRenderer>();
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) DrawCard();
     }
-
     public void DrawCard()
     {
         if (handCards.Count >= maxHandSize) return;
@@ -167,5 +165,31 @@ public class HandManager : MonoBehaviour
     {
         totalGold = totalGold + modifier;
         return totalGold;
+    }
+
+    public void DeleteAll()
+    {
+        foreach (GameObject card in handCards)
+        {
+            Destroy(card);
+        }
+        handCards = new();
+    }
+
+    public void EndBattle()
+    {
+        deckManager.RefillDeck();
+        DeleteAll();
+        manaDisplay.enabled = false;
+        manaSprite.enabled = false;
+    }
+
+    public void StartBattle()
+    {
+        mana = 0;
+        remainingMana = mana;
+        UpdateManaDisplay();
+        manaSprite.enabled = true;
+        manaDisplay.enabled = true;
     }
 }

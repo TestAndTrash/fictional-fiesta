@@ -296,6 +296,7 @@ MonoBehaviour:
   opponentCardManager: {fileID: 1645451024}
   playerHandManager: {fileID: 890215344}
   gameOver: 0
+  eventSent: 0
   playerWon: 0
   opponentWon: 0
 --- !u!114 &517491759
@@ -317,7 +318,7 @@ MonoBehaviour:
     goldGiven: 3
     cardGiven: 2
     cardInDeck: 6
-    deck: 
+    deck: 01000000
     opponentSprite: {fileID: -5075368910477382666, guid: f13a36e979f080ed7b473c1e85d3b23b, type: 3}
   - id: 1
     opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
@@ -325,15 +326,15 @@ MonoBehaviour:
     goldGiven: 5
     cardGiven: 1
     cardInDeck: 8
-    deck: 
+    deck: 0100000001000000010000000100000001000000010000000100000001000000
     opponentSprite: {fileID: 2385265954839553, guid: 275b16c49077fc615bab85a1c9e4ee8c, type: 3}
-  - id: 1
+  - id: 2
     opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
     name: Mike
     goldGiven: 7
     cardGiven: 3
     cardInDeck: 10
-    deck: 
+    deck: 01000000010000000100000001000000010000000100000001000000010000000100000001000000
     opponentSprite: {fileID: -5538204950628445106, guid: fe0c70f53f5b5ab12b98e08de9de2c3a, type: 3}
 --- !u!114 &517491760
 MonoBehaviour:
@@ -352,6 +353,8 @@ MonoBehaviour:
   splineContainer: {fileID: 2017000817}
   spawnPoint: {fileID: 1006879528}
   handManager: {fileID: 890215344}
+  opponentCardManager: {fileID: 1645451024}
+  cardGameManager: {fileID: 517491758}
   enhanceDeck: {fileID: 517491756}
   cardData: {fileID: 890215343}
 --- !u!1 &519420028
@@ -1234,7 +1237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9d59e6e0b30bbcfcbe67edd76d342d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deck: 010000000200000003000000
+  deck: 0100000001000000
   currentDeck: 
   database: {fileID: 890215343}
 --- !u!4 &890215346
@@ -2108,6 +2111,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6501841323383598793, guid: 946f2bbaa85374949b9bbddb4edb6dee, type: 3}
+      propertyPath: handManager
+      value: 
+      objectReference: {fileID: 890215344}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2173,6 +2180,10 @@ PrefabInstance:
       propertyPath: database
       value: 
       objectReference: {fileID: 890215343}
+    - target: {fileID: 1648446770954107892, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+      propertyPath: deck.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9116273576422859877, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
       propertyPath: spawnPoint
       value: 

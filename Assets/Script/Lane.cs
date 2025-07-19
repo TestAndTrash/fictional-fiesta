@@ -37,7 +37,7 @@ namespace Assets.Script
 
         public Creature GetNexusFromTeamID(int index)
         {
-           return bases[index];
+            return bases[index];
         }
 
         public void ClearTiles()
@@ -49,6 +49,13 @@ namespace Assets.Script
                     tile.creature.Kill();
                 }
             }
+        }
+
+        public void ResetLane()
+        {
+            ClearTiles();
+            InvokBase(playerBaseIndex);
+            InvokBase(ennemyBaseIndex);
         }
 
     }

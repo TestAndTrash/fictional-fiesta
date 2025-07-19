@@ -24,6 +24,7 @@ public class EnhanceDeck : MonoBehaviour
         EmptyTheDisplay();
         for (int i = 0; i < nbOfCards; i++)
         {
+            if (cardPool.Count <= 0) break;
             int randomInt = UnityEngine.Random.Range(0, cardPool.Count);
             cardsToChooseFrom.Add(database.GetCardById(cardPool[randomInt]));
             cardPool.RemoveAt(randomInt);
@@ -76,6 +77,6 @@ public class EnhanceDeck : MonoBehaviour
 
     private void CardClicked(CardManager cardManager)
     {
-        playerChoseCard?.Invoke(cardManager);
+        if(cardManager.reward) playerChoseCard?.Invoke(cardManager);
     }
 }

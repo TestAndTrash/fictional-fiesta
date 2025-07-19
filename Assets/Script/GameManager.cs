@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SplineContainer splineContainer;
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private HandManager handManager;
+    [SerializeField] private OpponentCardManager opponentCardManager;
+    [SerializeField] private CardGameManager cardGameManager;
     [SerializeField] private EnhanceDeck enhanceDeck;
     [SerializeField] private CardData cardData;
 
@@ -30,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        currOpponent = opponentDatabase.entries[0];
         for (int i = 0; i < opponentDatabase.entries.Count; i++)
         {
             dbEntries.Add(i);
@@ -44,7 +47,6 @@ public class GameManager : MonoBehaviour
         OpponentCardDisplay.OnCardDisplayClicked += OpponentChosed;
         CardGameManager.playerWonGame += RewardPlayer;
         CardGameManager.playerLostGame += DisplayGameOver;
-        //PLAYER LOST TODO
         EnhanceDeck.playerChoseCard += AddCardToDeck;
 
         ManageRun();
@@ -54,7 +56,6 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < numberOfOpponent; i++)
         {
-            //TODO PREVENT FROM TO STRONG OPPONENT
             int randomInt = Random.Range(0, dbEntries.Count);
             Opponent opponent = opponentDatabase.GetOpponentById(dbEntries[randomInt]);
             currOpponentChoice.Add(opponent);
@@ -92,7 +93,18 @@ public class GameManager : MonoBehaviour
     private void OpponentChosed(OpponentCardDisplay opponentCardDisplay)
     {
         currOpponent = opponentCardDisplay.opponentData;
+        EmptyTheDisplay();  
         LaunchFight();
+    }
+
+    public void EmptyTheDisplay()
+    {
+        foreach (GameObject card in physicalCards)
+        {
+            Destroy(card);
+        }
+        physicalCards = new();
+        currOpponentChoice = new();
     }
 
     public void RewardPlayer()
@@ -107,13 +119,21 @@ public class GameManager : MonoBehaviour
     {
         handManager.gameObject.GetComponent<DeckManager>().AddCardToDeck(cardManager.card.id);
         drawed++;
-        if (drawed < needsToDraw)
+        if (drawed < needsToDraw && currOpponent.deck.Count > 0)
         {
-            enhanceDeck.DrawRandCards(3, currOpponent != null ? currOpponent.deck : godDeck);
+            if (!deckInit)
+            {
+                enhanceDeck.DrawRandCards(4, godDeck);
+            }
+            else
+            {
+                enhanceDeck.DrawRandCards(3, currOpponent != null ? currOpponent.deck : godDeck);
+            }
         }
         else
         {
             drawed = 0;
+            deckInit = true;
             ManageRun();
         }
     }
@@ -123,8 +143,7 @@ public class GameManager : MonoBehaviour
         if (!deckInit) {
             //DIALOGUE
             needsToDraw = 5;
-            deckInit = true;
-            enhanceDeck.DrawRandCards(3, godDeck);
+            enhanceDeck.DrawRandCards(4, godDeck);
         }
         else if (wonFight == 0)
         {
@@ -133,16 +152,19 @@ public class GameManager : MonoBehaviour
         else if (wonFight == 1)
         {
             //DIALOGUE
+            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
         }
         else if (wonFight == 2)
         {
             //DIALOGUE
+            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
         }
         else if (wonFight == 2)
         {
             //DIALOGUE
+            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
         }
         else if (!bought)
@@ -157,7 +179,10 @@ public class GameManager : MonoBehaviour
 
     public void LaunchFight()
     {
-        //OPPONENTCARDMANAGER FILL WITH CURROPPONENT DATA
+        Debug.Log("LAUNCH FIGHT");
+        enhanceDeck.EmptyTheDisplay();
+        opponentCardManager.InitOpponent(currOpponent);
+        cardGameManager.LaunchGame();
         //CARDGAMEMANAGER Launch game => board opponent and player display 
     }
 

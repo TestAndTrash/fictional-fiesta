@@ -20,17 +20,22 @@ public class DeckManager : MonoBehaviour
 
     public void RefillDeck()
     {
-        currentDeck = deck;
+        currentDeck = new List<int>(deck);
+        UpdateDisplay();
     }
 
     public void ReplaceDeck(List<int> newDeck)
     {
         deck = newDeck;
-        currentDeck = deck;
+        currentDeck = new List<int>(deck);
     }
 
     public void UpdateDisplay()
     {
+        if (cardNumberDisplay == null)
+        {
+            cardNumberDisplay = gameObject.transform.Find("Number").gameObject.GetComponent<TextMeshPro>();
+        }
         cardNumberDisplay.text = currentDeck.Count.ToString();
     }
 
@@ -46,7 +51,8 @@ public class DeckManager : MonoBehaviour
 
     public void AddCardToDeck(int cardID)
     {
-        currentDeck.Add(cardID);
+        deck.Add(cardID);
+        currentDeck = new List<int>(deck);
         UpdateDisplay();
     }
 

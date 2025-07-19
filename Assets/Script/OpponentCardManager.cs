@@ -64,6 +64,7 @@ public class OpponentCardManager : MonoBehaviour
         opponentData = opponent;
         deck.ReplaceDeck(opponent.deck);
         opponentName = opponent.name;
+        ResetData();
     }
 
     public void DetectThreat()
@@ -250,12 +251,28 @@ public class OpponentCardManager : MonoBehaviour
         {
             opponentDeckIsEmpty?.Invoke();
         }
-        if (hand.Count >= maxHandSize) yield return null;
+        if (hand.Count >= maxHandSize || deck.GetDeckCount() <= 0) yield break;
         for (int i = 0; i < nbOfCards; i++)
         {
+            if (deck.GetDeckCount() <= 0) yield break;
             hand.Add(deck.DrawCardFromDeck());
             opponentHandManager.DrawCard();
             yield return new WaitForSeconds(0.3f);
         }
+    }
+
+    public void EndBattle()
+    {
+        opponentHandManager.DeleteAll();
+        hand = new();
+        manaDisplay.enabled = false;
+    }
+
+    public void StartBattle()
+    {
+        mana = 0;
+        remainingMana = mana;
+        UpdateManaDisplay();
+        manaDisplay.enabled = true;
     }
 }
