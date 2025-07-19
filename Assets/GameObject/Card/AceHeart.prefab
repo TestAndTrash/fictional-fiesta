@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -147,9 +147,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02bb5b7cdf2ef55e49fa50c0c9b9fec8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card:
+    id: 0
+    cardPrefab: {fileID: 0}
+    creaturePrefab: {fileID: 0}
+    cost: 0
+    cardName: 
+    pm: 0
+    hp: 0
+    atk: 0
+    rng: 0
   traveling: 1
   cardName: 
-  hp: 0
-  mobility: 0
-  attack: 0
-  range: 0
