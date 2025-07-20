@@ -1595,42 +1595,262 @@ MonoBehaviour:
     cardPrefab: {fileID: 2199839037768752300, guid: 6602226a0341dc1698c57a7801ce3ad2, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 37bf5a85f05c5724ab2ebb4f1677a69f, type: 3}
     cost: 1
-    cardName: Ace of Heart
-    pm: 3
+    cardName: Fresh Potato
+    pm: 2
     hp: 1
     atk: 1
     rng: 1
-    price: 2
+    price: 6
   - id: 2
     cardPrefab: {fileID: 2199839037768752300, guid: 714d6d59d3b6225ec9d3b72c8c9f7c87, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 947044d6ba00a51428d22a8bd0ff6f96, type: 3}
     cost: 2
-    cardName: Three of Glove
-    pm: 1
-    hp: 1
-    atk: 1
+    cardName: Ninja Potato
+    pm: 2
+    hp: 2
+    atk: 2
     rng: 1
-    price: 2
+    price: 7
   - id: 3
     cardPrefab: {fileID: 2199839037768752300, guid: 7733e872e9cf07e11af01ad398b8f1b7, type: 3}
     creaturePrefab: {fileID: 1325126310910319795, guid: 76d479caa8729aa4dba1edb7ccf874df, type: 3}
-    cost: 1
-    cardName: Six of Square
-    pm: 4
+    cost: 3
+    cardName: Mashed Potato
+    pm: 3
     hp: 1
-    atk: 1
+    atk: 2
     rng: 1
-    price: 3
+    price: 9
   - id: 4
     cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
-    creaturePrefab: {fileID: 5234382742849657349, guid: 14fd33e9b96911b4cacfedc37029d5a6, type: 3}
-    cost: 1
-    cardName: Nine of Square
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: 'Potat-o-bro '
     pm: 2
+    hp: 4
+    atk: 3
+    rng: 1
+    price: 11
+  - id: 5
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: Potechi
+    pm: 4
+    hp: 5
+    atk: 4
+    rng: 1
+    price: 11
+  - id: 6
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 1
+    cardName: Fresh Turnip
+    pm: 1
     hp: 1
     atk: 1
+    rng: 2
+    price: 5
+  - id: 7
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 4
+    cardName: U-Turnip
+    pm: 1
+    hp: 1
+    atk: 2
     rng: 3
-    price: 4
+    price: 11
+  - id: 8
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: Turnip-ja
+    pm: 1
+    hp: 3
+    atk: 1
+    rng: 4
+    price: 11
+  - id: 9
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 7
+    cardName: Daddy Turnip
+    pm: 0
+    hp: 2
+    atk: 1
+    rng: 6
+    price: 11
+  - id: 10
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 6
+    cardName: Mommy Turnip
+    pm: 3
+    hp: 1
+    atk: 2
+    rng: 3
+    price: 11
+  - id: 11
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 2
+    cardName: Pumpumpi
+    pm: 0
+    hp: 4
+    atk: 1
+    rng: 1
+    price: 11
+  - id: 12
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 2
+    cardName: Fresh Pumpkin
+    pm: 0
+    hp: 2
+    atk: 1
+    rng: 2
+    price: 11
+  - id: 13
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 4
+    cardName: Slugkin
+    pm: 0
+    hp: 5
+    atk: 2
+    rng: 1
+    price: 11
+  - id: 14
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 6
+    cardName: Pumking
+    pm: 0
+    hp: 8
+    atk: 2
+    rng: 2
+    price: 11
+  - id: 15
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: Pump Queen
+    pm: 2
+    hp: 6
+    atk: 1
+    rng: 1
+    price: 11
+  - id: 16
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 1
+    cardName: Fresh Leeks
+    pm: 1
+    hp: 1
+    atk: 2
+    rng: 1
+    price: 11
+  - id: 17
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 3
+    cardName: Leekling
+    pm: 2
+    hp: 1
+    atk: 3
+    rng: 1
+    price: 11
+  - id: 18
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: Leaking Leek
+    pm: 1
+    hp: 3
+    atk: 6
+    rng: 1
+    price: 11
+  - id: 19
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 6
+    cardName: Angry Lee(k)
+    pm: 2
+    hp: 4
+    atk: 8
+    rng: 1
+    price: 11
+  - id: 20
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 4
+    cardName: Leek Leek
+    pm: 2
+    hp: 2
+    atk: 3
+    rng: 2
+    price: 11
+  - id: 21
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 2
+    cardName: Fresh Zucchini
+    pm: 2
+    hp: 2
+    atk: 1
+    rng: 1
+    price: 11
+  - id: 22
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 4
+    cardName: Zucchi-ninja
+    pm: 3
+    hp: 4
+    atk: 1
+    rng: 1
+    price: 11
+  - id: 23
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 3
+    cardName: Zucchino
+    pm: 4
+    hp: 1
+    atk: 2
+    rng: 1
+    price: 11
+  - id: 24
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 5
+    cardName: Angry Zucchi
+    pm: 3
+    hp: 6
+    atk: 2
+    rng: 1
+    price: 11
+  - id: 25
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 4
+    cardName: Zen-cchini
+    pm: 3
+    hp: 3
+    atk: 3
+    rng: 3
+    price: 11
+  - id: 999
+    cardPrefab: {fileID: 2199839037768752300, guid: 9c2c6407219c340b7a2cd82826127968, type: 3}
+    creaturePrefab: {fileID: 1325126310910319795, guid: e2fa282f3da75d74198b086d60f94263, type: 3}
+    cost: 0
+    cardName: Umi
+    pm: 4
+    hp: 99
+    atk: 99
+    rng: 15
+    price: 11
 --- !u!114 &890215344
 MonoBehaviour:
   m_ObjectHideFlags: 0
