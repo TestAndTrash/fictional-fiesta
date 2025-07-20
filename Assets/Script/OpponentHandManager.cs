@@ -41,7 +41,7 @@ public class OpponentHandManager : MonoBehaviour
     public void PlayTheCard(CardEntry card)
     {
         handCards[0].gameObject.transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = card.cardPrefab.GetComponent<SpriteRenderer>().sprite;
-        handCards[0].transform.DOScale(new Vector3(1.5f, 1.5f, 1.5f), 1.5f);
+        handCards[0].transform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 1f);
         handCards[0].transform.DOMove(new Vector3(0, 0, 0), 1.5f);
         handCards[0].transform.DORotate(new(0, 180f, 0), 1.5f).OnComplete(() =>
         {

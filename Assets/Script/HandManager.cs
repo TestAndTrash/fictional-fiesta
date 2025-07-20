@@ -53,6 +53,7 @@ public class HandManager : MonoBehaviour
         CardManager cardManager = cardObject.GetComponent<CardManager>();
         cardManager.fillCardData(drawnCard);
         cardManager.fillHandManager(this);
+        cardManager.ChangeSortingOrder(maxHandSize - handCards.Count);
         cardManager.OnCardClicked += CardClicked;
         handCards.Add(cardObject);
         UpdateCardPos(cardObject.GetComponent<CardManager>());
@@ -72,7 +73,7 @@ public class HandManager : MonoBehaviour
     {
         canPlay = false;
         if (handCards.Count == 0) return;
-        float cardSpacing = 1f / 15;
+        float cardSpacing = 1f / 10;
         float firstCardPosition = 0.5f - (handCards.Count - 1) * cardSpacing / 2;
         Spline spline = splineContainer.Spline;
         for (int i = 0; i < handCards.Count; i++)

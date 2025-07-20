@@ -41,12 +41,19 @@ public class CardManager : MonoBehaviour
         goldSprite = gameObject.transform.Find("GoldSprite").gameObject.GetComponent<SpriteRenderer>();
     }
 
+    public void ChangeSortingOrder(int order)
+    {
+        if(spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sortingOrder = order;
+        originalSortingOrder = spriteRenderer.sortingOrder;
+    }
+
     void OnMouseEnter()
     {
         if ((handManager == null || !handManager.canPlay || chosen) && !reward) return;
         if (traveling) return;
         transform.DOMoveY(transform.position.y + 0.2f, 0.25f);
-        spriteRenderer.sortingOrder = 10;
+        spriteRenderer.sortingOrder = 12;
         if (setOnce) return;
         orignalPos = transform.position;
         setOnce = true;
