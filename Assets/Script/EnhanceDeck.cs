@@ -56,7 +56,7 @@ public class EnhanceDeck : MonoBehaviour
             else
             {
                 cardManager.sell = true;
-                cardManager.price = card.price;
+                cardManager.price = card.cost + 6;
                 cardManager.DisplayGold();
             }
             cardManager.OnCardClicked += CardClicked;
