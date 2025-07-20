@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: 6eb62f4b497b8724b9c42265787505eb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6235846669928335992
+    second: Patate_0
+  - first:
+      213: 4007122190062093960
+    second: Patate_1
+  - first:
+      213: -3570273596862722493
+    second: Patate_2
+  - first:
+      213: 4116378159112827335
+    second: Patate_3
+  - first:
+      213: 3383564766131188083
+    second: Patate_4
+  - first:
+      213: -8827895588823618789
+    second: Patate_5
+  - first:
+      213: 5910498560208699045
+    second: Patate_6
+  - first:
+      213: -5039199513476292129
+    second: Patate_7
+  - first:
+      213: 5415029288865391402
+    second: Patate_8
+  - first:
+      213: -7337799639117384441
+    second: Patate_9
+  - first:
+      213: -3279228571342638352
+    second: Patate_10
+  - first:
+      213: 3664535050022434875
+    second: Patate_11
+  - first:
+      213: -4395671549303771218
+    second: Patate_12
+  - first:
+      213: -1547963814455844242
+    second: Patate_13
+  - first:
+      213: -4510983893679659677
+    second: Patate_14
+  - first:
+      213: 8313494895572720252
+    second: Patate_15
+  - first:
+      213: -2128106375981472737
+    second: Patate_16
+  - first:
+      213: -3764775282580947640
+    second: Patate_17
+  - first:
+      213: 2674826198834677546
+    second: Patate_18
+  - first:
+      213: 2576114605436166093
+    second: Patate_19
+  - first:
+      213: -4911268235201167836
+    second: Patate_20
+  - first:
+      213: 1319226917822168983
+    second: Patate_21
+  - first:
+      213: -4219398828331589575
+    second: Patate_22
+  - first:
+      213: -1731034522920258526
+    second: Patate_23
+  - first:
+      213: 2020492568505804510
+    second: Patate_24
+  - first:
+      213: -5236262155736249603
+    second: Patate_25
+  - first:
+      213: 2305747689443989607
+    second: Patate_26
+  - first:
+      213: 3766043182453885684
+    second: Patate_27
+  - first:
+      213: 2752525335504458712
+    second: Patate_28
+  - first:
+      213: 1436109992762061043
+    second: Patate_29
+  - first:
+      213: 7450989841874945609
+    second: Patate_30
+  - first:
+      213: -7320016512287094196
+    second: Patate_31
+  - first:
+      213: -5446664252442560600
+    second: Patate_32
+  - first:
+      213: 1514149437703083998
+    second: Patate_33
+  - first:
+      213: -1100733252509074974
+    second: Patate_34
+  - first:
+      213: -4920025387101772693
+    second: Patate_35
+  - first:
+      213: 4911150314662048674
+    second: Patate_36
+  - first:
+      213: 5210736827929480877
+    second: Patate_37
+  - first:
+      213: -743115650502819468
+    second: Patate_38
+  - first:
+      213: -5294460444301816414
+    second: Patate_39
+  - first:
+      213: -7778569675746403582
+    second: Patate_40
+  - first:
+      213: -2186657460826281980
+    second: Patate_41
+  - first:
+      213: -8670455641133337542
+    second: Patate_42
+  - first:
+      213: -7903359197167329963
+    second: Patate_43
+  - first:
+      213: 9026308983390103864
+    second: Patate_44
+  - first:
+      213: 7148836991092919455
+    second: Patate_45
+  - first:
+      213: 5824963520561030801
+    second: Patate_46
+  - first:
+      213: 5467106063768099571
+    second: Patate_47
+  - first:
+      213: -6672256258286276661
+    second: Patate_48
+  - first:
+      213: 2811711555295485234
+    second: Patate_49
+  - first:
+      213: 8187344735451941563
+    second: Patate_50
+  - first:
+      213: 8573831125189057867
+    second: Patate_51
+  - first:
+      213: 6249199916184878787
+    second: Patate_52
+  - first:
+      213: 1801465306098847736
+    second: Patate_53
+  - first:
+      213: -2135260791442995322
+    second: Patate_54
+  - first:
+      213: -7225476232478800354
+    second: Patate_55
+  - first:
+      213: -7589698490167308596
+    second: Patate_56
+  - first:
+      213: 1660621898489879736
+    second: Patate_57
+  - first:
+      213: -7918362761665206180
+    second: Patate_58
+  - first:
+      213: -8450711354185028585
+    second: Patate_59
+  - first:
+      213: 1895536565494189491
+    second: Patate_60
+  - first:
+      213: 2042477482133521565
+    second: Patate_61
+  - first:
+      213: 2262107384243597148
+    second: Patate_62
+  - first:
+      213: 4610234900779227788
+    second: Patate_63
+  - first:
+      213: -2469927610281127255
+    second: Patate_64
+  - first:
+      213: -1482184818432538304
+    second: Patate_65
+  - first:
+      213: -3280926840233919859
+    second: Patate_66
+  - first:
+      213: 4214360130902772224
+    second: Patate_67
+  - first:
+      213: -4430062871099507664
+    second: Patate_68
+  - first:
+      213: 6989531803509250220
+    second: Patate_69
+  - first:
+      213: -3751815423876262795
+    second: Patate_70
+  - first:
+      213: 5187919512175038883
+    second: Patate_71
+  - first:
+      213: 713195126165291385
+    second: Patate_72
+  - first:
+      213: -1981610980502446040
+    second: Patate_73
+  - first:
+      213: 3879778090101768242
+    second: Patate_74
+  - first:
+      213: -5654430522616102383
+    second: Patate_75
+  - first:
+      213: -5691217701524375308
+    second: Patate_76
+  - first:
+      213: 7365096865950905362
+    second: Patate_77
+  - first:
+      213: -3180498525722308565
+    second: Patate_78
+  - first:
+      213: 7920300194123807321
+    second: Patate_79
+  - first:
+      213: 2224195093381366279
+    second: Patate_80
+  - first:
+      213: 5820237214131468271
+    second: Patate_81
+  - first:
+      213: 4531577092096264743
+    second: Patate_82
+  - first:
+      213: -6003143972326492218
+    second: Patate_83
+  - first:
+      213: 3874753127892888880
+    second: Patate_84
+  - first:
+      213: -3428650427866433616
+    second: Patate_85
+  - first:
+      213: 8240123544930523637
+    second: Patate_86
+  - first:
+      213: 9091546745328411064
+    second: Patate_87
+  - first:
+      213: 327773121597225489
+    second: Patate_88
+  - first:
+      213: -8862951685126516596
+    second: Patate_89
+  - first:
+      213: 2578577441235957218
+    second: Patate_90
+  - first:
+      213: -3560445819906353688
+    second: Patate_91
+  - first:
+      213: -1966384876178434535
+    second: Patate_92
+  - first:
+      213: -3327006042881867447
+    second: Patate_93
+  - first:
+      213: -4748563903039629090
+    second: Patate_94
+  - first:
+      213: -9188709291536417083
+    second: Patate_95
+  - first:
+      213: 4730552489308623759
+    second: Patate_96
+  - first:
+      213: -7510607145137721738
+    second: Patate_97
+  - first:
+      213: 420037012673851730
+    second: Patate_98
+  - first:
+      213: -2355550696805564097
+    second: Patate_99
+  - first:
+      213: 7312893465611805670
+    second: Patate_100
+  - first:
+      213: 7299099261274212593
+    second: Patate_101
+  - first:
+      213: 8573026534019812926
+    second: Patate_102
+  - first:
+      213: -651184192682549443
+    second: Patate_103
+  - first:
+      213: 2156731055516769822
+    second: Patate_104
+  - first:
+      213: -4381625953037040914
+    second: Patate_105
+  - first:
+      213: 7926934060148986152
+    second: Patate_106
+  - first:
+      213: 2525861539632613671
+    second: Patate_107
+  - first:
+      213: -5594455540731836530
+    second: Patate_108
+  - first:
+      213: -7696053743983561248
+    second: Patate_109
+  - first:
+      213: -4333265538064173931
+    second: Patate_110
+  - first:
+      213: 3424322456658586236
+    second: Patate_111
+  - first:
+      213: -268384182327780872
+    second: Patate_112
+  - first:
+      213: 6887545290049878835
+    second: Patate_113
+  - first:
+      213: -801470053047941602
+    second: Patate_114
+  - first:
+      213: 8068864807606320897
+    second: Patate_115
+  - first:
+      213: 5989193518114869147
+    second: Patate_116
+  - first:
+      213: 4734364417887958703
+    second: Patate_117
+  - first:
+      213: 7335868262509272287
+    second: Patate_118
+  - first:
+      213: 8812958432445464808
+    second: Patate_119
+  - first:
+      213: 5682118970359503438
+    second: Patate_120
+  - first:
+      213: -1386434886040443061
+    second: Patate_121
+  - first:
+      213: -7211536895178943900
+    second: Patate_122
+  - first:
+      213: 6605762966920762271
+    second: Patate_123
+  - first:
+      213: 7529480270398895986
+    second: Patate_124
+  - first:
+      213: -5503067711756801431
+    second: Patate_125
+  - first:
+      213: 4441669618422137136
+    second: Patate_126
+  - first:
+      213: 2691939965204238369
+    second: Patate_127
+  - first:
+      213: -1180252046343296983
+    second: Patate_128
+  - first:
+      213: -5306586608403216609
+    second: Patate_129
+  - first:
+      213: 691111959167801678
+    second: Patate_130
+  - first:
+      213: 6832464922684277455
+    second: Patate_131
+  - first:
+      213: -1251532444911997504
+    second: Patate_132
+  - first:
+      213: 9175933468409884508
+    second: Patate_133
+  - first:
+      213: 7010477470664781167
+    second: Patate_134
+  - first:
+      213: 6111730372416005103
+    second: Patate_135
+  - first:
+      213: -913742148086817333
+    second: Patate_136
+  - first:
+      213: -3457849994827257706
+    second: Patate_137
+  - first:
+      213: -1748309499673310671
+    second: Patate_138
+  - first:
+      213: 6877674144884709366
+    second: Patate_139
+  - first:
+      213: 2104757753738711151
+    second: Patate_140
+  - first:
+      213: -1584457245748625181
+    second: Patate_141
+  - first:
+      213: 2480414161750333515
+    second: Patate_142
+  - first:
+      213: -2379472237203310468
+    second: Patate_143
+  - first:
+      213: -852320434679346540
+    second: Patate_144
+  - first:
+      213: -6960651422909770169
+    second: Patate_145
+  - first:
+      213: -3871752434422948696
+    second: Patate_146
+  - first:
+      213: 8350684823672689322
+    second: Patate_147
+  - first:
+      213: -3361707675549186817
+    second: Patate_148
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Patate_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87a81e2e18d2a8650800000000000000
+      internalID: 6235846669928335992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_1
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8868c36b6682c9730800000000000000
+      internalID: 4007122190062093960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_2
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34e8a0c6417d37ec0800000000000000
+      internalID: -3570273596862722493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_3
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c1b81f4020502930800000000000000
+      internalID: 4116378159112827335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_4
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 371f6c75a36d4fe20800000000000000
+      internalID: 3383564766131188083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_5
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1b2ee1fbb30d7580800000000000000
+      internalID: -8827895588823618789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_6
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ae72b6102f460250800000000000000
+      internalID: 5910498560208699045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_7
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd1ace6cdba211ab0800000000000000
+      internalID: -5039199513476292129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_8
+      rect:
+        serializedVersion: 2
+        x: 4096
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a23682bb27c062b40800000000000000
+      internalID: 5415029288865391402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_9
+      rect:
+        serializedVersion: 2
+        x: 4608
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7053b650b16ea2a90800000000000000
+      internalID: -7337799639117384441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_10
+      rect:
+        serializedVersion: 2
+        x: 5120
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f27fcb0df6dd72d0800000000000000
+      internalID: -3279228571342638352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_11
+      rect:
+        serializedVersion: 2
+        x: 5632
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b383e83663b0bd230800000000000000
+      internalID: 3664535050022434875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_12
+      rect:
+        serializedVersion: 2
+        x: 6144
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaf2572e3007ff2c0800000000000000
+      internalID: -4395671549303771218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_13
+      rect:
+        serializedVersion: 2
+        x: 6656
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62633abc17848ae0800000000000000
+      internalID: -1547963814455844242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_14
+      rect:
+        serializedVersion: 2
+        x: 7168
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36527b58c04c561c0800000000000000
+      internalID: -4510983893679659677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_15
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a92ac8f877f5370800000000000000
+      internalID: 8313494895572720252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_16
+      rect:
+        serializedVersion: 2
+        x: 8192
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f146167b6827772e0800000000000000
+      internalID: -2128106375981472737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_17
+      rect:
+        serializedVersion: 2
+        x: 8704
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d779eb3d4d0cbc0800000000000000
+      internalID: -3764775282580947640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_18
+      rect:
+        serializedVersion: 2
+        x: 10752
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2703798144ee1520800000000000000
+      internalID: 2674826198834677546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_19
+      rect:
+        serializedVersion: 2
+        x: 11264
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcfd7b5b59230c320800000000000000
+      internalID: 2576114605436166093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_20
+      rect:
+        serializedVersion: 2
+        x: 12288
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ebc24af8ba7dbb0800000000000000
+      internalID: -4911268235201167836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_21
+      rect:
+        serializedVersion: 2
+        x: 12800
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79f7ce664e5de4210800000000000000
+      internalID: 1319226917822168983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Patate_22
+      rect:
+        serializedVersion: 2
+        x: 13312
+        y: 0
+        width: 512
+        height: 512
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930a897fe1fa175c0800000000000000
+      internalID: -4219398828331589575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1591610ac64ad8143a2a12d8644b63c1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":33.0,"y":1.0},"gridSpriteSize":{"x":512.0,"y":512.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.20000000298023225},"autoSlicingMethod":0,"spriteAlignment":9,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Patate_0: 6235846669928335992
+      Patate_1: 4007122190062093960
+      Patate_10: -3279228571342638352
+      Patate_11: 3664535050022434875
+      Patate_12: -4395671549303771218
+      Patate_13: -1547963814455844242
+      Patate_14: -4510983893679659677
+      Patate_15: 8313494895572720252
+      Patate_16: -2128106375981472737
+      Patate_17: -3764775282580947640
+      Patate_18: 2674826198834677546
+      Patate_19: 2576114605436166093
+      Patate_2: -3570273596862722493
+      Patate_20: -4911268235201167836
+      Patate_21: 1319226917822168983
+      Patate_22: -4219398828331589575
+      Patate_3: 4116378159112827335
+      Patate_4: 3383564766131188083
+      Patate_5: -8827895588823618789
+      Patate_6: 5910498560208699045
+      Patate_7: -5039199513476292129
+      Patate_8: 5415029288865391402
+      Patate_9: -7337799639117384441
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

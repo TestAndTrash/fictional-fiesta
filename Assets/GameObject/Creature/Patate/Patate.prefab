@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8842533967999451137}
   - component: {fileID: 1325126310910319795}
   - component: {fileID: 1622306214377426601}
-  - component: {fileID: 4208861704650511684}
+  - component: {fileID: 3891340514250802720}
   m_Layer: 0
-  m_Name: Winged Knight 2
+  m_Name: Patate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1175304452, guid: 2e94bce47c68bf84295716d22ce74ac6, type: 3}
-  m_Color: {r: 0.75862825, g: 0.8392157, b: 0.19215687, a: 1}
+  m_Sprite: {fileID: 637330734624951574, guid: 37ce263c6bc4ebe448505473fbc4fe23, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -120,8 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b06bd4fa1ccf6479352ddb759754ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 4208861704650511684}
---- !u!95 &4208861704650511684
+  animator: {fileID: 3891340514250802720}
+--- !u!95 &3891340514250802720
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -131,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 8801012688876195169}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 846f255407096ba409a627485d904ed4, type: 2}
+  m_Controller: {fileID: 9100000, guid: 929ee634b693a1a469104cebe7e87c49, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
