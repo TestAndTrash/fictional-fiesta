@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1622306214377426601}
   - component: {fileID: 610264146346712216}
   m_Layer: 0
-  m_Name: Winged Knight 3
+  m_Name: Poireaux
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,8 +80,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -1175304452, guid: 2e94bce47c68bf84295716d22ce74ac6, type: 3}
-  m_Color: {r: 0.3095349, g: 0.8392157, b: 0.19215687, a: 1}
+  m_Sprite: {fileID: -7790994459553997597, guid: 7645596a635bd7d4bbde8ca2824938f1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -131,7 +131,7 @@ Animator:
   m_GameObject: {fileID: 8801012688876195169}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 846f255407096ba409a627485d904ed4, type: 2}
+  m_Controller: {fileID: 9100000, guid: c1b6835ad86dba64bbfa2281aaf33dd5, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
