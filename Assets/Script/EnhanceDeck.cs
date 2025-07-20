@@ -18,8 +18,10 @@ public class EnhanceDeck : MonoBehaviour
     private List<GameObject> physicalCards = new();
 
     public static event Action<CardManager> playerChoseCard;
+    public static event Action<CardManager> playerBoughtCard;
 
-    public void DrawRandCards(int nbOfCards, List<int> cardPool)
+
+    public void DrawRandCards(int nbOfCards, List<int> cardPool, bool isShop)
     {
         List<int> tempPool = new List<int>(cardPool);
         EmptyTheDisplay();
@@ -30,7 +32,7 @@ public class EnhanceDeck : MonoBehaviour
             cardsToChooseFrom.Add(database.GetCardById(tempPool[randomInt]));
             tempPool.RemoveAt(randomInt);
         }
-        DisplayCards();
+        DisplayCards(isShop);
     }
 
     public void EmptyTheDisplay()
@@ -43,14 +45,20 @@ public class EnhanceDeck : MonoBehaviour
         cardsToChooseFrom = new();
     }
 
-    private void DisplayCards()
+    private void DisplayCards(bool isShop)
     {
         foreach (CardEntry card in cardsToChooseFrom)
         {
             GameObject cardObject = Instantiate(card.cardPrefab, spawnPoint.position, spawnPoint.rotation);
             CardManager cardManager = cardObject.GetComponent<CardManager>();
             cardManager.fillCardData(card);
-            cardManager.reward = true;
+            if (!isShop) cardManager.reward = true;
+            else
+            {
+                cardManager.sell = true;
+                cardManager.price = card.price;
+                cardManager.DisplayGold();
+            }
             cardManager.OnCardClicked += CardClicked;
             physicalCards.Add(cardObject);
             board.gameObject.SetActive(false);
@@ -78,6 +86,7 @@ public class EnhanceDeck : MonoBehaviour
 
     private void CardClicked(CardManager cardManager)
     {
-        if(cardManager.reward) playerChoseCard?.Invoke(cardManager);
+        if (cardManager.reward) playerChoseCard?.Invoke(cardManager);
+        else playerBoughtCard?.Invoke(cardManager);
     }
 }

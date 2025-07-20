@@ -31,7 +31,7 @@ public class HandManager : MonoBehaviour
     private TextMeshPro goldDisplay = null;
     private CardManager lastCardClicked = null;
 
-    private int totalGold = 3;
+    public int totalGold = 3;
 
     void Start()
     {

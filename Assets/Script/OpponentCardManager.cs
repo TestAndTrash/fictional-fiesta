@@ -53,10 +53,19 @@ public class OpponentCardManager : MonoBehaviour
     public event Action opponentDeckIsEmpty;
 
     private TextMeshPro manaDisplay = null;
+    private TextMeshPro nameDisplay = null;
+    private SpriteRenderer portrait = null;
+    private SpriteRenderer manaSprite = null;
+
+
 
     void Start()
     {
         manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
+        manaSprite = gameObject.transform.Find("ManaSprite").gameObject.GetComponent<SpriteRenderer>();
+        nameDisplay = gameObject.transform.Find("Name").gameObject.GetComponent<TextMeshPro>();
+        portrait = gameObject.transform.Find("Portrait").gameObject.GetComponent<SpriteRenderer>();
+        EndBattle();
     }
 
     public void InitOpponent(Opponent opponent)
@@ -140,6 +149,12 @@ public class OpponentCardManager : MonoBehaviour
     public void UpdateManaDisplay()
     {
         manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
+    }
+
+    public void UpdateOpponentDisplay()
+    {
+        portrait.sprite = opponentData.opponentSprite;
+        nameDisplay.text = opponentData.name;
     }
 
     private IEnumerator PlayTurnRoutine()
@@ -266,6 +281,11 @@ public class OpponentCardManager : MonoBehaviour
         opponentHandManager.DeleteAll();
         hand = new();
         manaDisplay.enabled = false;
+        manaSprite.enabled = false;
+        portrait.enabled = false;
+        nameDisplay.enabled = false;
+        deck.cardNumberDisplay.enabled = false;
+        deck.cardBackSprite.enabled = false;
     }
 
     public void StartBattle()
@@ -274,5 +294,11 @@ public class OpponentCardManager : MonoBehaviour
         remainingMana = mana;
         UpdateManaDisplay();
         manaDisplay.enabled = true;
+        manaSprite.enabled = true;
+        UpdateOpponentDisplay();
+        portrait.enabled = true;
+        nameDisplay.enabled = true;
+        deck.cardNumberDisplay.enabled = true;
+        deck.cardBackSprite.enabled = true;
     }
 }

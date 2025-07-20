@@ -9,12 +9,13 @@ public class DeckManager : MonoBehaviour
 
     [SerializeField] private CardData database;
 
-     private TextMeshPro cardNumberDisplay = null;
-
+    public TextMeshPro cardNumberDisplay = null;
+    public SpriteRenderer cardBackSprite = null;
     public void Start()
     {
         RefillDeck();
         cardNumberDisplay = gameObject.transform.Find("Number").gameObject.GetComponent<TextMeshPro>();
+        cardBackSprite = gameObject.GetComponent<SpriteRenderer>();
         UpdateDisplay();
     }
 

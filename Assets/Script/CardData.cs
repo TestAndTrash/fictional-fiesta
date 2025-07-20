@@ -14,6 +14,7 @@ public class CardEntry
     public int hp;
     public int atk;
     public int rng;
+    public int price;
 }
 
 public class CardData : MonoBehaviour

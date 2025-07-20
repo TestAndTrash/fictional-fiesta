@@ -37,9 +37,6 @@ public class OpponentCardDisplay : MonoBehaviour
 
     public void FillCardData(Opponent opponent)
     {
-        Debug.Log(opponent);
-        Debug.Log(opponent.opponentSprite);
-
         InitDisplay();
         opponentData = opponent;
         portrait.sprite = opponent.opponentSprite;

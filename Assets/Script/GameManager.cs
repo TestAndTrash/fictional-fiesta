@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 using DG.Tweening;
 using System;
+using Assets.Script.HUD;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +18,6 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CardData cardData;
     [SerializeField] private Dialogue dialogue;
 
-
     private List<int> godDeck = new();
     private List<Opponent> currOpponentChoice = new();
     private List<GameObject> physicalCards = new();
@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
     private int needsToDraw = 0;
     private int drawed = 0;
+    private bool buying = false;
+
     private int wonFight = 0;
     private bool waitingForDialogue = false;
     private bool deckInit = false;
@@ -39,10 +41,9 @@ public class GameManager : MonoBehaviour
     private bool hasntBoughtDialogueClear = false;
     private bool beforeBossDialogueClear = false;
 
-
-
     private string[] newLines;
 
+    public static event Action shopOpen;
 
     void Start()
     {
@@ -63,7 +64,16 @@ public class GameManager : MonoBehaviour
         CardGameManager.playerLostGame += DisplayGameOver;
         EnhanceDeck.playerChoseCard += AddCardToDeck;
         Dialogue.dialogueDone += DialogueOver;
+        EnhanceDeck.playerBoughtCard += BuyCard;
+        LeaveShop.playerLeaveShop += PlayerLeaveShop;
 
+        //TEST 
+        /*deckInitDialogueClear = true;
+        fight0DialogueClear = true;
+        fight1DialogueClear = true;
+        fight2DialogueClear = true;
+        fight3DialogueClear = true;
+        wonFight = 4;*/
         ManageRun();
     }
 
@@ -127,7 +137,7 @@ public class GameManager : MonoBehaviour
         wonFight++;
         handManager.ChangeGold(currOpponent.goldGiven);
         needsToDraw = currOpponent.cardGiven;
-        enhanceDeck.DrawRandCards(3, currOpponent.deck);
+        enhanceDeck.DrawRandCards(3, currOpponent.deck, false);
     }
 
     public void AddCardToDeck(CardManager cardManager)
@@ -136,23 +146,48 @@ public class GameManager : MonoBehaviour
         drawed++;
         if (drawed < needsToDraw && currOpponent.deck.Count > 0)
         {
-            if (!deckInit)
+            if (buying)
             {
-                enhanceDeck.DrawRandCards(4, godDeck);
+                enhanceDeck.DrawRandCards(3, godDeck, true);
+            }
+            else if (!deckInit)
+            {
+                enhanceDeck.DrawRandCards(4, godDeck, false);
             }
             else
             {
-                enhanceDeck.DrawRandCards(3, currOpponent != null ? currOpponent.deck : godDeck);
+                enhanceDeck.DrawRandCards(3, currOpponent != null ? currOpponent.deck : godDeck, false);
             }
         }
         else
         {
             drawed = 0;
-            deckInit = true;
+            if (!buying) deckInit = true;
+            else
+            {
+                buying = false;
+                bought = true;
+            }      
             ManageRun();
         }
     }
 
+    public void BuyCard(CardManager cardManager)
+    {
+        if (handManager.totalGold >= cardManager.card.price)
+        {
+            handManager.ChangeGold(-cardManager.price);
+            AddCardToDeck(cardManager);
+        }
+        else Debug.Log("No gold, no card");
+    }
+
+    public void PlayerLeaveShop()
+    {
+        buying = false;
+        bought = true;
+        ManageRun();
+    }
     public void LaunchDialogue()
     {
         waitingForDialogue = true;
@@ -163,13 +198,13 @@ public class GameManager : MonoBehaviour
             newLines[1] = "First it's this local tournament then It'll be a regional, and maybe the worlds?? Who knows ? (I do).";
             newLines[2] = "I know this must be weird, for you but to make things easy to understand... Let's say that I summonned you to play for this championship.";
             newLines[3] = "I believe in you... first let's crack a booster should we ?";
-            newLines[4] = "Choose the card you want to add to you deck for the remaining of the championship";
+            newLines[4] = "Choose the card you want to add to you deck for the remaining of the championship.";
         }
         else if (!fight0DialogueClear)
         {
             newLines = new string[2];
             newLines[0] = "Stonks... as they say. Since you never played before, I'm making you play against my friend Marcus.";
-            newLines[1] = "He's highly drunk so don't worry, you won't loose. And an advice protect your pots";
+            newLines[1] = "He's highly drunk so don't worry, you won't loose. And an advice protect your pots.";
         }
         else if (!fight1DialogueClear)
         {
@@ -190,13 +225,13 @@ public class GameManager : MonoBehaviour
             newLines = new string[3];
             newLines[0] = "What was that ! Player !";
             newLines[1] = "Sorry never asked your name but.. don't care at this point we've been making it work without that futile info.";
-            newLines[2] = "Semi-finals bruv, good luck, respect your tengland";
+            newLines[2] = "Semi-finals bruv, good luck, respect your tengland.";
         }
         else if (!hasntBoughtDialogueClear)
         {
             newLines = new string[3];
-            newLines[0] = "Oh maaan this one was my favorite ! Now you know the basics and some advanced strats";
-            newLines[1] = "As my father also said : Every card game is pay to win, son";
+            newLines[0] = "Oh maaan this one was my favorite ! Now you know the basics and some advanced strats.";
+            newLines[1] = "As my father also said : Every card game is pay to win, son.";
             newLines[2] = "I see a card market across the room, maybe we should take a look.";
         }
         else if (!beforeBossDialogueClear)
@@ -204,7 +239,7 @@ public class GameManager : MonoBehaviour
             newLines = new string[3];
             newLines[0] = "So this is the time of our lives ? We finally met on the board huh ?";
             newLines[1] = "You bought all this, for nothing man, that's kinda sad, could've kept those coins for yo mama tho.";
-            newLines[2] = "I'm say one last thing: Adversaire très fort et très respectable sur le terrain.";
+            newLines[2] = "Imma say one last thing: Adversaire très fort et très respectable sur le terrain.";
         }
         else
         {
@@ -242,7 +277,7 @@ public class GameManager : MonoBehaviour
         else if (!deckInit)
         {
             needsToDraw = 5;
-            enhanceDeck.DrawRandCards(4, godDeck);
+            enhanceDeck.DrawRandCards(4, godDeck, false);
         }
         else if (!fight0DialogueClear)
         {
@@ -288,14 +323,18 @@ public class GameManager : MonoBehaviour
         else if (!bought)
         {
             enhanceDeck.EmptyTheDisplay();
-            //MERCHANT
+            enhanceDeck.DrawRandCards(3, godDeck, true);
+            shopOpen?.Invoke();
+            buying = true;
         }
         else if (!beforeBossDialogueClear)
         {
+            enhanceDeck.EmptyTheDisplay();
             LaunchDialogue();
         }
         else if (wonFight == 4)
         {
+            Debug.Log("boos fight !");
             LaunchFight();
         }
         else
@@ -306,11 +345,9 @@ public class GameManager : MonoBehaviour
 
     public void LaunchFight()
     {
-        Debug.Log("LAUNCH FIGHT");
         enhanceDeck.EmptyTheDisplay();
         opponentCardManager.InitOpponent(currOpponent);
         cardGameManager.LaunchGame();
-        //CARDGAMEMANAGER Launch game => board opponent and player display 
     }
 
     public void DisplayGameOver()

@@ -1,6 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 using System;
+using TMPro;
 
 public class CardManager : MonoBehaviour
 {
@@ -13,15 +14,31 @@ public class CardManager : MonoBehaviour
     private HandManager handManager = null;
 
     private SpriteRenderer spriteRenderer;
+
+    private TextMeshPro goldNumber = null;
+    private SpriteRenderer goldSprite = null;
     private int originalSortingOrder;
     private bool chosen = false;
 
     public bool reward = false;
 
+    public bool sell = false;
+    public int price = 0;
+
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         originalSortingOrder = spriteRenderer.sortingOrder;
+        if (goldNumber != null) return;
+        InitDisplay();
+        goldSprite.enabled = false;
+        goldNumber.enabled = false;
+    }
+
+    public void InitDisplay()
+    {
+        goldNumber = gameObject.transform.Find("GoldNumber").gameObject.GetComponent<TextMeshPro>();
+        goldSprite = gameObject.transform.Find("GoldSprite").gameObject.GetComponent<SpriteRenderer>();
     }
 
     void OnMouseEnter()
@@ -45,7 +62,7 @@ public class CardManager : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (chosen && !reward) return;
+        if (chosen && !reward && !sell) return;
         OnCardClicked?.Invoke(this);
     }
 
@@ -83,5 +100,14 @@ public class CardManager : MonoBehaviour
     public void fillHandManager(HandManager hManager)
     {
         handManager = hManager;
+    }
+
+    public void DisplayGold()
+    {
+        if (price == 0) return;
+        if (goldSprite == null) InitDisplay();
+        goldSprite.enabled = true;
+        goldNumber.enabled = true;
+        goldNumber.text = price.ToString();
     }
 }
