@@ -56,11 +56,9 @@ public class GameManager : MonoBehaviour
         {
             dbEntries.Add(i);
         }
-        //Fill the shop/first card to add deck
         for (int i = 0; i < 20; i++)
         {
-            //int randomInt = Random.Range(0, cardData.entries.Count);
-            int randomInt = UnityEngine.Random.Range(1, 5);
+            int randomInt = UnityEngine.Random.Range(1, cardData.entries.Count);
             godDeck.Add(randomInt);
         }
         OpponentCardDisplay.OnCardDisplayClicked += OpponentChosed;
@@ -188,9 +186,9 @@ public class GameManager : MonoBehaviour
 
     public void BuyCard(CardManager cardManager)
     {
-        if (handManager.totalGold >= cardManager.card.price)
+        if (handManager.totalGold >= cardManager.card.cost+6)
         {
-            handManager.ChangeGold(-cardManager.price);
+            handManager.ChangeGold(-(cardManager.card.cost+6));
             AddCardToDeck(cardManager);
         }
         else Debug.Log("No gold, no card");

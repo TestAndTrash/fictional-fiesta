@@ -104,7 +104,7 @@ public class CardManager : MonoBehaviour
 
     public void DisplayGold()
     {
-        if (price == 0) return;
+        if (card.price == 0) return;
         if (goldSprite == null) InitDisplay();
         goldSprite.enabled = true;
         goldNumber.enabled = true;
