@@ -27,19 +27,19 @@ public class HandManager : MonoBehaviour
     private int remainingMana = 0;
 
     private TextMeshPro manaDisplay = null;
-
+    private SpriteRenderer manaSprite = null;
+    private TextMeshPro goldDisplay = null;
     private CardManager lastCardClicked = null;
+
+    public int totalGold = 3;
 
     void Start()
     {
         manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
+        manaSprite = gameObject.transform.Find("ManaSprite").gameObject.GetComponent<SpriteRenderer>();
+        goldDisplay = gameObject.transform.Find("GoldNumber").gameObject.GetComponent<TextMeshPro>();
+        goldDisplay.text = totalGold.ToString();
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) DrawCard();
-    }
-
     public void DrawCard()
     {
         if (handCards.Count >= maxHandSize) return;
@@ -129,7 +129,7 @@ public class HandManager : MonoBehaviour
 
     public void UpChosenOne(CardManager cardManager)
     {
-        if(lastCardClicked != null)
+        if (lastCardClicked != null)
         {
             lastCardClicked.Up(false);
         }
@@ -159,5 +159,39 @@ public class HandManager : MonoBehaviour
     public void UpdateManaDisplay()
     {
         manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
+    }
+
+    public int ChangeGold(int modifier)
+    {
+        totalGold = totalGold + modifier;
+        goldDisplay.text = totalGold.ToString();
+        return totalGold;
+        
+    }
+
+    public void DeleteAll()
+    {
+        foreach (GameObject card in handCards)
+        {
+            Destroy(card);
+        }
+        handCards = new();
+    }
+
+    public void EndBattle()
+    {
+        deckManager.RefillDeck();
+        DeleteAll();
+        manaDisplay.enabled = false;
+        manaSprite.enabled = false;
+    }
+
+    public void StartBattle()
+    {
+        mana = 0;
+        remainingMana = mana;
+        UpdateManaDisplay();
+        manaSprite.enabled = true;
+        manaDisplay.enabled = true;
     }
 }

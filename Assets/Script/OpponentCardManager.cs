@@ -7,15 +7,18 @@ using UnityEngine;
 
 public class OpponentCardManager : MonoBehaviour
 {
-    private string opponentName = "Test Marcus";
+    public string opponentName = "Test Marcus";
+
+    public Opponent opponentData;
+    public List<CardEntry> hand = new();
+
     private Team playerTeam;
     private Board board;
     [SerializeField] private DeckManager deck;
     [SerializeField] private OpponentHandManager opponentHandManager;
-    public List<CardEntry> hand = new();
 
     [SerializeField] private int maxHandSize;
-    private int mana = 10;
+    private int mana = 0;
     private int remainingMana = 0;
 
     //SENSITIVITY
@@ -49,11 +52,28 @@ public class OpponentCardManager : MonoBehaviour
     public event Action opponentPassedTurn;
     public event Action opponentDeckIsEmpty;
 
-     private TextMeshPro manaDisplay = null;
+    private TextMeshPro manaDisplay = null;
+    private TextMeshPro nameDisplay = null;
+    private SpriteRenderer portrait = null;
+    private SpriteRenderer manaSprite = null;
+
+
 
     void Start()
     {
-        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();        
+        manaDisplay = gameObject.transform.Find("ManaNumber").gameObject.GetComponent<TextMeshPro>();
+        manaSprite = gameObject.transform.Find("ManaSprite").gameObject.GetComponent<SpriteRenderer>();
+        nameDisplay = gameObject.transform.Find("Name").gameObject.GetComponent<TextMeshPro>();
+        portrait = gameObject.transform.Find("Portrait").gameObject.GetComponent<SpriteRenderer>();
+        EndBattle();
+    }
+
+    public void InitOpponent(Opponent opponent)
+    {
+        opponentData = opponent;
+        deck.ReplaceDeck(opponent.deck);
+        opponentName = opponent.name;
+        ResetData();
     }
 
     public void DetectThreat()
@@ -128,7 +148,13 @@ public class OpponentCardManager : MonoBehaviour
 
     public void UpdateManaDisplay()
     {
-        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();  
+        manaDisplay.text = remainingMana.ToString() + "/" + mana.ToString();
+    }
+
+    public void UpdateOpponentDisplay()
+    {
+        portrait.sprite = opponentData.opponentSprite;
+        nameDisplay.text = opponentData.name;
     }
 
     private IEnumerator PlayTurnRoutine()
@@ -166,7 +192,7 @@ public class OpponentCardManager : MonoBehaviour
                     {
                         selected.Add((goodCard.cardEntry, firstTile));
                         PayMana(goodCard.cardEntry.cost);
-                        goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
+                        goodCards.Remove(goodCard);
                         break;
                     }
                 }
@@ -176,32 +202,32 @@ public class OpponentCardManager : MonoBehaviour
         return selected;
     }
 
-private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
-{
-    List<(CardEntry, Tile)> selected = new();
-    List<(Creature, int)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
-
-    foreach (var (nexus, hp) in concernedNexusList)
+    private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
     {
-        if (remainingMana <= 0) break;
-        Tile firstTile = nexus.tile.GetLane().tiles[7];
-        if (!firstTile.creature)
+        List<(CardEntry, Tile)> selected = new();
+        List<(Creature, int)> concernedNexusList = nexusAlive.Count > 3 ? playerNexus : nexusAlive;
+
+        foreach (var (nexus, hp) in concernedNexusList)
         {
-            foreach (var goodCard in goodCards)
+            if (remainingMana <= 0) break;
+            Tile firstTile = nexus.tile.GetLane().tiles[7];
+            if (!firstTile.creature)
             {
-                if (goodCard.cardEntry.cost <= remainingMana)
+                foreach (var goodCard in goodCards)
                 {
-                    selected.Add((goodCard.cardEntry, firstTile));
-                    PayMana(goodCard.cardEntry.cost);
-                    goodCards.RemoveAll(entry => entry.cardEntry == goodCard.cardEntry);
-                    break;
+                    if (goodCard.cardEntry.cost <= remainingMana)
+                    {
+                        selected.Add((goodCard.cardEntry, firstTile));
+                        PayMana(goodCard.cardEntry.cost);
+                        goodCards.Remove(goodCard);
+                        break;
+                    }
                 }
             }
         }
-    }
 
-    return selected;
-}
+        return selected;
+    }
 
     private IEnumerator PlayCardsSequentially(List<(CardEntry cardEntry, Tile tile)> cardsToPlay)
     {
@@ -240,12 +266,39 @@ private List<(CardEntry, Tile)> GetCardsToPlayForNexus()
         {
             opponentDeckIsEmpty?.Invoke();
         }
-        if (hand.Count >= maxHandSize) yield return null;
+        if (hand.Count >= maxHandSize || deck.GetDeckCount() <= 0) yield break;
         for (int i = 0; i < nbOfCards; i++)
         {
+            if (deck.GetDeckCount() <= 0) yield break;
             hand.Add(deck.DrawCardFromDeck());
             opponentHandManager.DrawCard();
             yield return new WaitForSeconds(0.3f);
         }
+    }
+
+    public void EndBattle()
+    {
+        opponentHandManager.DeleteAll();
+        hand = new();
+        manaDisplay.enabled = false;
+        manaSprite.enabled = false;
+        portrait.enabled = false;
+        nameDisplay.enabled = false;
+        deck.cardNumberDisplay.enabled = false;
+        deck.cardBackSprite.enabled = false;
+    }
+
+    public void StartBattle()
+    {
+        mana = 0;
+        remainingMana = mana;
+        UpdateManaDisplay();
+        manaDisplay.enabled = true;
+        manaSprite.enabled = true;
+        UpdateOpponentDisplay();
+        portrait.enabled = true;
+        nameDisplay.enabled = true;
+        deck.cardNumberDisplay.enabled = true;
+        deck.cardBackSprite.enabled = true;
     }
 }

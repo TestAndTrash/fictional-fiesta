@@ -9,22 +9,34 @@ public class DeckManager : MonoBehaviour
 
     [SerializeField] private CardData database;
 
-     private TextMeshPro cardNumberDisplay = null;
-
+    public TextMeshPro cardNumberDisplay = null;
+    public SpriteRenderer cardBackSprite = null;
     public void Start()
     {
         RefillDeck();
         cardNumberDisplay = gameObject.transform.Find("Number").gameObject.GetComponent<TextMeshPro>();
+        cardBackSprite = gameObject.GetComponent<SpriteRenderer>();
         UpdateDisplay();
     }
 
     public void RefillDeck()
     {
-        currentDeck = deck;
+        currentDeck = new List<int>(deck);
+        UpdateDisplay();
+    }
+
+    public void ReplaceDeck(List<int> newDeck)
+    {
+        deck = newDeck;
+        currentDeck = new List<int>(deck);
     }
 
     public void UpdateDisplay()
     {
+        if (cardNumberDisplay == null)
+        {
+            cardNumberDisplay = gameObject.transform.Find("Number").gameObject.GetComponent<TextMeshPro>();
+        }
         cardNumberDisplay.text = currentDeck.Count.ToString();
     }
 
@@ -40,7 +52,8 @@ public class DeckManager : MonoBehaviour
 
     public void AddCardToDeck(int cardID)
     {
-        currentDeck.Add(cardID);
+        deck.Add(cardID);
+        currentDeck = new List<int>(deck);
         UpdateDisplay();
     }
 

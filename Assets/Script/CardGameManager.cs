@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Assets.Script.Creatures;
 using Assets.Script.HUD;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CardGameManager : MonoBehaviour
@@ -14,8 +15,13 @@ public class CardGameManager : MonoBehaviour
     private int opponentCaptureLane = 0;
     public static event Action<bool> partyIsOver;
     public bool gameOver = false;
+    public bool eventSent = false;
+
     public bool playerWon = false;
     public bool opponentWon = false;
+    public static event Action playerWonGame;
+    public static event Action playerLostGame;    
+    public static event Action battleStart;    
 
     public void Start()
     {
@@ -34,8 +40,15 @@ public class CardGameManager : MonoBehaviour
 
     public void LaunchGame()
     {
-        StartCoroutine(opponentCardManager.Draw(3));
-        StartCoroutine(playerHandManager.DrawFirstHand(5));
+        battleStart?.Invoke();
+        gameOver = false;
+        eventSent = false;
+        board.gameObject.SetActive(true);
+        board.PrepareFight();
+        playerHandManager.StartBattle();
+        opponentCardManager.StartBattle();
+        StartCoroutine(opponentCardManager.Draw(4));
+        StartCoroutine(playerHandManager.DrawFirstHand(4));
         playerHandManager.RefillMana();
         playerHandManager.ActivatePlay(true);
     }
@@ -81,15 +94,26 @@ public class CardGameManager : MonoBehaviour
 
     public void EndTheGame()
     {
+        if (eventSent) return;
         playerHandManager.ActivatePlay(false);
         if (playerWon)
         {
-            Debug.Log("PLAYER WON");
+            playerWonGame?.Invoke();
+            CurtainCall();
         }
         else
         {
-            Debug.Log("OPPONENT WON");
+            playerLostGame?.Invoke();
+            CurtainCall();
         }
+        eventSent = true;
+    }
+
+    public void CurtainCall()
+    {
+        board.gameObject.SetActive(false);
+        opponentCardManager.EndBattle();
+        playerHandManager.EndBattle();
     }
 
     public void CaptureLane(Base killedBase)

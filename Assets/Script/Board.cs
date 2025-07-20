@@ -8,6 +8,8 @@ public class Board : MonoBehaviour
 {
     [SerializeField]
     public List<Lane> lanes;
+    [SerializeField] private HandManager handManager;
+
     [SerializeField]
     public List<Team> teams;
     public int playerTeamIndex { get; private set; } = 0;
@@ -34,9 +36,7 @@ public class Board : MonoBehaviour
         newCreature.GetComponent<Creature>().Initiate(cardEntry);
         newCreature.updateTile(tile);
         newCreature.transform.position = tile.transform.position;
-
         teams[team].creatures.Add(newCreature);
-        
     }
 
     public void RunOpponentActions()
@@ -109,7 +109,7 @@ public class Board : MonoBehaviour
 
     public void HandleTileClick(Tile clickedTile)
     {
-        if (currentCardEntry != null)
+        if (currentCardEntry != null && handManager.canPlay)
         {
             InvokCreature(currentCardEntry.creaturePrefab, 0, clickedTile, currentCardEntry);
             currentCardManager.UseCard(currentCardEntry.cost);
@@ -121,5 +121,13 @@ public class Board : MonoBehaviour
     public Team GetPlayerTeam()
     {
         return teams[playerTeamIndex];
+    }
+
+    public void PrepareFight()
+    {
+        foreach (Lane lane in lanes)
+        {
+            lane.ResetLane();
+        }
     }
 }
