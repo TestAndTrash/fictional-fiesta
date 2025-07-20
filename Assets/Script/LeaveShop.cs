@@ -15,12 +15,18 @@ namespace Assets.Script.HUD
         void Start()
         {
             GameManager.shopOpen += onShopOpen;
+            GameManager.closeShop += onShopClose;
             gameObject.SetActive(false);
         }
 
         public void Leave()
         {
             playerLeaveShop?.Invoke();
+            gameObject.SetActive(false);
+        }
+
+        public void onShopClose()
+        {
             gameObject.SetActive(false);
         }
 

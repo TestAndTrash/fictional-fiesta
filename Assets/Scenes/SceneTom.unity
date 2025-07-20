@@ -211,7 +211,7 @@ Transform:
   m_GameObject: {fileID: 288137990}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.704997, y: 0.23866653, z: -30.933332}
+  m_LocalPosition: {x: -5.44, y: -0.02, z: -30.933332}
   m_LocalScale: {x: 2.1666665, y: 2.1666665, z: 2.1666665}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -472,6 +472,46 @@ MonoBehaviour:
     cardInDeck: 10
     deck: 01000000
     opponentSprite: {fileID: -5538204950628445106, guid: fe0c70f53f5b5ab12b98e08de9de2c3a, type: 3}
+  - id: 3
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Tom
+    goldGiven: 5
+    cardGiven: 2
+    cardInDeck: 10
+    deck: 0100000002000000
+    opponentSprite: {fileID: 2935600185235841280, guid: ff2da1abf35b98cef9c0a1ae7bc53a52, type: 3}
+  - id: 4
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Trou
+    goldGiven: 7
+    cardGiven: 3
+    cardInDeck: 10
+    deck: 01000000
+    opponentSprite: {fileID: 44312295472614032, guid: 211e8c9b69014db5aabe90d97c9b8a6e, type: 3}
+  - id: 5
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Almeric
+    goldGiven: 7
+    cardGiven: 3
+    cardInDeck: 10
+    deck: 01000000
+    opponentSprite: {fileID: -6518425540804800850, guid: edb49297bb2f694a48c67ef4f14bab0c, type: 3}
+  - id: 6
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Linda
+    goldGiven: 7
+    cardGiven: 3
+    cardInDeck: 10
+    deck: 01000000
+    opponentSprite: {fileID: 4205077649056285165, guid: 71bb273e8cf7a0901bcdc7ae13b1dba3, type: 3}
+  - id: 7
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Nel
+    goldGiven: 7
+    cardGiven: 3
+    cardInDeck: 10
+    deck: 01000000
+    opponentSprite: {fileID: -4432077319497043826, guid: ea4607febf29506cfaf4ce1844beb4f8, type: 3}
 --- !u!114 &517491760
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +534,15 @@ MonoBehaviour:
   enhanceDeck: {fileID: 517491756}
   cardData: {fileID: 890215343}
   dialogue: {fileID: 1150741711}
+  bossOpponent:
+    id: 999
+    opponentPrefab: {fileID: 1573108135306056301, guid: 54925f412a03230b5b6d0a80fd610217, type: 3}
+    name: Miguel
+    goldGiven: 0
+    cardGiven: 0
+    cardInDeck: 0
+    deck: 010000000100000001000000
+    opponentSprite: {fileID: 8381812732683091083, guid: 6d8b5698cc1ef74e4a46b2b33775b018, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,6 +1666,7 @@ MonoBehaviour:
   currentDeck: 
   database: {fileID: 890215343}
   cardNumberDisplay: {fileID: 0}
+  cardBackSprite: {fileID: 0}
 --- !u!4 &890215346
 Transform:
   m_ObjectHideFlags: 0
@@ -2220,7 +2270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.8666668, y: 0.88000154}
+  m_AnchoredPosition: {x: -2.68, y: 0.57}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2017000816

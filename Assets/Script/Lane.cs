@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Assets.Script.Creatures;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -51,9 +52,24 @@ namespace Assets.Script
             }
         }
 
+        public void ClearTileQuick()
+        {
+            foreach (Tile tile in tiles)
+            {
+                if (tile.creature != null)
+                {
+                    tile.creature.gameObject.SetActive(false);
+                }
+            }
+        }
+
         public void ResetLane()
         {
-            ClearTiles();
+            ClearTileQuick();
+            foreach (Base b in bases)
+            {
+                Destroy(b.gameObject);
+            }
             bases.Clear();
             InvokBase(playerBaseIndex);
             InvokBase(ennemyBaseIndex);

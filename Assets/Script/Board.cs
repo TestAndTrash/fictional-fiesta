@@ -19,7 +19,6 @@ public class Board : MonoBehaviour
 
     private CardEntry currentCardEntry;
     private CardManager currentCardManager;
-
     private void OnEnable()
     {
         Tile.OnTileClicked += HandleTileClick;
@@ -49,6 +48,7 @@ public class Board : MonoBehaviour
         for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[playerTeamIndex].creatures[i];
+            if (creature == null || creature.gameObject == null) continue;
             if (creature.gameObject.activeSelf)
             {
                 Tile tile = creature.tile.GetComponent<Tile>();
@@ -68,6 +68,7 @@ public class Board : MonoBehaviour
         for (int i = teams[ennemyTeamIndex].creatures.Count - 1; i >= 0; i--)
         {
             Creature creature = teams[ennemyTeamIndex].creatures[i];
+            if (creature == null || creature.gameObject == null) continue;
             if (creature.gameObject.activeSelf)
             {
                 Tile tile = creature.tile.GetComponent<Tile>();
@@ -123,11 +124,22 @@ public class Board : MonoBehaviour
         return teams[playerTeamIndex];
     }
 
-    public void PrepareFight()
+    public void ResetBoard()
     {
+        StopAllCoroutines();
         foreach (Lane lane in lanes)
         {
             lane.ResetLane();
+        }
+        for (int i = teams[playerTeamIndex].creatures.Count - 1; i >= 0; i--)
+        {
+            Creature creature = teams[playerTeamIndex].creatures[i];
+            Destroy(creature);
+        }
+        for (int i = teams[ennemyTeamIndex].creatures.Count - 1; i >= 0; i--)
+        {
+            Creature creature = teams[ennemyTeamIndex].creatures[i];
+            Destroy(creature);
         }
     }
 }

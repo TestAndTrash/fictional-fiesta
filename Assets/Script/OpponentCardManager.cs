@@ -182,6 +182,7 @@ public class OpponentCardManager : MonoBehaviour
 
         foreach (var creaThreat in creatureThreat)
         {
+            if (creaThreat.creature == null || creaThreat.creature.gameObject == null) continue;
             if (remainingMana <= 0) break;
             Tile firstTile = creaThreat.creature.tile.GetLane().tiles[7];
             if (!firstTile.creature && creaThreat.creature.tile.GetLane().GetNexusFromTeamID(board.ennemyTeamIndex).alive)

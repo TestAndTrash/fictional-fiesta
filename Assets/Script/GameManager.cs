@@ -44,19 +44,23 @@ public class GameManager : MonoBehaviour
     private string[] newLines;
 
     public static event Action shopOpen;
+    public static event Action closeShop;
+
+    [SerializeField] private Opponent bossOpponent;
 
     void Start()
     {
+
         currOpponent = opponentDatabase.entries[0];
         for (int i = 0; i < opponentDatabase.entries.Count; i++)
         {
             dbEntries.Add(i);
         }
         //Fill the shop/first card to add deck
-        for (int i = 0; i < 120; i++)
+        for (int i = 0; i < 20; i++)
         {
             //int randomInt = Random.Range(0, cardData.entries.Count);
-            int randomInt = UnityEngine.Random.Range(1, 3);
+            int randomInt = UnityEngine.Random.Range(1, 5);
             godDeck.Add(randomInt);
         }
         OpponentCardDisplay.OnCardDisplayClicked += OpponentChosed;
@@ -67,18 +71,27 @@ public class GameManager : MonoBehaviour
         EnhanceDeck.playerBoughtCard += BuyCard;
         LeaveShop.playerLeaveShop += PlayerLeaveShop;
 
-        //TEST 
-        /*deckInitDialogueClear = true;
-        fight0DialogueClear = true;
-        fight1DialogueClear = true;
-        fight2DialogueClear = true;
-        fight3DialogueClear = true;
-        wonFight = 4;*/
         ManageRun();
     }
 
     public void DisplayOpponentChoice(int numberOfOpponent)
     {
+        if (dbEntries.Count < numberOfOpponent)
+        {
+            numberOfOpponent = dbEntries.Count;
+            for (int i = 0; i < numberOfOpponent; i++)
+            {
+                int randomInt = UnityEngine.Random.Range(0, dbEntries.Count);
+                Opponent opponent = opponentDatabase.GetOpponentById(dbEntries[randomInt]);
+                currOpponentChoice.Add(opponent);
+                GameObject opponentCardObject = Instantiate(opponentCardPrefab, spawnPoint.position, spawnPoint.rotation);
+                OpponentCardDisplay opponentCardDisplay = opponentCardObject.GetComponent<OpponentCardDisplay>();
+                opponentCardDisplay.FillCardData(opponent);
+                physicalCards.Add(opponentCardObject);
+                dbEntries.RemoveAt(randomInt);
+                UpdateCardPos(opponentCardDisplay);
+            }
+        }
         for (int i = 0; i < numberOfOpponent; i++)
         {
             int randomInt = UnityEngine.Random.Range(0, dbEntries.Count);
@@ -88,7 +101,7 @@ public class GameManager : MonoBehaviour
             OpponentCardDisplay opponentCardDisplay = opponentCardObject.GetComponent<OpponentCardDisplay>();
             opponentCardDisplay.FillCardData(opponent);
             physicalCards.Add(opponentCardObject);
-            dbEntries.Remove(randomInt);
+            dbEntries.RemoveAt(randomInt);
             UpdateCardPos(opponentCardDisplay);
         }
     }
@@ -167,6 +180,7 @@ public class GameManager : MonoBehaviour
             {
                 buying = false;
                 bought = true;
+                closeShop?.Invoke();
             }      
             ManageRun();
         }
@@ -186,6 +200,7 @@ public class GameManager : MonoBehaviour
     {
         buying = false;
         bought = true;
+        closeShop?.Invoke();
         ManageRun();
     }
     public void LaunchDialogue()
@@ -334,11 +349,12 @@ public class GameManager : MonoBehaviour
         }
         else if (wonFight == 4)
         {
-            Debug.Log("boos fight !");
+            currOpponent = bossOpponent;
             LaunchFight();
         }
         else
-        {
+        {   
+            enhanceDeck.EmptyTheDisplay();
             LaunchDialogue();
         }
     }

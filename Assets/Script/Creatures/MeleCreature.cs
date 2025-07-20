@@ -67,15 +67,11 @@ namespace Assets.Script.Creatures
             Creature ennemy = nextTile.creature;            
             if (ennemy.team != this.team)
             {
-                ennemy.PlayAnimation("Fight");
                 PlayAnimation("Fight");
                 yield return new WaitForSeconds(1.1f);
-
                 ennemy.PlayAnimation("Hit");
-                PlayAnimation("Hit");
                 yield return new WaitForSeconds(0.5f);
                 ennemy.Hit(ennemy.hp - this.atk);
-                this.Hit(this.hp - ennemy.atk);
                 yield return new WaitForSeconds(1f);
             }
         }

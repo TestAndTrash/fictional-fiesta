@@ -32,19 +32,13 @@ public class CardGameManager : MonoBehaviour
         opponentCardManager.opponentDeckIsEmpty += OnOpponentDeckEmpty;
         opponentCardManager.FillBoardInfo(board);
     }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftAlt)) LaunchGame();
-    }
-
     public void LaunchGame()
     {
         battleStart?.Invoke();
         gameOver = false;
         eventSent = false;
         board.gameObject.SetActive(true);
-        board.PrepareFight();
+        //board.PrepareFight();
         playerHandManager.StartBattle();
         opponentCardManager.StartBattle();
         StartCoroutine(opponentCardManager.Draw(4));
@@ -112,6 +106,7 @@ public class CardGameManager : MonoBehaviour
     public void CurtainCall()
     {
         board.gameObject.SetActive(false);
+        board.ResetBoard();
         opponentCardManager.EndBattle();
         playerHandManager.EndBattle();
     }
