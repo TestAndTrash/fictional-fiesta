@@ -18,6 +18,7 @@ namespace Assets.Script.HUD
             CardGameManager.playerLostGame += EndBattle;
             CardGameManager.playerWonGame += EndBattle;
             CardGameManager.battleStart += StartBattle;
+            gameObject.SetActive(false);
         }
 
         public void LaunchRound()

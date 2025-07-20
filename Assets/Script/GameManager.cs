@@ -27,9 +27,19 @@ public class GameManager : MonoBehaviour
     private int needsToDraw = 0;
     private int drawed = 0;
     private int wonFight = 0;
-
+    private bool waitingForDialogue = false;
     private bool deckInit = false;
     private bool bought = false;
+
+    private bool deckInitDialogueClear = false;
+    private bool fight0DialogueClear = false;
+    private bool fight1DialogueClear = false;
+    private bool fight2DialogueClear = false;
+    private bool fight3DialogueClear = false;
+    private bool hasntBoughtDialogueClear = false;
+    private bool beforeBossDialogueClear = false;
+
+
 
     private string[] newLines;
 
@@ -52,6 +62,7 @@ public class GameManager : MonoBehaviour
         CardGameManager.playerWonGame += RewardPlayer;
         CardGameManager.playerLostGame += DisplayGameOver;
         EnhanceDeck.playerChoseCard += AddCardToDeck;
+        Dialogue.dialogueDone += DialogueOver;
 
         ManageRun();
     }
@@ -144,52 +155,152 @@ public class GameManager : MonoBehaviour
 
     public void LaunchDialogue()
     {
-        newLines = new string[1];
-        newLines[0] = "Hey there, welcome in the vegetable-top game championship !";
+        waitingForDialogue = true;
+        if (!deckInitDialogueClear)
+        {
+            newLines = new string[5];
+            newLines[0] = "Hey there, welcome in the vegetable-top game championship ! I'm gonna introduce the game for you don't you worry, macaroni.";
+            newLines[1] = "First it's this local tournament then It'll be a regional, and maybe the worlds?? Who knows ? (I do).";
+            newLines[2] = "I know this must be weird, for you but to make things easy to understand... Let's say that I summonned you to play for this championship.";
+            newLines[3] = "I believe in you... first let's crack a booster should we ?";
+            newLines[4] = "Choose the card you want to add to you deck for the remaining of the championship";
+        }
+        else if (!fight0DialogueClear)
+        {
+            newLines = new string[2];
+            newLines[0] = "Stonks... as they say. Since you never played before, I'm making you play against my friend Marcus.";
+            newLines[1] = "He's highly drunk so don't worry, you won't loose. And an advice protect your pots";
+        }
+        else if (!fight1DialogueClear)
+        {
+            newLines = new string[3];
+            newLines[0] = "You're a natural ! And you looted his deck too... Man you did him dirty, my man has a wife and two kids...";
+            newLines[1] = "It's okay keep the thief act, I love it. You'll grow stronger as we progress through the event !";
+            newLines[2] = "Now as my father said, choose your weapon but also choose your ennemy. Never got along with the old man...";
+        }
+        else if (!fight2DialogueClear)
+        {
+            newLines = new string[3];
+            newLines[0] = "Man are you starting to feel the thrill ? The smell of them blood in our hands hahahaha. ha ? ha !";
+            newLines[1] = "Keep looting those juicy decks. You are qualified for the next step.";
+            newLines[2] = "As I am, of course.";
+        }
+        else if (!fight3DialogueClear)
+        {
+            newLines = new string[3];
+            newLines[0] = "What was that ! Player !";
+            newLines[1] = "Sorry never asked your name but.. don't care at this point we've been making it work without that futile info.";
+            newLines[2] = "Semi-finals bruv, good luck, respect your tengland";
+        }
+        else if (!hasntBoughtDialogueClear)
+        {
+            newLines = new string[3];
+            newLines[0] = "Oh maaan this one was my favorite ! Now you know the basics and some advanced strats";
+            newLines[1] = "As my father also said : Every card game is pay to win, son";
+            newLines[2] = "I see a card market across the room, maybe we should take a look.";
+        }
+        else if (!beforeBossDialogueClear)
+        {
+            newLines = new string[3];
+            newLines[0] = "So this is the time of our lives ? We finally met on the board huh ?";
+            newLines[1] = "You bought all this, for nothing man, that's kinda sad, could've kept those coins for yo mama tho.";
+            newLines[2] = "I'm say one last thing: Adversaire très fort et très respectable sur le terrain.";
+        }
+        else
+        {
+            newLines = new string[4];
+            newLines[0] = "The heck bro ? You fooled me into thinking you were a newbie !";
+            newLines[1] = "Is this game huge in your realm or what ? I tought I'd train my human pet to conquish the whole vegetable-top game scene...";
+            newLines[2] = "You've killed the immortal tutorial boss, nice dude...";
+            newLines[3] = "That's rought bro, my hopes and dreams... We were just getting started !";
+        }
         dialogue.SetLines(newLines);
         dialogue.StartDialogue();
     }
 
+    public void DialogueOver()
+    {
+        waitingForDialogue = false;
+        if (!deckInitDialogueClear) deckInitDialogueClear = true;
+        else if (!fight0DialogueClear) fight0DialogueClear = true;
+        else if (!fight1DialogueClear) fight1DialogueClear = true;
+        else if (!fight2DialogueClear) fight2DialogueClear = true;
+        else if (!fight3DialogueClear) fight3DialogueClear = true;
+        else if (!hasntBoughtDialogueClear) hasntBoughtDialogueClear = true;
+        else if (!beforeBossDialogueClear) beforeBossDialogueClear = true;
+
+        ManageRun();
+    }
+
     public void ManageRun()
     {
-        if (!deckInit)
+        if (waitingForDialogue) return;
+        if (!deckInitDialogueClear)
         {
-            //DIALOGUE
-
+            LaunchDialogue();
+        }
+        else if (!deckInit)
+        {
             needsToDraw = 5;
             enhanceDeck.DrawRandCards(4, godDeck);
+        }
+        else if (!fight0DialogueClear)
+        {
+            enhanceDeck.EmptyTheDisplay();
+            LaunchDialogue();
         }
         else if (wonFight == 0)
         {
             LaunchFight();
         }
+        else if (!fight1DialogueClear)
+        {
+            enhanceDeck.EmptyTheDisplay();
+            LaunchDialogue();
+        }
         else if (wonFight == 1)
         {
-            //DIALOGUE
-            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
+        }
+        else if (!fight2DialogueClear)
+        {
+            enhanceDeck.EmptyTheDisplay();
+            LaunchDialogue();
         }
         else if (wonFight == 2)
         {
-            //DIALOGUE
-            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
+        }
+        else if (!fight3DialogueClear)
+        {
+            enhanceDeck.EmptyTheDisplay();
+            LaunchDialogue();
         }
         else if (wonFight == 3)
         {
-            //DIALOGUE
-            enhanceDeck.EmptyTheDisplay();
             DisplayOpponentChoice(2);
+        }
+        else if (!hasntBoughtDialogueClear)
+        {
+            enhanceDeck.EmptyTheDisplay();
+            LaunchDialogue();
         }
         else if (!bought)
         {
-            //DIALOGUE
             enhanceDeck.EmptyTheDisplay();
             //MERCHANT
         }
-        else
+        else if (!beforeBossDialogueClear)
+        {
+            LaunchDialogue();
+        }
+        else if (wonFight == 4)
         {
             LaunchFight();
+        }
+        else
+        {
+            LaunchDialogue();
         }
     }
 
