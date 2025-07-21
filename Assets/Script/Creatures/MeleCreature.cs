@@ -22,6 +22,7 @@ namespace Assets.Script.Creatures
 
         public override IEnumerator MoveForward(Lane lane)
         {
+            Debug.Log(attack);
             bool fighted = false;
             for (int i = 0; i < pm && (tile.pos[tile.tileIndex] != goal[team]) && this.alive; i++)
             {
@@ -64,6 +65,7 @@ namespace Assets.Script.Creatures
 
         public IEnumerator Fight(Tile nextTile)
         {
+            Debug.Log("ok ?");
             Creature ennemy = nextTile.creature;            
             if (ennemy.team != this.team)
             {

@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5881519073093879662}
   - component: {fileID: 8842533967999451137}
-  - component: {fileID: 1325126310910319795}
   - component: {fileID: 1622306214377426601}
   - component: {fileID: 1519757677256384308}
+  - component: {fileID: 1042545647083102823}
   m_Layer: 0
   m_Name: Citrouille 5
   m_TagString: Untagged
@@ -91,23 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1325126310910319795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8801012688876195169}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2835d1feedbcf0543ae47b7aa7897d4f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animations: {fileID: 0}
-  move: 1
-  health: 4
-  attack: 3
-  range: 1
 --- !u!114 &1622306214377426601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +126,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1042545647083102823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8801012688876195169}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 285df4f4377e03f46b67a0dcba3438ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animations: {fileID: 0}
+  move: 3
+  health: 3
+  attack: 3
+  range: 3
 --- !u!1001 &1123885173863853053
 PrefabInstance:
   m_ObjectHideFlags: 0

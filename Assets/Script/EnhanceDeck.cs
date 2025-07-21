@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.Splines;
 using DG.Tweening;
 using System;
+using TMPro;
 
 public class EnhanceDeck : MonoBehaviour
 {
@@ -20,6 +21,18 @@ public class EnhanceDeck : MonoBehaviour
     public static event Action<CardManager> playerChoseCard;
     public static event Action<CardManager> playerBoughtCard;
 
+    private GameObject stealDisplay = null;
+
+
+    void Start()
+    {
+        InitDisplay();
+    }
+
+    public void InitDisplay()
+    {
+        stealDisplay = gameObject.transform.Find("StealText").gameObject;
+    }
 
     public void DrawRandCards(int nbOfCards, List<int> cardPool, bool isShop)
     {
@@ -41,6 +54,8 @@ public class EnhanceDeck : MonoBehaviour
         {
             Destroy(card);
         }
+        if (stealDisplay == null) InitDisplay();
+        stealDisplay.gameObject.SetActive(false);
         physicalCards = new();
         cardsToChooseFrom = new();
     }
@@ -64,6 +79,8 @@ public class EnhanceDeck : MonoBehaviour
             board.gameObject.SetActive(false);
             UpdateCardPos(cardObject.GetComponent<CardManager>());
         }
+        if (stealDisplay == null) InitDisplay();
+        stealDisplay.gameObject.SetActive(true);
     }
 
     private void UpdateCardPos(CardManager card)

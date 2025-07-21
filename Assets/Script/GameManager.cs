@@ -215,9 +215,11 @@ public class GameManager : MonoBehaviour
         }
         else if (!fight0DialogueClear)
         {
-            newLines = new string[2];
+            newLines = new string[3];
             newLines[0] = "Stonks... as they say. Since you never played before, I'm making you play against my friend Marcus.";
-            newLines[1] = "He's highly drunk so don't worry, you won't loose. And an advice protect your pots.";
+            newLines[1] = "He's drunk so don't worry, you won't loose. And an advice protect your pots.";
+            newLines[2] = "For real, use your units to destroy 3 of his pots, or make him run out of cards.";
+
         }
         else if (!fight1DialogueClear)
         {

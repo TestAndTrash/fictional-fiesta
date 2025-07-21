@@ -23,6 +23,10 @@ namespace Assets.Script
         private TextMeshPro hpDisplay = null;
         private TextMeshPro atkDisplay = null;
 
+        private TextMeshPro rngDisplay = null;
+
+        private TextMeshPro pmDisplay = null;
+
         private CardEntry card;
 
         public CreatureAnimation animations;
@@ -47,10 +51,10 @@ namespace Assets.Script
                 InitDisplay();
             }
             card = cardEntry;
-            pm = card.pm;
+            UpdatePM(card.pm);
             UpdateHP(card.hp);
             UpdateATK(card.atk);
-            rng = card.rng;
+            UpdateRNG(card.rng);
         }
 
         public void InitDisplay()
@@ -59,16 +63,33 @@ namespace Assets.Script
             if (display != null)
             {
                 hpDisplay = gameObject.transform.Find("CreatureUI/HP_UI/HP").gameObject.GetComponent<TextMeshPro>();
+                hpDisplay.gameObject.GetComponent<MeshRenderer>().sortingOrder = 15;
+
             }
 
             display = gameObject.transform.Find("CreatureUI/ATK_UI/ATK");
             if (display != null)
             {
                 atkDisplay = gameObject.transform.Find("CreatureUI/ATK_UI/ATK").gameObject.GetComponent<TextMeshPro>();
+                atkDisplay.gameObject.GetComponent<MeshRenderer>().sortingOrder = 15;
+
+            }
+
+            display = gameObject.transform.Find("CreatureUI/RNG_UI/RNG");
+            if (display != null)
+            {
+                rngDisplay = gameObject.transform.Find("CreatureUI/RNG_UI/RNG").gameObject.GetComponent<TextMeshPro>();
+                rngDisplay.gameObject.GetComponent<MeshRenderer>().sortingOrder = 15;
+
+            }
+            
+            display = gameObject.transform.Find("CreatureUI/PM_UI/PM");
+            if (display != null)
+            {
+                pmDisplay = gameObject.transform.Find("CreatureUI/PM_UI/PM").gameObject.GetComponent<TextMeshPro>();
+                pmDisplay.gameObject.GetComponent<MeshRenderer>().sortingOrder = 15;
             }
         }
-
-        
 
         public void UpdateHP(int newHP)
         {
@@ -89,7 +110,25 @@ namespace Assets.Script
                 atkDisplay.text = atk.ToString();
             }
         }
-        
+
+        public void UpdateRNG(int newRng)
+        {
+            rng = newRng;
+            if (rngDisplay != null)
+            {
+                rngDisplay.text = rng.ToString();
+            } 
+        }
+
+
+        public void UpdatePM(int newPM)
+        {
+            pm = newPM;
+            if (pmDisplay != null)
+            {
+                pmDisplay.text = pm.ToString();
+            } 
+        }
         public virtual IEnumerator MoveForward(Lane lane)
         {
             throw new NotImplementedException();
